@@ -4,267 +4,371 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart, Crescent Moon, and Rainbow Animation</title>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Coldplay</title>
     <style>
+        /* Estilos generales */
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #0d335f;
             margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .controls-container {
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: #fff;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
+            align-items: flex-start; /* Cambiado a flex-start para permitir desplazamiento */
+            min-height: 100vh; /* Mínimo de altura completa */
+            overflow: auto; /* Permitir desplazamiento */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
+            padding: 10px 20px;
+            border-bottom: 4px solid #ffdd40;
+            z-index: 10; /* Asegura que la barra esté siempre encima */
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #fff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: color 0.2s ease-in-out; /* Añadida la transición aquí */
+        }
+
+        .navbar-brand:hover {
+            color: #000 !important;
+        }
+
+        .navbar-brand img {
+            margin-right: 15px;
+            border-radius: 0;
+        }
+
+        /* [Resto del código CSS sin cambios] */
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 600;
+            margin-right: 15px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffdd40 !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background-color: #ffdd40;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            background-color: #cc3f33;
+            border: none;
             border-radius: 10px;
         }
-        canvas {
-            border: 2px solid white;
-            max-width: 100%;
+
+        .dropdown-item {
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #ff7f50;
+            color: #ffffff;
+        }
+
+        /* Contenedor principal */
+        .container {
+            margin-top: 80px; /* Ajusta el margen superior para evitar el solapamiento */
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.5);
+            border: 5px solid rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            box-sizing: border-box;
+            overflow: hidden;
             height: auto;
         }
-        .plyr, .default-player {
-            margin-top: 20px;
-            width: 100%;
-            max-width: 300px;
+
+
+        /* Detalles de colores en las esquinas */
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px; /* Esquinas redondeadas para pseudo-elementos */
+            z-index: -1; /* Colocar detrás del contenedor */
+            background: linear-gradient(135deg, rgba(255, 78, 78, 0.2), rgba(249, 212, 35, 0.2)); /* Fondo degradado */
+            filter: blur(25px); /* Efecto de desenfoque para el fondo */
         }
-        .default-player {
-            display: none;
+
+        /* Texto en los contenedores */
+        h1, h2, h3, p {
+            color: #333; /* Color del texto oscuro */
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8); /* Sombra de texto más suave */
+            margin: 10px 0; /* Ajustar margen superior e inferior */
         }
-        /* Custom CSS for default HTML5 audio player */
-        .default-player audio {
-            width: 100%;
-            background-color: #f1f3f4;
-            border-radius: 4px;
-            padding: 5px;
-        }
-        .default-player audio::-webkit-media-controls-panel {
-            background-color: #f1f3f4;
-        }
-        .default-player audio::-webkit-media-controls-current-time-display,
-        .default-player audio::-webkit-media-controls-time-remaining-display {
-            color: #5f6368;
-        }
-        #audio-upload, #shape-selector {
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            max-width: 300px;
-        }
-        #song-title {
-            color: white;
-            margin-top: 10px;
-            font-size: 18px;
-            text-align: center;
-            max-width: 300px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        @media (max-width: 768px) {
-            .controls-container {
-                padding: 10px;
-            }
-            canvas {
-                width: 100%;
-                height: auto;
-            }
+
+        /* SVG estilos */
+        svg {
+            margin-top: 10px; /* Reducir espacio entre SVG y otros elementos */
+            max-width: 100%; /* SVG responsivo */
+            height: auto; /* Mantener proporción */
         }
     </style>
-
-    <!-- Include Plyr CSS -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 </head>
 <body>
-<h2 style="color: white;">Coldplay audio player</h2>
-<div class="controls-container">
-    <input type="file" id="audio-upload" accept="audio/*" />
-    <select id="shape-selector">
-        <option value="heart">Heart</option>
-        <option value="moon">Crescent Moon</option>
-        <option value="rainbow">Rainbow</option>
-    </select>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://ecastro4.github.io">
+                <img src="logo.png" alt="Logo" width="50">
+                Web d'Eric
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inici</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tema 1</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Programació p5.js
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://ecastro4.github.io/cara">Cara interactiva</a>
+                            <a class="dropdown-item" href="https://ecastro4.github.io/ocell">Ocell</a>
+                            <a class="dropdown-item" href="https://ecastro4.github.io/wepray">We Pray</a>
+                            <a class="dropdown-item" href="https://ecastro4.github.io/coldplay">Coldplay</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Braç robòtic
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="https://ecastro4.github.io/robotica/cdirecta">Cinemàtica directa</a>
+                            <a class="dropdown-item" href="https://ecastro4.github.io/robotica/cinversa">Cinemàtica inversa</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tema 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>SVG Audio Visualizer</h1>
+        <div class="controls">
+            <label for="songSelect">Choose Song:</label>
+            <select id="songSelect">
+                <option value="song1">Good Feelings</option>
+                <option value="song2">Song 2</option>
+                <!-- Easily add more songs here -->
+            </select>
+            <br><br>
+            <input type="file" id="audioFile" accept="audio/*">
+            <br><br>
+            <audio id="audioPlayer" controls></audio>
+        </div>
 
-    <!-- Display the song title here -->
-    <h2 id="song-title"></h2>
+    <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
+        <g id="coldplay1" style="display:none;" fill="hsl(200, 100%, 50%)">
+            <path d="M 6.484375 0.191406 C -2.53125 -0.679688 -1.636719 11.554688 6.035156 10.199219 C 3.070312 9.28125 1.988281 7.316406 2.027344 5.261719 C 2.1875 2.601562 3.398438 1.171875 6.484375 0.191406 Z M 6.484375 0.191406 "/>
+            <path d="M 21.96875 5.242188 C 21.96875 2.347656 19.550781 0 16.566406 0 C 13.582031 0 11.164062 2.347656 11.164062 5.242188 C 11.164062 8.140625 13.582031 10.488281 16.566406 10.488281 C 19.550781 10.488281 21.96875 8.140625 21.96875 5.242188 Z M 21.96875 5.242188 "/>
+            <path d="M 40.976562 0.417969 C 46.726562 3.878906 44.539062 8.96875 40.882812 10.359375 C 49.652344 11.398438 49.847656 -0.496094 40.976562 0.417969 Z M 40.976562 0.417969 "/>
+            <path d="M 28.796875 0.769531 C 22.613281 6.183594 31.28125 13.558594 35.816406 8.113281 C 32.449219 10.523438 25.0625 7.371094 28.796875 0.769531 Z M 28.796875 0.769531 "/>
+            <path d="M 52.101562 2.949219 C 57.777344 -3.421875 65.484375 5.554688 59.316406 10.070312 C 61.675781 5.960938 58.074219 0.195312 52.101562 2.949219 Z M 52.101562 2.949219 "/>
+            <path d="M 68.003906 1.21875 C 62.207031 6.25 70.796875 13.847656 75.152344 8.308594 C 70.707031 11 65.160156 6.925781 68.003906 1.21875 Z M 68.003906 1.21875 "/>
+            <path d="M 79.738281 7.121094 C 78.707031 -0.320312 89.859375 -1.390625 89.769531 7.25 C 88.316406 3.441406 82.785156 0.753906 79.738281 7.121094 Z M 79.738281 7.121094 "/>
+            <path d="M 93.617188 1.058594 C 101.425781 0.101562 101.820312 11.902344 93.90625 10.9375 C 98.554688 9.375 99.34375 3.324219 93.617188 1.058594 Z M 93.617188 1.058594 "/>
+            <path d="M 103.042969 2.742188 C 103.042969 1.792969 102.269531 1.027344 101.3125 1.027344 C 100.355469 1.027344 99.582031 1.792969 99.582031 2.742188 C 99.582031 3.691406 100.355469 4.457031 101.3125 4.457031 C 102.269531 4.457031 103.042969 3.691406 103.042969 2.742188 Z M 103.042969 2.742188 "/>
+        </g>
+        <g id="lemonade" style="display:none;" fill="hsl(200, 100%, 50%)">
+            <path d="M 30.183594 89.089844 C 30.320312 89.820312 30.644531 90.441406 31.15625 90.957031 C 31.78125 91.457031 32.375 91.75 32.953125 91.875 L 62.113281 91.957031 C 62.480469 91.960938 63.566406 91.582031 64.136719 90.964844 C 64.558594 90.515625 64.84375 89.9375 64.90625 89.367188 L 69.609375 46.890625 C 58.914062 36.121094 60.101562 35.765625 53.074219 28.886719 L 29.746094 28.945312 L 17.398438 3.324219 L 14.011719 4.957031 L 25.617188 29.207031 C 25.09375 29.371094 24.648438 29.71875 24.222656 30.128906 C 23.644531 30.695312 23.492188 31.242188 23.390625 31.789062 Z M 30.183594 89.089844 "/>
+            <path d="M 86.011719 30.550781 C 86.011719 21.433594 78.59375 14.039062 69.445312 14.039062 C 60.300781 14.039062 52.882812 21.433594 52.882812 30.550781 C 52.882812 39.671875 60.300781 47.0625 69.445312 47.0625 C 78.59375 47.0625 86.011719 39.671875 86.011719 30.550781 Z M 86.011719 30.550781 "/>
+        </g>
+        <g id="good" style="display:none;" fill="hsl(200, 100%, 50%)">
+            <path d="M 95.878906 58.546875 L 95.886719 58.550781 L 84.78125 90.585938 L 84.746094 90.574219 C 83.042969 94.550781 79.179688 97.332031 74.675781 97.332031 L 43.863281 97.332031 C 41.433594 97.332031 39.460938 95.3125 39.460938 92.820312 C 39.460938 90.328125 41.433594 88.308594 43.863281 88.308594 L 63.894531 88.308594 C 63.890625 88.300781 63.894531 88.296875 63.890625 88.292969 L 74.617188 88.292969 C 74.636719 88.296875 74.65625 88.308594 74.675781 88.308594 C 75.625 88.308594 76.417969 87.683594 76.726562 86.816406 L 76.757812 86.792969 L 87.367188 56.191406 L 87.347656 56.164062 C 87.679688 55.285156 87.882812 54.335938 87.882812 53.332031 C 87.882812 49 84.476562 45.488281 80.257812 45.445312 L 80.191406 45.34375 L 80.191406 45.433594 L 67.949219 45.433594 C 62.703125 45.433594 60.316406 41.371094 61.964844 37.703125 C 63.617188 34.039062 63.671875 18.871094 63.671875 18.359375 L 63.671875 16.101562 C 63.671875 13.609375 61.699219 11.589844 59.269531 11.589844 C 56.839844 11.589844 54.867188 13.609375 54.867188 16.101562 L 54.867188 18.359375 C 54.867188 33.019531 44.363281 45.132812 30.65625 47.308594 L 30.65625 92.820312 C 30.65625 95.3125 28.6875 97.332031 26.257812 97.332031 L 8.648438 97.332031 C 6.21875 97.332031 4.246094 95.3125 4.246094 92.820312 L 4.246094 43.179688 C 4.246094 40.6875 6.21875 38.667969 8.648438 38.667969 L 26.257812 38.667969 C 37.195312 38.667969 46.0625 29.574219 46.0625 18.359375 L 46.0625 16.101562 C 46.0625 8.625 51.976562 2.5625 59.269531 2.5625 C 66.5625 2.5625 72.476562 8.625 72.476562 16.101562 L 72.476562 18.359375 C 72.476562 20.691406 71.976562 34.234375 71.472656 36.410156 L 80.179688 36.410156 C 89.292969 36.410156 96.683594 43.984375 96.683594 53.332031 C 96.683594 55.152344 96.398438 56.902344 95.878906 58.546875 Z M 21.855469 47.691406 L 13.050781 47.691406 L 13.050781 88.308594 L 21.855469 88.308594 Z M 21.855469 47.691406 "/>
+            <path d="M 26.519531 88.304688 L 44.242188 88.304688 L 44.242188 97.332031 L 26.519531 97.332031 Z M 26.519531 88.304688 "/>
+        </g>
+        <g id="meditate" style="display:none;" fill="hsl(200, 100%, 50%)">
+            <path d="M 63.90625 14.246094 C 63.90625 6.378906 57.527344 0 49.660156 0 C 41.792969 0 35.414062 6.378906 35.414062 14.246094 C 35.414062 22.113281 41.792969 28.488281 49.660156 28.488281 C 57.527344 28.488281 63.90625 22.113281 63.90625 14.246094 Z M 63.90625 14.246094 "/>
+            <path d="M 91.679688 76.734375 C 84.808594 60.609375 60.460938 35.726562 59.988281 35.417969 C 57.539062 32.773438 53.957031 31.476562 50.339844 31.425781 L 50.339844 31.414062 C 50.339844 31.414062 49.660156 31.414062 49.660156 31.414062 L 49.660156 31.425781 C 46.042969 31.480469 42.460938 32.777344 40.011719 35.417969 C 39.539062 35.726562 15.1875 60.609375 8.320312 76.734375 C 6.640625 80.679688 8.210938 84.390625 10.84375 86.582031 C 10.191406 88.742188 10.175781 91.160156 10.910156 93.488281 C 12.167969 97.503906 15.421875 100 19.398438 100 C 27.007812 100 72.945312 100 80.597656 100 C 84.574219 100 87.828125 97.503906 89.085938 93.488281 C 89.820312 91.160156 89.804688 88.742188 89.152344 86.582031 C 91.789062 84.390625 93.359375 80.679688 91.679688 76.734375 Z M 27.003906 74.195312 C 29.925781 69.421875 33.257812 65.054688 36.875 60.855469 C 36.875 65.1875 37 76.023438 37.21875 77.007812 C 36.484375 76.820312 29.660156 75.101562 27.003906 74.195312 Z M 62.78125 77.007812 C 63 76.023438 63.125 65.1875 63.125 60.855469 C 66.746094 65.054688 70.078125 69.421875 72.996094 74.195312 C 70.34375 75.101562 63.519531 76.820312 62.78125 77.007812 Z M 62.78125 77.007812 "/>
+        </g>
+        <g id="dance" style="display:none;" fill="hsl(200, 100%, 50%)">
+            <path d="M 52.855469 15.320312 C 52.855469 10.660156 49.078125 6.882812 44.417969 6.882812 C 39.757812 6.882812 35.980469 10.660156 35.980469 15.320312 C 35.980469 19.980469 39.757812 23.757812 44.417969 23.757812 C 49.078125 23.757812 52.855469 19.980469 52.855469 15.320312 Z M 52.855469 15.320312 "/>
+            <path d="M 5.761719 93.554688 L 94.238281 93.554688 C 97.421875 93.554688 100 91.035156 100 87.921875 C 100 84.808594 97.421875 82.285156 94.238281 82.285156 L 67.21875 82.285156 C 67.375 82.226562 67.535156 82.175781 67.691406 82.085938 C 69.011719 81.285156 69.4375 79.5625 68.636719 78.238281 L 52.855469 52.117188 L 52.855469 39.21875 C 60.039062 45.703125 63.511719 56.085938 63.574219 56.273438 C 63.960938 57.460938 65.058594 58.214844 66.242188 58.214844 C 66.523438 58.214844 66.816406 58.171875 67.101562 58.078125 C 68.574219 57.605469 69.382812 56.023438 68.90625 54.554688 C 68.667969 53.828125 63.820312 39.183594 52.847656 32.179688 C 52.804688 28.351562 49.695312 25.261719 45.855469 25.261719 L 42.980469 25.261719 C 41.136719 25.261719 39.472656 25.988281 38.222656 27.152344 C 29.597656 20.996094 25.449219 8.59375 25.378906 8.386719 C 24.902344 6.917969 23.328125 6.105469 21.855469 6.582031 C 20.382812 7.058594 19.574219 8.636719 20.050781 10.109375 C 20.285156 10.832031 25.097656 25.367188 35.976562 32.40625 L 35.976562 54.820312 L 30.550781 64.339844 C 30.105469 65.117188 30.0625 66.058594 30.433594 66.878906 L 36.730469 80.839844 C 37.050781 81.546875 37.632812 82.035156 38.304688 82.285156 L 5.761719 82.285156 C 2.578125 82.285156 0 84.808594 0 87.921875 C 0 91.03125 2.578125 93.554688 5.761719 93.554688 Z M 36.121094 65.875 L 41.464844 56.5 L 48.957031 56.5 L 63.839844 81.136719 C 64.179688 81.695312 64.691406 82.074219 65.257812 82.289062 L 40.289062 82.289062 C 40.335938 82.269531 40.386719 82.261719 40.433594 82.242188 C 41.84375 81.605469 42.472656 79.945312 41.835938 78.535156 Z M 36.121094 65.875 "/>
+        </g>
+        <g id="nature" style="display:none;" fill="hsl(200, 100%, 50%)">
+            <path d="M 67.355469 0.0859375 C 61.136719 1.042969 55.59375 7.273438 53.507812 15.648438 C 52.988281 17.761719 52.773438 19.378906 52.703125 21.660156 C 52.597656 25.257812 53.207031 28.5625 54.539062 31.5 C 55.316406 33.210938 56.203125 34.519531 57.429688 35.746094 C 59.054688 37.363281 60.71875 38.277344 62.816406 38.71875 C 63.800781 38.925781 65.683594 38.910156 66.699219 38.6875 C 68.710938 38.246094 70.476562 37.378906 72.273438 35.957031 C 75.847656 33.117188 78.566406 28.570312 79.917969 23.160156 C 80.519531 20.746094 80.75 18.652344 80.695312 16.019531 C 80.617188 12.386719 79.964844 9.546875 78.566406 6.785156 C 77.773438 5.214844 77.105469 4.292969 75.925781 3.117188 C 74.351562 1.539062 72.71875 0.625 70.707031 0.1875 C 70.035156 0.0390625 68.046875 -0.0234375 67.355469 0.0859375 Z M 67.355469 0.0859375 "/>
+            <path d="M 33.625 2.097656 C 32.25 2.28125 31.335938 2.539062 30.378906 3.015625 C 27.089844 4.65625 24.597656 8.144531 23.40625 12.75 C 22.851562 14.882812 22.640625 16.648438 22.648438 19.054688 C 22.648438 23.207031 23.503906 27.023438 25.222656 30.574219 C 26.265625 32.730469 27.464844 34.457031 28.914062 35.910156 C 30.996094 37.984375 33.246094 39.191406 35.6875 39.523438 C 38.6875 39.941406 41.824219 38.648438 44.105469 36.058594 C 46.269531 33.597656 47.6875 30.214844 48.296875 26.039062 C 48.496094 24.648438 48.503906 20.59375 48.296875 19.214844 C 47.480469 13.644531 45.453125 9.113281 42.386719 5.964844 C 39.949219 3.472656 37.46875 2.234375 34.65625 2.097656 C 34.21875 2.082031 33.761719 2.082031 33.625 2.097656 Z M 33.625 2.097656 "/>
+            <path d="M 8.753906 27.035156 C 7.058594 27.269531 5.910156 27.726562 4.691406 28.644531 C 2.34375 30.402344 0.761719 33.519531 0.191406 37.519531 C 0.015625 38.703125 -0.0078125 41.773438 0.152344 43.042969 C 0.386719 45 0.839844 47.074219 1.425781 48.84375 C 3.660156 55.574219 8.230469 60.898438 13.109375 62.476562 C 14.21875 62.839844 14.820312 62.925781 16.082031 62.925781 C 17.015625 62.917969 17.363281 62.886719 17.941406 62.738281 C 18.726562 62.542969 19.898438 62.019531 20.484375 61.617188 C 22.625 60.15625 24.113281 57.796875 24.953125 54.5625 C 25.394531 52.859375 25.46875 52.109375 25.46875 49.472656 C 25.460938 47.234375 25.445312 46.972656 25.246094 45.757812 C 24.875 43.492188 24.351562 41.589844 23.550781 39.570312 C 20.945312 33.007812 16.175781 28.183594 11.304688 27.191406 C 10.679688 27.058594 9.195312 26.96875 8.753906 27.035156 Z M 8.753906 27.035156 "/>
+            <path d="M 89.210938 32.074219 C 83.554688 33.09375 78.152344 39.304688 76.0625 47.1875 C 75.046875 50.996094 74.945312 54.988281 75.769531 58.242188 C 76.773438 62.203125 79.0625 64.996094 82.066406 65.949219 C 82.898438 66.21875 83.476562 66.304688 84.402344 66.304688 C 85.441406 66.304688 86.191406 66.1875 87.214844 65.871094 C 89.234375 65.238281 91.152344 64 92.972656 62.164062 C 94.066406 61.066406 94.691406 60.292969 95.578125 58.964844 C 97.773438 55.699219 99.207031 51.863281 99.777344 47.738281 C 99.953125 46.507812 99.976562 43.320312 99.824219 42.253906 C 99.445312 39.59375 98.773438 37.621094 97.640625 35.902344 C 96.238281 33.773438 94.203125 32.382812 91.96875 32.035156 C 91.269531 31.933594 89.917969 31.949219 89.210938 32.074219 Z M 89.210938 32.074219 "/>
+            <path d="M 47.964844 53.585938 C 44.351562 53.820312 39.84375 54.832031 37.785156 55.867188 C 36.367188 56.574219 35.488281 57.300781 32.914062 59.890625 C 31.867188 60.9375 30.671875 62.082031 30.261719 62.429688 C 29.078125 63.417969 26.789062 64.910156 22.710938 67.339844 C 16.128906 71.261719 14.027344 72.789062 13.195312 74.273438 C 12.214844 76.019531 11.707031 78.25 11.707031 80.839844 C 11.699219 82.90625 11.9375 84.453125 12.523438 86.195312 C 13.085938 87.886719 13.726562 89 14.988281 90.464844 C 19.160156 95.328125 25.972656 98.292969 36.082031 99.652344 C 39.65625 100.132812 43.132812 100.382812 52.082031 100.820312 C 55.554688 100.984375 62.609375 101.007812 64.679688 100.859375 C 72.996094 100.265625 78.492188 98.609375 82.800781 95.375 C 83.871094 94.570312 85.449219 93.054688 86.082031 92.203125 C 87.160156 90.773438 87.609375 89.234375 87.609375 87.011719 C 87.609375 85.675781 87.46875 84.570312 87.136719 83.246094 C 86.296875 79.949219 85.164062 77.960938 82.84375 75.703125 C 81.742188 74.628906 80.949219 73.992188 78.191406 71.9375 C 75.324219 69.800781 74.304688 68.957031 73.074219 67.695312 C 72.003906 66.597656 71.292969 65.679688 69.34375 62.925781 C 67.6875 60.578125 66.714844 59.367188 65.660156 58.34375 C 64.558594 57.277344 63.695312 56.664062 62.460938 56.0625 C 58.507812 54.144531 53.191406 53.238281 47.964844 53.585938 Z M 47.964844 53.585938 "/>
+        </g>
+        <g id="friends" style="display:none;" fill="hsl(200, 100%, 50%)">
+            <path d="M 18.242188 0.292969 C 14.316406 1.152344 10.917969 4.433594 9.863281 8.398438 C 9.492188 9.785156 9.492188 12.675781 9.863281 14.0625 C 11.152344 18.90625 15.742188 22.460938 20.703125 22.460938 C 23.652344 22.460938 26.308594 21.328125 28.535156 19.140625 C 30.839844 16.855469 31.835938 14.492188 31.835938 11.230469 C 31.835938 7.96875 30.839844 5.605469 28.535156 3.320312 C 25.703125 0.527344 22.070312 -0.546875 18.242188 0.292969 Z M 18.242188 0.292969 "/>
+            <path d="M 76.5625 0.3125 C 69.570312 2.148438 66.054688 9.882812 69.277344 16.308594 C 70.3125 18.378906 72.226562 20.273438 74.316406 21.289062 C 81.816406 24.960938 90.507812 19.570312 90.507812 11.230469 C 90.507812 6.035156 87.03125 1.601562 81.933594 0.292969 C 80.488281 -0.078125 77.988281 -0.0585938 76.5625 0.3125 Z M 76.5625 0.3125 "/>
+            <path d="M 6.777344 22.910156 C 4.121094 24.84375 1.972656 27.96875 0.839844 31.582031 L 0.292969 33.300781 L 0.292969 56.542969 L 0.917969 57.851562 C 1.25 58.574219 1.894531 59.550781 2.34375 60.039062 C 3.359375 61.132812 5.46875 62.226562 6.933594 62.402344 L 8.007812 62.539062 L 8.007812 80.117188 C 8.007812 97.324219 8.007812 97.695312 8.398438 98.4375 C 8.652344 98.945312 9.0625 99.355469 9.570312 99.609375 C 10.273438 99.960938 10.703125 100 14.550781 100 L 18.75 100 L 18.75 85.351562 C 18.75 71.347656 18.769531 70.664062 19.121094 69.960938 C 19.550781 69.121094 20.761719 68.359375 21.660156 68.359375 C 22.65625 68.359375 23.769531 69.042969 24.21875 69.921875 C 24.609375 70.664062 24.609375 71.035156 24.609375 85.351562 L 24.609375 100 L 28.808594 100 C 32.636719 100 33.085938 99.960938 33.789062 99.609375 C 35.371094 98.808594 35.234375 100.957031 35.351562 73.476562 L 35.449219 49.003906 L 40.585938 56.347656 C 46.054688 64.140625 46.445312 64.589844 48.300781 65.136719 C 50.097656 65.664062 51.972656 65.351562 53.457031 64.277344 C 54.023438 63.867188 55.761719 61.542969 59.414062 56.347656 L 64.550781 49.003906 L 64.648438 73.476562 C 64.765625 100.957031 64.628906 98.808594 66.210938 99.609375 C 66.914062 99.960938 67.363281 100 71.191406 100 L 75.390625 100 L 75.390625 85.351562 C 75.390625 71.347656 75.410156 70.664062 75.761719 69.960938 C 76.191406 69.121094 77.402344 68.359375 78.300781 68.359375 C 79.296875 68.359375 80.410156 69.042969 80.859375 69.921875 C 81.25 70.664062 81.25 71.035156 81.25 85.351562 L 81.25 100 L 85.449219 100 C 89.296875 100 89.726562 99.960938 90.429688 99.609375 C 90.9375 99.355469 91.347656 98.945312 91.601562 98.4375 C 91.992188 97.695312 91.992188 97.324219 91.992188 80.117188 L 91.992188 62.539062 L 93.066406 62.402344 C 94.53125 62.226562 96.640625 61.132812 97.65625 60.039062 C 98.105469 59.550781 98.75 58.574219 99.082031 57.851562 L 99.707031 56.542969 L 99.707031 33.300781 L 99.160156 31.582031 C 98.066406 28.085938 96.289062 25.390625 93.671875 23.261719 L 92.421875 22.246094 L 91.464844 23.203125 C 85.46875 29.179688 76.015625 30 69.335938 25.078125 L 68.105469 24.179688 L 67.265625 25.039062 C 66.796875 25.488281 62.773438 31.113281 58.300781 37.5 C 53.828125 43.886719 50.097656 49.121094 50 49.121094 C 49.902344 49.121094 46.171875 43.886719 41.699219 37.5 C 37.226562 31.113281 33.183594 25.488281 32.734375 25.019531 L 31.875 24.179688 L 30.839844 24.960938 C 24.257812 29.921875 14.84375 29.277344 8.808594 23.457031 L 7.617188 22.304688 Z M 6.777344 22.910156 "/>
+        </g>
+    </svg>
 
-    <!-- Audio element for Plyr -->
-    <audio id="player" class="plyr" controls></audio>
-
-    <!-- Default HTML5 audio player -->
-    <div class="default-player">
-        <audio id="default-player" controls></audio>
-    </div>
-</div>
-
-<!-- Include Plyr JS -->
-<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
-
-<script>
-let amplitude, fft;
-let song;
-let shapes = [];
-let numShapes = 10;
-let selectedShape = 'heart';
-let player;
-
-function setup() {
-    let canvas = createCanvas(600, 600);
-    canvas.parent(document.body);
-    canvas.style('max-width', '100%');
-    canvas.style('height', 'auto');
-
-    amplitude = new p5.Amplitude();
-    fft = new p5.FFT();
-
-    for (let i = 0; i < numShapes; i++) {
-        let x = random(width);
-        let y = random(height);
-        shapes.push({x: x, y: y});
-    }
-
-    let fileInput = document.getElementById('audio-upload');
-    fileInput.addEventListener('change', handleFileUpload);
-
-    let shapeSelector = document.getElementById('shape-selector');
-    shapeSelector.addEventListener('change', function() {
-        selectedShape = this.value;
-    });
-
-    // Initialize Plyr with fallback
-    try {
-        player = new Plyr('#player');
-    } catch (error) {
-        console.error('Plyr initialization failed:', error);
-        document.querySelector('.plyr').style.display = 'none';
-        document.querySelector('.default-player').style.display = 'block';
-    }
-}
-
-function draw() {
-    background('#0d335f');
-
-    if (!song || !song.isPlaying()) {
-      return;
-    }
-
-    let level = amplitude.getLevel();
-    let size = map(level, 0, 1, 0.5, 1.5); // Escala de la mida de la forma
-
-    let spectrum = fft.analyze();
-    let bass = fft.getEnergy("bass");
-    let treble = fft.getEnergy("treble");
-
-    let r = map(bass, 0, 255, 50, 255);
-    let b = map(treble, 0, 255, 50, 255);
-    let g = map(level, 0, 1, 50, 255);
-
-    noFill();
-    stroke(r, g, b);
-    strokeWeight(3);
-
-    // Dibuixar múltiples formes (cors, llunes o arcs de Sant Martí)
-    shapes.forEach(shape => {
-      push();
-      translate(shape.x, shape.y);
-      scale(size);
-
-      if (selectedShape === 'heart') {
-          drawHeart(); // Dibuixa el cor
-      } else if (selectedShape === 'moon') {
-          drawCrescentMoon(); // Dibuixa la lluna creixent
-      } else if (selectedShape === 'rainbow') {
-          drawRainbow(); // Dibuixa l'arc de Sant Martí
-      }
-
-      pop();
-   });
-}
-
-function drawHeart() {
-   beginShape();
-   vertex(0, 30);
-   vertex(15, 0);
-   vertex(30, -10);
-   vertex(45, -10);
-   vertex(60, 0);
-   vertex(75, 30);
-   vertex(37.5, 60);
-   vertex(0, 30);
-   endShape(CLOSE);
-}
-
-function drawCrescentMoon() {
-   // Dibuix de la lluna creixent
-   fill(0);
-   ellipse(0, 0, 50, 100); // Lluna plena
-   fill('#0d335f');
-   ellipse(10, 0, 50, 100); // Ombra per crear la creixent
-}
-
-function drawRainbow() {
-   // Dibuix d'un arc de Sant Martí
-   let radius = 50;
-   let colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF']; // Colors de l'arc de Sant Martí
-
-   for (let i = 0; i < colors.length; i++) {
-       stroke(colors[i]);
-       noFill();
-       arc(0, 0, radius + i * 10, radius + i * 10, PI, TWO_PI); // Dibuixar arcs concèntrics amb diferents colors
-   }
-}
-
-function handleFileUpload(event) {
-   let file = event.target.files[0];
-   if (file && file.type.startsWith('audio/')) {
-       let fileURL = URL.createObjectURL(file);
-
-       // Update audio player with the new audio file
-       const audioElement = document.getElementById('player');
-       const defaultAudioElement = document.getElementById('default-player');
-       audioElement.src = fileURL;
-       defaultAudioElement.src = fileURL;
-
-       if (player) {
-           player.source = {
-               type: 'audio',
-               sources: [{ src: fileURL, type: file.type }]
-           };
-       }
-
-       // Update song title
-       const songTitleElement = document.getElementById('song-title');
-       songTitleElement.textContent = file.name;
-
-       // Load sound for p5.js analysis
-       loadSound(fileURL, soundLoaded);
-   } else {
-       console.error('Please upload a valid audio file');
-   }
-}
-
-function soundLoaded(loadedSong) {
-   if (song && song.isPlaying()) {
-       song.stop();
-   }
-   song = loadedSong;
-   song.play();
-   amplitude.setInput(song);
-   fft.setInput(song);
-}
-</script>
-
+    <script>
+        const fileInput = document.getElementById('audioFile');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const songSelect = document.getElementById('songSelect');
+        const shapes = {
+            coldplay1: document.getElementById('coldplay1'),
+            lemonade: document.getElementById('lemonade'),
+            good: document.getElementById('good'),
+            meditate: document.getElementById('meditate'),
+            dance: document.getElementById('dance'),
+            nature: document.getElementById('nature'),
+            friends: document.getElementById('friends')
+        };
+    
+        let audioContext, analyser, frequencyData;
+        let currentShapeIndex = 0;
+        let cycleTimeout;
+        let isInitialized = false; // Asegura que initAudio solo se ejecute una vez
+    
+        const songConfig = {
+            song1: {
+                shapeOrder: ['coldplay1', 'lemonade', 'good', 'meditate', 'dance', 'nature', 'friends'],
+                durations: [3000, 3000, 3000, 3000, 3000, 3000, 3000]
+            },
+            song2: {
+                shapeOrder: ['friends', 'nature', 'dance', 'meditate', 'good', 'lemonade', 'coldplay1'],
+                durations: [5000, 5000, 5000, 5000, 5000, 5000, 5000]
+            }
+        };
+    
+        fileInput.addEventListener('change', handleFileUpload);
+        songSelect.addEventListener('change', resetVisualizer);
+        audioPlayer.addEventListener('play', startCycleShapes);
+        audioPlayer.addEventListener('pause', stopCycleShapes);
+    
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('audio/')) {
+                const audioURL = URL.createObjectURL(file);
+                audioPlayer.src = audioURL;
+                audioPlayer.load();
+                if (!isInitialized) {
+                    initAudio();
+                }
+            } else {
+                alert('Please upload a valid audio file.');
+            }
+        }
+    
+        function initAudio() {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 256;
+            frequencyData = new Uint8Array(analyser.frequencyBinCount);
+    
+            const source = audioContext.createMediaElementSource(audioPlayer);
+            source.connect(analyser);
+            analyser.connect(audioContext.destination);
+    
+            isInitialized = true; // Marca el contexto como inicializado
+            visualize();
+        }
+    
+        function visualize() {
+            if (audioContext && audioContext.state === 'running') { // Verifica que el contexto esté activo
+                requestAnimationFrame(visualize);
+                analyser.getByteFrequencyData(frequencyData);
+    
+                const averageFrequency = frequencyData.reduce((a, b) => a + b) / frequencyData.length;
+                const scale = averageFrequency / 255;
+    
+                const selectedShape = shapes[getCurrentShape()];
+                const hue = Math.round((averageFrequency / 255) * 360);
+                selectedShape.setAttribute('fill', `hsl(${hue}, 100%, 50%)`);
+                selectedShape.setAttribute('transform', `scale(${scale + 0.5})`);
+            }
+        }
+    
+        function startCycleShapes() {
+            if (!isInitialized) { // Asegura que initAudio se haya ejecutado
+                initAudio();
+            }
+            const songData = songConfig[songSelect.value];
+            updateShapeVisibility();
+    
+            cycleTimeout = setTimeout(() => {
+                currentShapeIndex = (currentShapeIndex + 1) % songData.shapeOrder.length;
+                if (!audioPlayer.paused) {
+                    startCycleShapes();
+                }
+            }, songData.durations[currentShapeIndex]);
+        }
+    
+        function stopCycleShapes() {
+            clearTimeout(cycleTimeout);
+        }
+    
+        function resetVisualizer() {
+            clearTimeout(cycleTimeout);
+            audioPlayer.currentTime = 0;
+            audioPlayer.pause();
+            currentShapeIndex = 0;
+            updateShapeVisibility();
+        }
+    
+        function getCurrentShape() {
+            return songConfig[songSelect.value].shapeOrder[currentShapeIndex];
+        }
+    
+        function updateShapeVisibility() {
+            Object.keys(shapes).forEach(key => {
+                shapes[key].style.display = key === getCurrentShape() ? 'block' : 'none';
+            });
+        }
+    </script>    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
