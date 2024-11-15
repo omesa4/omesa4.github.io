@@ -13,11 +13,11 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #6a0dad, #007bff, #28a745); /* Cambio de colores a Morado, Azul, Verde */
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Permite desplazamiento */
+            align-items: flex-start; /* Cambiado a flex-start para permitir desplazamiento */
             min-height: 100vh; /* Mínimo de altura completa */
             overflow: auto; /* Permitir desplazamiento */
         }
@@ -27,9 +27,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(45deg, #6a0dad, #007bff, #28a745); /* Cambio de colores a Morado, Azul, Verde */
+            background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
             padding: 10px 20px;
-            border-bottom: 4px solid #28a745; /* Verde como borde */
+            border-bottom: 4px solid #ffdd40;
             z-index: 10; /* Asegura que la barra esté siempre encima */
         }
 
@@ -41,11 +41,11 @@
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 1px;
-            transition: color 0.2s ease-in-out; /* Transición suave */
+            transition: color 0.2s ease-in-out; /* Añadida la transición aquí */
         }
 
         .navbar-brand:hover {
-            color: #fff !important; /* Mantiene el color blanco al hacer hover */
+            color: #000 !important;
         }
 
         .navbar-brand img {
@@ -53,7 +53,7 @@
             border-radius: 0;
         }
 
-        /* Enlaces de navegación */
+        /* [Resto del código CSS sin cambios] */
         .nav-link {
             color: #ffffff !important;
             font-weight: 600;
@@ -63,14 +63,14 @@
         }
 
         .nav-link:hover {
-            color: #28a745 !important; /* Verde al hacer hover */
+            color: #ffdd40 !important;
         }
 
         .nav-link::after {
             content: '';
             width: 0%;
             height: 3px;
-            background-color: #28a745; /* Verde para el subrayado */
+            background-color: #ffdd40;
             position: absolute;
             bottom: -5px;
             left: 0;
@@ -81,9 +81,8 @@
             width: 100%;
         }
 
-        /* Menús desplegables */
         .dropdown-menu {
-            background-color: #6a0dad; /* Morado para el fondo del dropdown */
+            background-color: #cc3f33;
             border: none;
             border-radius: 10px;
         }
@@ -94,7 +93,7 @@
         }
 
         .dropdown-item:hover {
-            background-color: #007bff; /* Azul al hacer hover en items del dropdown */
+            background-color: #ff7f50;
             color: #ffffff;
         }
 
@@ -116,6 +115,7 @@
             height: auto;
         }
 
+
         /* Detalles de colores en las esquinas */
         .container::before, .container::after {
             content: '';
@@ -126,16 +126,8 @@
             bottom: 0;
             border-radius: 15px; /* Esquinas redondeadas para pseudo-elementos */
             z-index: -1; /* Colocar detrás del contenedor */
-            background: linear-gradient(135deg, rgba(106, 13, 173, 0.2), rgba(0, 123, 255, 0.2)); /* Morado y Azul */
+            background: linear-gradient(135deg, rgba(255, 78, 78, 0.2), rgba(249, 212, 35, 0.2)); /* Fondo degradado */
             filter: blur(25px); /* Efecto de desenfoque para el fondo */
-        }
-
-        .container::after {
-            background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(40, 167, 69, 0.2)); /* Azul y Verde */
-            top: auto;
-            bottom: 0;
-            left: auto;
-            right: auto;
         }
 
         /* Texto en los contenedores */
@@ -159,7 +151,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="https://ecastro4.github.io">
                 <img src="logo.png" alt="Logo" width="50">
-                Web d'Oscar <!-- Reemplazado "Eric" por "Oscar" -->
+                Web d'Eric
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -208,7 +200,7 @@
         <div class="controls">
             <label for="songSelect">Choose Song:</label>
             <select id="songSelect">
-                <option value="song1">Heart Feelings</option>
+                <option value="song1">Good Feelings</option>
                 <option value="song2">Song 2</option>
                 <!-- Easily add more songs here -->
             </select>
@@ -217,13 +209,6 @@
             <br><br>
             <audio id="audioPlayer" controls></audio>
         </div>
-    </div>
-
-    <!-- Bootstrap JS (opcional, si necesitas funcionalidad de Bootstrap como dropdowns) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
     <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
         <g id="coldplay1" style="display:none;" fill="hsl(200, 100%, 50%)">
             <path d="M 6.484375 0.191406 C -2.53125 -0.679688 -1.636719 11.554688 6.035156 10.199219 C 3.070312 9.28125 1.988281 7.316406 2.027344 5.261719 C 2.1875 2.601562 3.398438 1.171875 6.484375 0.191406 Z M 6.484375 0.191406 "/>
