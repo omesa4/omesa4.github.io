@@ -13,13 +13,13 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            background: linear-gradient(135deg, #8e44ad, #3498db, #2ecc71); /* Morado, Azul, Verde */
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Cambiado a flex-start para permitir desplazamiento */
-            min-height: 100vh; /* Mínimo de altura completa */
-            overflow: auto; /* Permitir desplazamiento */
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow: auto;
         }
 
         .navbar {
@@ -27,10 +27,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(45deg, #ff6b6b, #ff3d3d);
+            background: linear-gradient(45deg, #8e44ad, #3498db); /* Morado y Azul */
             padding: 10px 20px;
-            border-bottom: 4px solid #ffdd40;
-            z-index: 10; /* Asegura que la barra esté siempre encima */
+            border-bottom: 4px solid #2ecc71; /* Verde */
+            z-index: 10;
         }
 
         .navbar-brand {
@@ -41,19 +41,17 @@
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 1px;
-            transition: color 0.2s ease-in-out; /* Añadida la transición aquí */
+            transition: color 0.2s ease-in-out;
         }
 
         .navbar-brand:hover {
-            color: #000 !important;
+            color: #2ecc71 !important; /* Verde */
         }
 
         .navbar-brand img {
             margin-right: 15px;
-            border-radius: 0;
         }
 
-        /* [Resto del código CSS sin cambios] */
         .nav-link {
             color: #ffffff !important;
             font-weight: 600;
@@ -63,14 +61,14 @@
         }
 
         .nav-link:hover {
-            color: #ffdd40 !important;
+            color: #2ecc71 !important; /* Verde */
         }
 
         .nav-link::after {
             content: '';
             width: 0%;
             height: 3px;
-            background-color: #ffdd40;
+            background-color: #2ecc71; /* Verde */
             position: absolute;
             bottom: -5px;
             left: 0;
@@ -82,7 +80,7 @@
         }
 
         .dropdown-menu {
-            background-color: #cc3f33;
+            background-color: #8e44ad; /* Morado */
             border: none;
             border-radius: 10px;
         }
@@ -93,18 +91,18 @@
         }
 
         .dropdown-item:hover {
-            background-color: #ff7f50;
+            background-color: #3498db; /* Azul */
             color: #ffffff;
         }
 
         /* Contenedor principal */
         .container {
-            margin-top: 80px; /* Ajusta el margen superior para evitar el solapamiento */
+            margin-top: 80px;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.5);
-            border: 5px solid rgba(255, 255, 255, 0.7);
+            border: 5px solid rgba(142, 68, 173, 0.7); /* Morado translúcido */
             position: relative;
             z-index: 1;
             width: 90%;
@@ -115,8 +113,6 @@
             height: auto;
         }
 
-
-        /* Detalles de colores en las esquinas */
         .container::before, .container::after {
             content: '';
             position: absolute;
@@ -124,24 +120,22 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border-radius: 15px; /* Esquinas redondeadas para pseudo-elementos */
-            z-index: -1; /* Colocar detrás del contenedor */
-            background: linear-gradient(135deg, rgba(255, 78, 78, 0.2), rgba(249, 212, 35, 0.2)); /* Fondo degradado */
-            filter: blur(25px); /* Efecto de desenfoque para el fondo */
+            border-radius: 15px;
+            z-index: -1;
+            background: linear-gradient(135deg, rgba(142, 68, 173, 0.2), rgba(52, 152, 219, 0.2)); /* Morado y Azul */
+            filter: blur(25px);
         }
 
-        /* Texto en los contenedores */
         h1, h2, h3, p {
-            color: #333; /* Color del texto oscuro */
-            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8); /* Sombra de texto más suave */
-            margin: 10px 0; /* Ajustar margen superior e inferior */
+            color: #333;
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8);
+            margin: 10px 0;
         }
 
-        /* SVG estilos */
         svg {
-            margin-top: 10px; /* Reducir espacio entre SVG y otros elementos */
-            max-width: 100%; /* SVG responsivo */
-            height: auto; /* Mantener proporción */
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -202,13 +196,16 @@
             <select id="songSelect">
                 <option value="song1">Adventure Of A Lifetime</option>
                 <option value="song2">Song 2</option>
-                <!-- Easily add more songs here -->
             </select>
             <br><br>
             <input type="file" id="audioFile" accept="audio/*">
             <br><br>
             <audio id="audioPlayer" controls></audio>
         </div>
+    </div>
+</body>
+</html>
+
     <svg id="svgVisualizer" width="400" height="400" viewBox="0 0 100 100">
         <g id="coldplay1" style="display:none;" fill="hsl(200, 100%, 50%)">
             <path d="M 6.484375 0.191406 C -2.53125 -0.679688 -1.636719 11.554688 6.035156 10.199219 C 3.070312 9.28125 1.988281 7.316406 2.027344 5.261719 C 2.1875 2.601562 3.398438 1.171875 6.484375 0.191406 Z M 6.484375 0.191406 "/>
@@ -352,8 +349,7 @@
             heart: document.getElementById('heart'),
             electricguitar: document.getElementById('electricguitar'),
             dream: document.getElementById('dream'),
-            nature: document.getElementById('nature'),
-            friends: document.getElementById('friends')
+            monkey: document.getElementById('monkey')
         };
     
         let audioContext, analyser, frequencyData;
@@ -363,12 +359,12 @@
     
         const songConfig = {
             song1: {
-                shapeOrder: ['coldplay1', 'diamont', 'heart', 'electricguitar', 'dream', 'nature', 'friends'],
-                durations: [3000, 3000, 3000, 3000, 3000, 3000, 3000]
+                shapeOrder: ['coldplay1', 'diamont', 'heart', 'electricguitar', 'dream', 'monkey'],
+                durations: [3000, 3000, 3000, 3000, 3000, 3000]
             },
             song2: {
-                shapeOrder: ['friends', 'nature', 'dream', 'electricguitar', 'heart', 'diamont', 'coldplay1'],
-                durations: [5000, 5000, 5000, 5000, 5000, 5000, 5000]
+                shapeOrder: ['monkey', 'dream', 'electricguitar', 'heart', 'diamont', 'coldplay1'],
+                durations: [5000, 5000, 5000, 5000, 5000, 5000,]
             }
         };
     
