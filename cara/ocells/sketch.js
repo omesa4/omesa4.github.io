@@ -1,8 +1,14 @@
+let sc=5
+let mic
 function setup() {
- createCanvas(480, 120);
+ createCanvas(200*sc,170*sc);
+  mic = new p5.AudioIn();
+  mic.start();
 }
 
 function draw() {
+  let = vol =mic.getLevel();
+  let h = map(vol,0,1,0,300);
   background(204);
  
  //Ocell esquerra
@@ -20,7 +26,7 @@ function draw() {
  fill(0);
  ellipse(155,60,8,8);
  
- //Ocell dreta
+ //Ocell dret
  beginShape();
  vertex(370,120);
   vertex(360,90);
