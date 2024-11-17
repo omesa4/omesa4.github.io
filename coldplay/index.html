@@ -279,7 +279,7 @@
 <path  d="M 63.613281 96.753906 C 63.613281 97.109375 63.835938 97.421875 64.058594 97.421875 C 64.324219 97.421875 64.5 97.109375 64.5 96.753906 C 64.5 96.398438 64.324219 96.085938 64.058594 96.085938 C 63.835938 96.085938 63.613281 96.398438 63.613281 96.753906 Z M 63.613281 96.753906 "/>
 </g>
        
-        <g id="electric guitar" style="display:none;" fill="hsl(200, 100%, 50%)">
+        <g id="electricguitar" style="display:none;" fill="hsl(200, 100%, 50%)">
             <path  d="M 110.115493 429.984675 L 247.784126 331.172695 C 319.936074 285.206362 371.137311 310.847445 375.055773 323.772219 C 266.122528 363.640977 245.746526 420.916487 286.759762 441.085389 L 878.917746 244.712211 C 886.859162 266.653057 894.957317 285.258478 899.659472 298.756528 L 298.410656 508.992567 C 226.78117 531.975734 230.751878 617.550245 312.726104 605.355095 C 347.992262 595.244587 396.05873 601.290046 351.649493 644.859041 C 321.764689 671.125517 285.767085 671.281865 249.09028 668.311252 C 204.158582 666.435075 161.99593 662.891186 114.033955 717.717243 C 60.586133 800.58172 -83.978993 876.097839 -167.781835 794.275681 C -261.406955 663.516578 -252.002646 462.81777 -58.691852 423.782869 Z M 110.115493 429.984675 " transform="matrix(0.0747663,0,0,0.074953,17.13817,-15.43956)"/>
 <path  d="M -26.246986 633.758328 C -42.756773 724.544442 -82.672839 764.256852 -130.112353 783.174968 L -131.418507 799.226704 C -76.873516 804.490422 -22.328524 805.115814 32.216468 758.471973 C 95.434322 702.81206 124.274203 628.025566 304.941426 637.458566 C 327.720752 635.009113 345.641185 629.484814 347.783277 613.954239 C 275.944807 630.631367 221.243077 608.638405 234.774832 531.24611 L -11.304584 617.706593 Z M -26.246986 633.758328 " transform="matrix(0.0747663,0,0,0.074953,17.13817,-15.43956)"/>
 <path  d="M -34.031664 536.770408 L -10.625384 617.706593 L -28.807048 636.207781 L -46.988712 644.859041 L -61.30416 653.510301 L -104.146011 648.559279 L -124.939983 581.850769 L -100.227549 563.34958 L -85.964348 541.096038 L -61.30416 534.946347 Z M -34.031664 536.770408 " transform="matrix(0.0747663,0,0,0.074953,17.13817,-15.43956)"/>
@@ -348,10 +348,10 @@
         const songSelect = document.getElementById('songSelect');
         const shapes = {
             coldplay1: document.getElementById('coldplay1'),
-            lemonade: document.getElementById('lemonade'),
-            good: document.getElementById('good'),
-            meditate: document.getElementById('meditate'),
-            dance: document.getElementById('dance'),
+            diamont: document.getElementById('diamont'),
+            heart: document.getElementById('heart'),
+            electricguitar: document.getElementById('electricguitar'),
+            dream: document.getElementById('dream'),
             nature: document.getElementById('nature'),
             friends: document.getElementById('friends')
         };
@@ -363,11 +363,11 @@
     
         const songConfig = {
             song1: {
-                shapeOrder: ['coldplay1', 'lemonade', 'good', 'meditate', 'dance', 'nature', 'friends'],
+                shapeOrder: ['coldplay1', 'diamont', 'heart', 'electricguitar', 'dream', 'nature', 'friends'],
                 durations: [3000, 3000, 3000, 3000, 3000, 3000, 3000]
             },
             song2: {
-                shapeOrder: ['friends', 'nature', 'dance', 'meditate', 'good', 'lemonade', 'coldplay1'],
+                shapeOrder: ['friends', 'nature', 'dream', 'electricguitar', 'heart', 'diamont', 'coldplay1'],
                 durations: [5000, 5000, 5000, 5000, 5000, 5000, 5000]
             }
         };
