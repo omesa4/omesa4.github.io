@@ -1,25 +1,76 @@
+<html>
+  <head>
+    <style>
+      table{ 
+        width:50%; //Ocupa el 50% de l'amplada de la pàgina
+        border-collapse: collapse;// Evita que apareixin dobles linies a les cel·les 
+        margin: 20px auto; //Marge de 20px a la part superior i centra la taulq
+      }
+      th,td{
+        border: 1px;}
+    </style>
+  </head>
 <h1>Conceptes generals de microcontroladors</h1>
-<p>Els diferents microcontroladors tenen en comú els seguents aspectes:</p>
+<p>Esla diferents microcontroladors tenen en commú els següents aspectes:</p>
 <ul>
-  <li>Tipus d'entrades i sortides: el microcontrolador te un processador tipus AVR o  Expressif on es  conecta entrades digitals, entrades analogiques, sortides digital i sortides analogiques</li>
-  <li>Les entrades i sortides digitals només funcionen amb 0 o 1 es a dir codi binari, 0 significa 0 volts i 1 pot significar 5 volts o 3,3 volts depenent del microcontrolador i el  pin que utilitzem. A aquestes entrades podem connectar, per exemple, interruptors, sensor "foscor/claror" </li>
+  <li>Tipus d'entrades i sortides: elmicrocontrolador te un procesador tipus AVR o Espressif on es conecten entrades digitals, entrades analogiques, sortides digitals y sortides analogiques.</li>
+  <li>Es enntrades i  sortides digitals només funcionen amb 0 o 1 es a dir codi vinari, zer sifnifica 0V i 1 pot significar 5V o 3,3V  depenent del microcontrolador i del pin que utilitzem.
+  A aqestes entrades podem conectar per exemple interruptors, sensor "foscor/claror"</li>
 </ul>
-<h2>Sortides analògiques tipus PWM</h2>
-<p>PWM significa modulació de l'ample de banda, en anglès <i>Pulse Width Modulation</i> i és una forma
-d'aconseguir una sortida analògica a partir de diverses sortides digitals, molt ràpides.</p>
-<p>PWM es representa amb el símbol "~" tal com podem veure a la imatge següent d'un Arduino Uno</p>
-<img src="arduinouno.jpg" width="600" height="400">
+<h2>Sortides analògiques tipus PWM </h2>
+<p>PWM significa modulació de l'ample de banda, en anglès <i>Pulse Width Modulation</i> i és una forma d'aconseguir una sorida analògica a partir de diverses sorides digitals, molt ràpides.</p>
+<p>PWM es representa amb el símbol "~" tal com podem verure en la imatge següent d'un Arduino Uno</p>
+<img src="arduinouno.jpg" widht="600" height="400">
 <p>Més amunt podem veure que els pins números 3, 5, 6, 9, 10 i 11.</p>
-<p>Aquests PWM són sortides analògiques de 8 bits, en el cas de Arduino Uno Rev3, d'acord amb el
-  <a href="https://store.arduino.cc/en-es/products/arduino-uno-rev3"> fabricant</a>, mentres en el cas
-d'Arduino Uno Rev4 és de 12 bits, segons el 
-  <a href="https://docs.arduino.cc/resources/datasheets/ABX00080-datasheet.pdf"> fabricant</a>  que l'anomena DAC, que vol dir Digital Analog 
-  Converter</p>
-<p>Tenir 8 o 12 bits en un convertidor digital analògic o DAC tipus PWM fa que tinguem 2<sup>8</sup>
-  o 2<sup>10</sup> nivells diferents de corrent, es a dir 256 nivells diferents o 2048 nivells  diferents</p>
-<p>Suposem que tant Arduino Uno Rev3 o Rev4 poden donar 5 volts com a màxim. Quina seria la resolució en milivolts
-de cada Arduino?</p>
-<p>5 volts dividit entre 256 dona 0.01953125 volts= 19,53125 milivolts per Arduino Uno Rev3</p>
-<p>5 volts dividit entre 2048 dona 0.00244140625 volts= 2,44140625 milivolts per Arduino Uno Rev4</p>
-
-</body></html>
+<p>Aquests PWM són sortides analògiques de 8 bits, en el cas de Arduino Uno Rev3 d'acord amb el <a href="https://store.arduino.cc/en-es/products/arduino-uno-rev3">fabricant</a>, 
+   mentres que en el cas d'arduino Uno Rev4 és de 12 bits segons el <a href="https://docs.arduino.cc/resources/datasheets/ABX00080-datasheet.pdf">fabricant</a> que l'anomena DAC, que vol dir Digital Analog Converter</p>
+<p>Tenir 8 o 12 bits en un convertidor digital analògic o DAC (Digital Analog Converter) tipus PWM fa que tinguem 2<sup>8</sup> o 2<sup>10</sup> nivells de diferents de corrent, es a dir 256 nivells diferents 2048 nivells diferents</p>
+<p>Suposem que tant Arduino Uno Rev3 o Rev4 poden donar 5V com a màxim. Quina seria la resolució en minivolts en cada Ardunio?</p>
+<p>5 volts dividit entre 256 dona 0,01953125 volts=19,53125 milivolts per Arduino Uno Rev3</p>
+<p>5 volts dividit entre 2048 dona 0,00244140625 volts=2,44140625 milivolts per Arduino Uno Rev4</p>
+<p>Els milivolts anterior són la resolució que aconseguim. Imaginem que volem regular la  intensitat d'un LED 
+   amb un Arduino Uno Rev3 aconseguim menys fluid i amb graons més grans, es a dir canvis més bruscs perque 256 canvis
+   són menys que 2048 volts. A continuació veurem una imatge que repreenta com combinant moltes senyals digitals 
+   ràpidament sembla que generem un senyal analògic, aixo és la base del PWM.</p>
+<img src="pmw.PNG" widht="600" height="450">
+<p>Quan major és l'amplada del pols vol dir que major és el temps que la sortida digital està en voltatge alt,
+   per exemple 5V i menys temps està a 0V, i per tant el promig  de tots els polsos és més alt. En canvi si 
+   per exemple si cada pols és més estret a 5V vol dir que estarà més temps a 0V, i per tant el promig  de
+   tots els polsos és més baix. A la imatge de a dalt es pot veure com s'encendria un LED o un motor 
+   funcionaria a una velocitat del 10%, 30%, 50%, 90%. Quin percentatge del senyal canviara en un cas i 
+   en un altre?</p>
+  <ul>
+    <li>(0,01953125/5)*100 = 0,390625%</li>
+    <li>(0,00244140625/5)*100 = 0,048828125%</li>
+  </ul>  
+<p>A la taula a continuació veuras els valors per defecte de la freqüència PWM en Arduino Uno Rev3</p>
+<table>
+  <thead>
+    <tr>
+      <th>PIN de Sortida</th><th>Freqüència PWM (Hz)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PINS: 3, 9, 10 i 11</td>
+      <td>490 Hz</td>
+    </tr>
+    <tr>
+      <td>PINS: 5 i 6</td>
+      <td>976 Hz</td>
+    </tr>
+  </tbody>
+</table>
+<p>Nota: la taula HTML anterior té una capçalera com un document HTML, però és diu thead, 
+en comptes de head i es la primera filera de la taula.
+Té un cos anomenat tbody, en comptes de body i és la resta de la taula. 
+La taula la defineix el tag table que agrupa thead i tbody. Totes les fileres
+tant del thead com el tbody es defineixen amb el tag tr, que vol dir table row.
+Dintre de thead hi ha elements individuals que són cel·les que pertanyen a la primera filera 
+i s'anomenen th o table heading. 
+En el table body hi ha també fileres tr però dintre d'aquestes fileres els elements individuals han de ser td,
+que significa table data. Per últim, s'han de tancar el table o el body. Tots aquests elements es poden
+modificar amb CSS i fer la taula amb un estil propi
+</p>
+</body>
+</html>
