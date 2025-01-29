@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador d'Energia Fosca i Matèria Fosca</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,8 +35,7 @@
             max-width: 800px;
             text-align: left;
         }
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-<style>
+    
         img {
             width: 100%;
             height: auto;
@@ -44,7 +44,6 @@
     </style>
   </head>
 <body>
-
 <!-- Inclou highlight.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 <!-- Inicia highlight.js -->
@@ -142,22 +141,6 @@
         let galaxies = [];
         let H0 = 71; // km/s/Mpc, basat en mesures recents
         let universeAge = 13700; // Edat inicial de l'univers (en milions d'anys)
-
-        // Definim la classe Galàxia
-	// Fins al any 2015 no existien les classes i per crear una classe s'utilitzava una funció "function"
-	// Dintre de la funció es posaven els paràmetres o arguments que volem controlar (posició X,Y i tamany)
-	// Utilitzem la paraula clau constructor per crear un tipus d'objecte i la paraula "this" per referirnos a arguments o
-        // parametres propis de la classe.
-	// X,Y i tamany és definirà més endevant en un codi en una altre funció d'inicialització "init".
-	// "Math.random" genera un número aleatori entre 0 i 1. Que passarà si multiplico per 2 "&pi;"?
-	// Em generarà un número aleatori entre 0 i 2 "&pi;".
-	// Com variarà la distancia a la meva simulació?
-	// Entre 50 i 200 pixels, per què?
-	// Perquè si multiplico un número aleatori entre 0 i 1 per 150 (Math.random() * 150) donarà sempre un número entre 0 i 150
-	// i si li sumo 50 serà entre 50 i 200.
-	// La velocitat variarà entre 0.01 i 0.03.
-	// Això que hem creat al 2015 va apareixer "ES6" que és la versió de javascript de 2015 i podem substituir la paraula
-	// function per class.
         function Galaxy(x, y, size) {
             this.x = x;
             this.y = y;
@@ -359,6 +342,51 @@
         let H0 = 71; // km/s/Mpc, basat en mesures recents
         let universeAge = 13700; // Edat inicial de l'univers (en milions d'anys)
 
+	 // Definim la classe Galàxia
+	// Fins al any 2015 no existien les classes i per crear una classe s'utilitzava una funció "function"
+	// Dintre de la funció es posaven els paràmetres o arguments que volem controlar (posició X,Y i tamany)
+	// Utilitzem la paraula clau constructor per crear un tipus d'objecte i la paraula "this" per referirnos a arguments o
+        // parametres propis de la classe.
+	// X,Y i tamany és definirà més endevant en un codi en una altre funció d'inicialització "init".
+	// "Math.random" genera un número aleatori entre 0 i 1. Que passarà si multiplico per 2 "&pi;"?
+	// Em generarà un número aleatori entre 0 i 2 "&pi;".
+	// Com variarà la distancia a la meva simulació?
+	// Entre 50 i 200 pixels, per què?
+	// Perquè si multiplico un número aleatori entre 0 i 1 per 150 (Math.random() * 150) donarà sempre un número entre 0 i 150
+	// i si li sumo 50 serà entre 50 i 200.
+	// La velocitat variarà entre 0.01 i 0.03.
+	// Això que hem creat al 2015 va apareixer "ES6" que és la versió de javascript de 2015 i podem substituir la paraula
+	// function per class.
+	// Quan fem un codi compatible amb 2015 diem que fem un codi ES6+, és a dir, que és compatible amb ES6 i següents (2015)
+	// El codi serria de la seüent manera:
+	// class Galaxy{ // Galaxy sempre va en majúscula perque és una classe, si fos un objecte o una variable aniria en minuscules
+	/*     contructor(x, y, size){ // La paraula clau constructor crea la classe
+	    this.x = x;
+            this.y = y;
+            this.size = size;
+            this.angle = Math.random() * Math.PI * 2; // Angle inicial aleatori
+            this.distance = Math.random() * 150 + 50; // Distància des del centre
+            this.speed = Math.random() * 0.02 + 0.01; // Velocitat de rotació base
+        }}/*
+	    
+	    //El constructor té l'avantatge de que es poden fer herències més fàcilment
+	/*   
+	    class SpiralGalaxy extends Galaxy{
+	        constructor(x, y, size, arms){
+	    	super(x, y, size);
+	    	this.arms = arms; 
+	    	}}
+	*/
+	// this és una propietat que identifica els arguments propis interns de la classe.
+	// A partir de 2022 va canviar tot, les classes en JavaScript van agafar una sintaxi anomenada camps de classe (class fields)
+	// que permeten declarar variables fora del constructor i a vegades sense el constructor i permet encapsular les dades privades
+	// amb un # devant
+
+	/*
+	#speed; //Seria una propietat privada més segura i més encapsulada
+	#calculaPosicio(); // Seria un mètode privat. El JavaScript a partir del 2022 és ES13+ (el DNI o numero de compte bancari)
+	*/
+	    
         // Definim la classe Galàxia
         function Galaxy(x, y, size) {
             this.x = x;
@@ -369,6 +397,18 @@
             this.speed = Math.random() * 0.02 + 0.01; // Velocitat de rotació base
         }
 
+	// initGalaxy és una funció que només té un paràmetre intern que té el numero de galàxies i és un paràmetre intern
+	// Dintre del codi el primer que fem és definir un array[], que és una llista d'elements que inicialment està buida
+	/* Fem un bucle for(), és una estructura iterativa que repeteix desde i=0 fins que arrivi al número i = numGalaxies i 
+	   va augmentant de un en un perquè és el que significa i++ que també es podria posar i = i+1 */
+	/* Per cada galàxia que creem dintre del bucle for() fem un .push que és aplicar  als objectes que creem de la classe Galaxy
+	   de forma que new Galaxy crea un objecte amb totes les propietats de la classe Galaxy, es a dir, galaxy = new Galaxy(x, y, size); 
+	   similar a eric = new Homosapiens(alçada, pes, iq), per exemple per crear 200 erics faria un cicle for i o repetiria eric = new Homosapiens
+	   200 vegades.*/
+	// canvas.width / 2 és x de galaxy, es a dir, coloca la galàxia inicialment al centre del canvas o zona de dibuix, width/2 = centre de x
+	// canvas.height / 2 és y de galaxy, es a dir, coloca la galàxia inicialment al centre del canvas o zona de dibuix, height/2 = centre de y
+	// La funcio atemàtica crea numeros aleatories entre 1 i 4 pixels de gran de la galàxies
+	    
         // Inicialitzem les galàxies
         function initGalaxies(numGalaxies) {
             galaxies = [];
