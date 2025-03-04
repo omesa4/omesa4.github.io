@@ -1,4 +1,4 @@
-v<html>
+<html>
   <head>
     <style>
       table{ 
@@ -197,28 +197,48 @@ perque? Si soc un Arduino, els pins A0 - A5 només soc capaç de fer una cosa, l
     <p> Per exemple, Arduino és i era una classe de llenguatge Processing, i s'utilitza molt més Arduino com a llenguatge de programació actualment. Si utilitzo processing i la biblioteca Arduino, l'avantatge que tinc és que puc utilitzar totes les biblioteques de visió per ordinador, d'intel·ligencia artificial de l'ordinador i fer aplicacions que només amb Arduino serien impossible</p>
     <img src="lm35.png">
     <p> La imatge anterior procedeix de la fulla de característiques de LM35, i es veu que té una resposta lineal del voltatge i de la temperatura, de forma que a 2.9V ens donaria -55 graus i a 4.15V ens donaria 155 graus. Com fariem el codi de mapeig per això?</p>
-     float temp = map (value,0,1023,2900,4150);
-      <p>value és un valor que agafa amb la instrucció analogRead i va entre 0-1023 perque
-      es un conversor d'analògic a digital de 10 bits, que seria 2^10, el transforma en un
-      altre entre 2900-4150 milivolts</p>
-     float celsius = map (temp,2900,4150,-55,150)
-      <p>La variable "temp" no conté temperatura sino que milivolts i els convertim d'aquesta
-      manera perque la fulla de característiques de LM35 diu que hi ha una resposta lineal
-      vista en el  gràfic de més amunt entre  els milivolts mesurats i la temperatura en celsius
-      </p>
-      <p>Que pasaria si utilitzo ESP32S3 i no Arduino, respecte a la mesura de la temperatura?
-      </p>
-      <p>El codi canviarà de la següent manera d'aquest codi "float temp = map (value,0,1023,2900,4150);"
-      a aquest altre: "float temp = map (value,0,4095,2900,4150);" perque hi ha 12  bits, que és 2^12,
-      que dona 4096 i s'hauria de connectar a 5 volts, ja que, es pot connectar tambè a 3,3 volts, però
-      no es llegiria correctament</p>
-      <p>Quina mesura donaria en un o altre controlador?</p>
-      <p>En ESP32 tenim 4096 nivells diferents, i tenim 1250 milivolts disponibles (4150-2900)</p>
-      <p>Quina és la resolució que tinc per cada nivell?</p>
-      <p>1250:4096, que dona 0.30517578125, que vol  dir que cada vegada que augmenta un número
-      de nivell augmenta 0,305 milivolts</p>
-      <p>0,305 milivolts quant seria en graus?</p>
-      <p>Tindriem 205 graus de diferència de temperatura, per tant, la resolució seria més baixa 
-      en el  cas de 1024 nivells, que en el cas de 4096 nivells, no importa el valor intermig</p>
+     float temp = map (value,0,1023,2900,4150); 
+    <p> Value és un valor que agafa amb la instrucció analogRead i va entre 0 i 1023 (en aquest cas) perque és un conversor d'analògica a digital de 10 bits 2^10, el transforma en un entre 2900 i 4150 millivolts</p>
+     float celsius = map (temp,2900,4150,-55,150); 
+    <p> La variable <b>temp</b> no conté temperatura, sinó millivolts i els convertim d'aquesta manera perque la fulla de característiques de LM35 diu que hi ha una resposta lineal, vista en el gràfic de més amunt entre els millivolts mesurats i la temperatura en celcius</p>
+    <p> Què passaria si utilitzo ESP32S3 i no Arduino respecre als resultats de mesura de temperatura? </p>
+    <p> El codi canviarà de la seguent manera: </p>
+    
+  int value = analogRead(sensorPin);
+  float millivolts = (value / 4096.0) * 5000;
+  float celsius = millivolts / 12; 
+  Serial.print(celsius);
+  Serial.println(" C");
+  delay(1000);
+     float temp = map (value,0,4095,2900,4150); 
+     float celsius = map (temp,2900,4150,-55,150); 
+<p> Canvia ja que hi té 12 bits, que és 2^12 que dona 4095 i s'hauria de connectar a 5 volts, ja que és pot connectar també a 3.3 volts, però no es llegiria correctament.</p>
+<p> Quina mesura donaria en un o altre controlador?</p>
+  <p> En ESP32S3 tenim 4096 nivells diferents i tenim 1250 millivolts disponibles (4150 - 2900).</p>
+<p> Quina és la resolució que tinc per cada nivell?</p>
+  <p> 1250/4096, que dona 0.30517578125, que vol dir que cada vegada que augmenta un número de nivell augmenten 0.305 millivolts</p>
+<p> Això quant seria en graus?</p>
+  <p> Tindriem 205 graus de diferència de temperatura (sempre), per tant la resolució seria més baixa en el cas de 1024 nivells que en el cas de 4096 nivells, que seria més alt, no importa el valor intermig.</p>
+    <h1> Sensor LM35</h1>
+    <p> És un sensor de temperatura lineal que té 3 pins, com es pot veure a la imatge següent:</p>
+    <img src="sensor_lm35.png">
+    <p> A continuació tenim el gràfic de funcionament procedent del full de característiques</p>
+    <img src="lm35.png">
+    <p> Per últim veurem el cirquit físic d'Arduino: </p>
+    <img src="arduino_lm35.png"
+      <p> Hem vist que 2100 millivolts fins a 4350 millivolts la resposta de LM35 és lineal i va des de -55 fins a 150 graus. Com ho traduim al codi?</p>
+      <p> Primer hem d'entendre que Arduino la seva entrada analógica és A0 (o qualsevol fins a A5) és capaç de llegir el voltatge i sempre comença amb zero i acaba amb 5 volts. Com hi ha 1024 nivells diferents, la resolució és 5000/1024 = 4,88 millivolts. És a dir, la resolució en millivolts és 4,88 (5000 són millivoltsperque Arduino Uno funciona a 5v). </p>
+      <p> Comcomença a mesurar temperatures entre 29000 millivolts i 4100 millivolts hem de saber a què correspon aquests dos números en base 1024, (2900/5000)*1024 = 594 el nivell respecte 1024. (4100/5000)*1024 = 840 el nivell respecte 1024</p>
+      <p> Sabent això, com seria el mapeig?</p>
+      <pre>
+        <code>
+          int analogValue = analogRead (A0);
+          float volt = analogValue*(5000/1024);
+          float temp = map (analogValue,0,1023,-55,150); ÉS INCORRECTE
+          float temp = map (volt,594,840,-55,150); ÉS CORRECTE
+          // valors de volt des de 0 a 5000 perque 0*5000/1024 = 0 i 1024*5000/1024 = 5000
+          // 500 analogValue 
+        </code>
+      </pre>
   </body>
 </html>
