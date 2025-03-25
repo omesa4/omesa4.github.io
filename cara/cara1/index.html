@@ -12,14 +12,14 @@
       background-color: #FFFFFF;
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js" integrity="sha512-lvddmeF7aHRJwdbJeYThWd5kWSjTrXBzCRF/jYROiHzmhMJ1dEXfGH5Q7ft0yhizXTopAETG03s5ajTflauijA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script src="../p5.min.js"></script>-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js" integrity="sha512-I0Pwwz3PPNQkWes+rcSoQqikKFfRmTfGQrcNzZbm8ALaUyJuFdyRinl805shE8xT6iEWsWgvRxdXb3yhQNXKoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  <!-- <script src="../p5.min.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  <!-- <script src="../addons/p5.sound.js"></script> -->
   <script src="sketch.js"></script>
 </head>
 
 <body>
+  <!-- Botó per canviar el color de fons (fa ús de la funció random()) -->
+
   <main>
     <p>El fons gris està fet amb la instrucció "background" i si i ha un número entre parèntesis és una eescala de grisos i va de 0 a 255. </p>
     <p>Els números que estàn entre parentesis s'anomenen paràmetres o arguments i la funció backgroun i totes les demès son pròpies de p5.js i no generals de JavaScript.</p>
@@ -32,6 +32,8 @@
     <p>let rightEyeSize = 20+10*sin(frameCount*0,1);//mida variable segons el temps</p>
     <p>La mida dels ulls va variant entre 10 i 30, ja que la funció "frameCount" va donant números continuamen i el possem per 0,1 perwuè no augmenti tan ràpid. ""frameCount") significa countar fotogrames</p>
     <p>sinus del que sigui sempre serà entre -1 i +1 i si el multiplico per 10 faarà que varii entre 10 i -10 i la suma de 20 farà aquesta variació</p>
+    <button onclick="changeBackground();">Canvia Fons</button>
+
   </main>
 </body>
 
