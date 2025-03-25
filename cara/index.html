@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>p5.js example</title>
+  <title>Cara interactiva</title>
   <style>
     body {
       padding: 0;
@@ -26,6 +26,12 @@
     <p>Si en comptes d'un número hi ha dos números e primer és escala de grisos i el segon és transparència.</p>
     <p>Si hi ha tres números son RGB, que vol dir 255 nivells de "Red" o vermell, 255 nivells de verd o "Green" i 255 nivells de Blue o blau, que fan 255*255*255= 16.700.000 de colors diferents.</p>
     <p>Si hi ha quatre números son RGB i transparència. Tot l'anterior s'aplica a "background" que dona fons o a "fill" que omple de color la forma a continuació.</p>
+    <p>Per moure els ulls utilitzarem la funció sinus i la funció cosinus que estàn canviant de número de forma no acompassada.</p>
+    <p>Per generar números de forma continua sense parar utilitzam la funció "frameCount", concretament farem:</p>
+    <p>let leftEyeSize = 20+10*cos(frameCount*0,1);//mida variable segons el temps</p>
+    <p>let rightEyeSize = 20+10*sin(frameCount*0,1);//mida variable segons el temps</p>
+    <p>La mida dels ulls va variant entre 10 i 30, ja que la funció "frameCount" va donant números continuamen i el possem per 0,1 perwuè no augmenti tan ràpid. ""frameCount") significa countar fotogrames</p>
+    <p>sinus del que sigui sempre serà entre -1 i +1 i si el multiplico per 10 faarà que varii entre 10 i -10 i la suma de 20 farà aquesta variació</p>
   </main>
 </body>
 
