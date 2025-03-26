@@ -1,3 +1,11 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}
+
 let sc=5
 let mic
 function setup() {
@@ -10,43 +18,82 @@ function draw() {
   let = vol =mic.getLevel();
   let h = map(vol,0,1,0,300);
   background(204);
- 
- //Ocell esquerra
- beginShape();
- vertex(50,120);
- vertex(100,90);
- vertex(110,60);
- vertex(80,20);
- vertex(210,60);
- vertex(160,80);                                      
- vertex(200,90);
- vertex(140,100);
- vertex(130,120);
- endShape();
- fill(0);
- ellipse(155,60,8,8);
- 
- //Ocell dret
- beginShape();
- vertex(370,120);
-  vertex(360,90);
-  vertex(290,80);
-  vertex(340,70);
-  vertex(280,50);
-  vertex(420,10);
-  vertex(390,50);
-  vertex(410,90);
-  vertex(460,120);
- endShape();
- fill(0);
- ellipse(345,50,10,10);
+  //Ocell 
+  fill (197, 33, 33)
+  beginShape();
+  vertex(80*sc,20*sc); 
+  vertex(100*sc,20*sc);
+  vertex(120*sc,30*sc);
+  vertex(130*sc,40*sc);
+  vertex(140*sc,60*sc);
+  vertex(140*sc,60*sc);
+  vertex(160*sc,70*sc-h);
+  vertex(145*sc,70*sc); 
+  vertex(160*sc,70*sc+h); 
+  vertex(140*sc,80*sc); 
+  vertex(120*sc,120*sc);
+  vertex(100*sc,140*sc);
+  vertex(95*sc,140*sc); 
+  vertex(95*sc,155*sc); 
+  vertex(100*sc,150*sc); 
+  vertex(98*sc,155*sc); 
+  vertex(102*sc,156*sc);
+  vertex(98*sc,157*sc);
+  vertex(100*sc,160*sc);
+  vertex(95*sc,158*sc);
+  vertex(90*sc,158*sc);
+  vertex(90*sc,140*sc);
+  vertex(70*sc,140*sc);
+  vertex(70*sc,155*sc);
+  vertex(75*sc,150*sc);
+  vertex(73*sc,155*sc);
+  vertex(77*sc,156*sc);
+  vertex(73*sc,157*sc);
+  vertex(75*sc,160*sc);
+  vertex(70*sc,158*sc);
+  vertex(65*sc,158*sc);
+  vertex(65*sc,140*sc);
+  vertex(60*sc,140*sc);
+  vertex(40*sc,120*sc);
+  vertex(35*sc,110*sc);
+  vertex(35*sc,80*sc);
+  vertex(40*sc,60*sc);
+  vertex(50*sc,40*sc);
+  vertex(60*sc,30*sc);
+  vertex(80*sc,20*sc);
+  endShape();
+  
+  //bec
+  fill(253, 185, 75)
+  beginShape();
+  vertex(140*sc,60*sc);
+  vertex(160*sc,70*sc-h);
+  vertex(145*sc,70*sc); 
+  vertex(160*sc,70*sc+h);
+  vertex(140*sc,80*sc); 
+  endShape();
+  
+  //ull
+  fill(255,255,255)
+  beginShape();
+  vertex(100*sc,40*sc); 
+  vertex(110*sc,50*sc);
+  vertex(100*sc,60*sc);
+  vertex(90*sc,50*sc);
+  endShape(close);
 
-
-
-
-
-
-
-
-
+  beginShape();
+  vertex(100*sc,40*sc); 
+  vertex(110*sc,50*sc);
+  vertex(100*sc,60*sc);
+  vertex(90*sc,50*sc);
+  endShape(close);
+   //pupila
+  fill(0,0,0)
+  beginShape();
+  vertex(100*sc,45*sc); 
+  vertex(105*sc,50*sc);
+  vertex(100*sc,55*sc);
+  vertex(95*sc,50*sc);
+  endShape(close);
 }
