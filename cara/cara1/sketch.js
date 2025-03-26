@@ -30,7 +30,7 @@ function draw() {
  // que fa aquesta funció. Permet fer números pseudoaleatoris propers
   let ales = 10*random(1);
   background(bgColor);  // Pinta el fons amb el color actual.
-fill(0);
+fill(0);//text1
   print(20, 20, "Fotogrames: ", frameCount);
   print("Noise: ", noise);
   print("Tamany ull esquerra: ", leftEyeSize);
@@ -44,17 +44,29 @@ fill(0);
   //text("Volum: " + vol, 50, 100);
   //text("Ales: " + ales);
   text("Cara con mosca" , 50, 350)
-  fill(255,223,196);//cara
- ellipse(faceX,faceY,220,300);
- fill(81,209,246);//ulls
+  
+  fill(198, 134, 98);//cara
+ ellipse(faceX,faceY,245,300);
+  
+ fill(255,255,255);//ulls
  ellipse(faceX-50,faceY-50,50,leftEyeSize);
  ellipse(faceX+50,faceY-50,50,rightEyeSize);
- fill(0,0,0);//pupil·la
+  
+ fill(110, 74, 38);//iris
  ellipse(faceX-50,faceY-50,25,leftEyeSize/2);
  ellipse(faceX+50,faceY-50,25,rightEyeSize/2);
- fill(0,0,0);
+  
+  fill(0,0,0)//pupil·les
+  ellipse(faceX-50,faceY-50,16,leftEyeSize/2-2);
+ ellipse(faceX+50,faceY-50,16,rightEyeSize/2-2);
+  
+  fill(0,0,0);//cabell
+  arc(faceX, faceY + -100, 105, 55, PI,0);
+  
+  fill(197, 33, 33);//boca
  arc(faceX, faceY + 50, 120, 30+h, 0, PI); // La variable "h" determina la alçada de la boca 
- fill(255);
+  
+ fill(255);//mosca
  noStroke();
  ellipse(x-10,y, 15+ales,25);
  ellipse(x+10,y, 15+ales,25);
