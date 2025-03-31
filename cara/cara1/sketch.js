@@ -1,3 +1,10 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}
 let mic; //creem variable gloalper a un micròfon, ara es un espai a la memòria amb un nom.
 let bgColor;        // Variable per emmagatzemar el color de fons actual.
 function setup() {
@@ -64,7 +71,15 @@ fill(0);//text1
   arc(faceX, faceY + -100, 105, 55, PI,0);
   
   fill(197, 33, 33);//boca
- arc(faceX, faceY + 50, 120, 30+h, 0, PI); // La variable "h" determina la alçada de la boca 
+ arc(faceX, faceY + 50, 120, 50+h, 0, PI); // La variable "h" determina la alçada de la boca 
+  
+  fill(255, 255, 255);//dents
+  square(261,250,12,2)
+  square(274,250,12,2)
+ square(305,250,15,2)
+ square(287,250,15,2)
+  square(321,250,12,2)
+  square(334,250,12,2)
   
  fill(255);//mosca
  noStroke();
