@@ -1,1 +1,89 @@
+let mic;
+let bgColor;
+
+function setup() {
+  mic = new p5.AudioIn();
+  mic.start();
+  createCanvas(600, 400);
+  bgColor = color(200, 220, 255);
+}
+
+function draw() {
+  background(bgColor);
+
+  let faceX = 300;
+  let faceY = 200;
+  let leftEyeSize = 30 + 10 * cos(frameCount * 0.1);
+  let rightEyeSize = 30 + 10 * sin(frameCount * 0.1);
+  let vol = mic.getLevel();
+  let h = map(vol, 0, 0.2, 0, 100, true); // Ajustamos el rango para mayor sensibilidad
+
+  let eyeRadius = 10;
+  let eyeMaxOffset = 10;
+  let leftEyeCenterX = faceX - 50;
+  let rightEyeCenterX = faceX + 50;
+  let eyeCenterY = faceY - 50;
+  
+  let leftAngle = atan2(mouseY - eyeCenterY, mouseX - leftEyeCenterX);
+  let rightAngle = atan2(mouseY - eyeCenterY, mouseX - rightEyeCenterX);
+
+  let leftIrisX = eyeMaxOffset * cos(leftAngle);
+  let leftIrisY = eyeMaxOffset * sin(leftAngle);
+  let rightIrisX = eyeMaxOffset * cos(rightAngle);
+  let rightIrisY = eyeMaxOffset * sin(rightAngle);
+
+  fill(198, 134, 98); // Cara
+  ellipse(faceX, faceY, 245, 300);
+
+  fill(255, 255, 255); // Ojos
+  ellipse(leftEyeCenterX, eyeCenterY, 50, leftEyeSize);
+  ellipse(rightEyeCenterX, eyeCenterY, 50, rightEyeSize);
+
+  fill(110, 74, 38); // Iris
+  ellipse(leftEyeCenterX + leftIrisX, eyeCenterY + leftIrisY, 25, leftEyeSize / 2);
+  ellipse(rightEyeCenterX + rightIrisX, eyeCenterY + rightIrisY, 25, rightEyeSize / 2);
+
+  fill(0, 0, 0); // Pupilas
+  ellipse(leftEyeCenterX + leftIrisX, eyeCenterY + leftIrisY, 16, leftEyeSize / 2 - 2);
+  ellipse(rightEyeCenterX + rightIrisX, eyeCenterY + rightIrisY, 16, rightEyeSize / 2 - 2);
+
+  fill(0, 0, 0); // Cabello
+  arc(faceX, faceY - 95, 195, 120, PI, 0);
+
+  fill(183, 33, 43); // Boca con movimiento
+  arc(faceX, faceY + 50, 120, 50 + h, 0, PI);
+
+  fill(255, 215, 0); // Diente de oro
+  square(261, 250, 12, 2);
+  
+  fill(255, 255, 255); // Dientes blancos
+  square(274, 250, 12, 2);
+  square(305, 250, 15, 2);
+  square(287, 250, 15, 2);
+  square(321, 250, 12, 2);
+  square(334, 250, 12, 2);
+
+  fill(0, 0, 0); // Bigote
+  rect(240, 225, 120, 20);
+  
+  fill(198, 134, 98); // Detalle de bigote
+  triangle(300, 245, 310, 225, 290, 225);
+  
+  stroke(0); // Nariz
+  line(330, 210, 300, 180);
+  line(330, 210, 300, 220);
+
+  // Mosca
+  let flyX = 200 * noise(0.01 * frameCount);
+  let flyY = 200 * noise(0.01 * frameCount + 100);
+  let wingSize = 10 * random(1);
+
+  fill(255);
+  noStroke();
+  ellipse(flyX - 10, flyY, 15 + wingSize, 25);
+  ellipse(flyX + 10, flyY, 15 + wingSize, 25);
+  fill(0);
+  ellipse(flyX, flyY, 10, 20);
+}
+
 
