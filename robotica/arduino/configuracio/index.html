@@ -293,8 +293,92 @@
     <p>La memòria ROM és <i>Read Only Memory</i> o el disc dur, que és la capacitat total de memòria del microcontrolador o de l'ordinador. 
         L'Arduino UNO té 32 kB de memòria ROM, l'ESP32-S3 té 384 kB de memòria ROM i el meu ordinador té 119 GB de meòria, que són un gran 
         número de vegades diferents.</p>
-    <p>Arduino UNO... </p>
+    <h1> Entrades GPIO</h1>
+      <p> GPIO significa General Purpose Input Output, és a dir, entrades i sortides de pròposit general. Aquestes pins 
+        permeten ser utilitzats com entrades analógiques, entrades digitals, sortides analógiques, sortides digitals, i 
+        a vegades també com a rellotges o parts de protocols de comunicació. Les GTIO estan normalment en microcontroladors 
+        avançats o moderns, com ESP32S3 i també en microordenadors-microordenadors, com Raspberry Pi. Arduino Uno Rev 3
+        no té GPIO, però es poden utilitzar com a GPIOs les entrades analógiques de A0 a A5 i també es poden 
+        piratejar / modificar altres pins. </p>
+      <h2> Protocols de comunicació</h2>
+      <p> Diferents maneres que té una placa (Arduinno Uno o ESP32S3) de connectarse en qualsevol altre dispositiu, com: 
+      un sensor, el nostre portatil, una pantalla LCD, OLED, un targeta SD, etc.</p>
+        <h3> Comunicació síncrona</h3>
+        Coordinació entre el receptor i transmisor per enviar dades, això es fa per una transmisió o línia de rellotge que
+        es diu SCK o CLK serveix per a que a cada puls de rellotge indica que s'ha de llegir o escriure un bit, i el transmisor 
+        i el receptor es mouen al mateix ritme del rellotge que fa possible entre el microcontrolador i altres dispositius 
+        electronics, com: sensor, targetes SD, pantalles TFT, etc.</p>
+      
+      <p>Hi ha dos protocols principals síncrons: SPI i I2C </p>
+       <p> SPI significa Serial Periferal Interface i I2C significa Inter-Integrated Circuit</p>
+      <p> La comunicació / protocols síncrons és més ràpida i eficient en velocitats altes i és més precisa 
+        perque els dispositius estan sincronitzats, però necessitem posar més cables per al rellotge i altres senyals
+      <h3> Comunicació asíncrona</h3>
+        <p> No hi ha cap rellotge compartit, el emisor i el transmisor funcionen de forma totalment independents </p>
+      <p> Cada byte (conjunt de bits) o paquet de dades porta uns bits que es poden indentificar com a bits d'inici
+        i bits de final (convinació de 0 i 1 que és sempre igual, i que ens indica que ha començar o acabat la transmissió) </p>
+      <p> El transmisor i el receptor han d'acordar la velocitat de transmisió, e Arduino Uno Rev3 és 9600 bauds o bits per segon
+        i en ESP32S3 és 115200 bauds </p>
+      <p> Exemples de protocols asíncrons són UART i RS232 </p>
+      <p> UART vol dor Universal Asynchronous Receiver-Transmiter, i RS232 és el protocol o port sèrie antic </p>
+      <h5> Avantatges </h5>
+      <ul>
+        <li>  Més senzill de cablejar</li>
+        <li> Ideal per distancies llargues (de cable)</li>
+        <li> Comunicacions simples</li>
+      </ul>
+          <h5> Inconvenients </h5>
+      <ul>
+        <li>  Menys eficient a velocitats altes</li>
+        <li> Risc de desincronització si no respecta la velocitat acordada</li>
+      </ul>
+    <h4> SPI </h4>
+      <p> Exemple de SPI amb Arduino Uno </p>
+      <p> El pin 11 és un MOSI que significa Master Out Slave In, i el pin 12 és MISO Master In Slave Out </p>
+        <p> El pin MOSI envia dades des de l'Arduino (mestre o master) cap els periferics (slaves o esclaus). Per exemple, si connectem un mòdul SD o targeta de memòria o una pantalla o display SPI significa que les dades s'enviarien pel pin 11 o MOSI. </p>
+        <p> El pin MISO farà el contrari que el pin MOSI, o sigui, rep dades des d'un esclau cap a Arduino i l'esclau pot ser el mateix que l'anterior, connectem una targeta de memòria o una pantalla </p>
+        <p> A més s'utilitzen altres pins com el SCK (o pin 13 d'Arduino Uno) que significa Serial Clack, que enviarà un senyl de rellorge que segueix la comunicació, l'Arduino és el mestre que genera aquest senyal que segueixen tots els esclaus. </p>
+        <p> El pin 10 és el pin SS que significa Slave Select, diu quin esclau està actiuen un moment determinat. </p>
+        <p> Es necessiten 2 pins més d'alimentació que són el VCC de 5v o el GND que és el terra, que tanca el circuit. </p>
+        <p> A continuació veurem un codi per comprovar si la targeta SD està connectada correctament. </p>
 
+        <pre>
+            <code>
+                #include <SPI.h> // Afegim la biblioteca C++ Arduino que controla el protocol de comunicació SPI.
+                #include <SD.h> // Afegim o importem la biblioteca que controlen els arxius per "Read Write Rewrite Delate" és a dir, per llegir arxius, escriuse'ls, borrar-los
+                const int chipSelect = 10; // Tem que el pin 10 sigui un número enter i constant i s'anomeni "chipSelect" perquè controlarà la secció de la targeta SD. Aquest pin serveix per activar la targeta SD, quan l'Arduino vol comunicar-se amb ella.
+                void setup (){
+                Serial.begin(9600); // 9600 són bauds, els bauds són la quantitat de símbols transmesos per segon, en la comunicació sèrie 1 baud = 1 bit/segon, però en alguns casos 1 baud pot ser més d'1 bit/segon.
+                Serial.print("Inicialitzant la targeta SD"); // Això significa que sortirà a la consola aquest misatge.
+                if(!SD.Begin(chipSelect)){ // El signe ! nega (si no funciona SD)
+                Serial.println("Error: no s'ha detectat la targeta SD"); // Si es compleix la condició anterior, posa aquest missatge a la consola.
+                return; // Segnifica que cabi la funció setup si la targeta no està disponible
+                    } // Aquesta clau tanca el condicional si no detecta la tergeta SD.
+
+                Serial.println("Targeta SD detectada correctament");
+                File fitxer = SD.open ("dades.txt"); // File és una classe d'objectes que gestiona arxius i quan escric un nom al costat, com fitxer, declaro una variable per gestionar un fitxer. Si el fitxer existeix i es pot obrir correctament la paraula fixter serà vàlida, en cas contrari, el fitxer donarà com a resposta nul.
+                if (fitxer){ // Vol dir, si el fitxer s'ha pogut obrir perquè és vàlid, executa el codi següent, i si no passa directament per el else i mostra un error.
+                Serial.println("Llegint dades.txt");  // Ha començat a llegir el fitxer
+                Serial.begin(9600); //9600 cón bauds o els bauds
+                while(fitxer.available()){ // Mentre que hi hagin dades per llegir dins del fitxer
+                Serial.write(fitxer.read()); // El que faria és mostrar el contingut del fitxer. El mètode read el que fa amb la sintexi del punt aplicat al fitxer va llegint caràcter per caràcter i els mostra al monitor rèrie fins que no hi ha més caràcters per mostrar 
+                  fitxer.close (); // Sempre s'ha de tancar el fitxer quan no es necessita , per evitar errors i alliberar memòria.
+                    } // Aquesta clau tanca el bloc de configuració o setup.
+                void loop () { // Aquesta part del codi és la que s'executaria tota lestona de forma repetitiva. No posariem per exemple llegir un fitxer, ja que estaria llegint tota l'estona sense pausa
+                    }
+                </SD.h>
+                </SPI.h>
+            </code>
+        </pre>
+     <h2> Exemple comunicació SPI entre MAX6675 I ESP32S3</h2>
+    <p>El MAX6675 és un sensor de temperatura amb molts circuits interns. En primer lloc té un termoparell de  tipus K, que permet mesurar temperatures molt altes amplies de -50 graus a 1000 graus amb una precisió de 0,25 graus i amb un preu de 5€. També té un convertidor analògic digital de 12 bits i un circuit per adaptar a la comunicació</p>
+    <p>Un termoparell de tipus K és una unió de 2 aliatges que genera un corrent electric proporcionada a la temperatura. Els 2 aliatges més comuns: El Cromel, constituit per Crom i Níquel, i el Alumel que està constituit per Aluminni i Níquel. L'efecte Seebeck és la tennsió electrica provocada per el canvi de temperatura que és molt petita la corrent  del ordre de microvolts i que necesitem amplificar amb un circuit amplificador amb l'ordre de microvolts  i que necesitem ampllificar  amb unn circuit amplificador amb l'ordre de minivolts i després amb un convertidor analogic digital de 12 bits, convertirlo en un número hexadecimal (hexadecimal com 0x, binaria com a 0b i octals 0o), dins del número pot haver el valor per convertir en celsius</p>
+        <img src="maxr.png">
+    <p> A la imatge superior podem veure que está conectat MAX6675 a ESP32S3 per alimentació elèctrica al pin de 3.3 volts (cable vermall) i al pin GND (cable negre), també a de estar connectat a un MISO perque volem que funcioni com un sensor, és a dir, master input, que vol dir que el microcontrolador actua com a meste que rep entrades o inputs i els sensor és un esclau que dona a output. En ESP32S3 MISO es posa amb les sigles SO, que vol dir serial out (que està en el GPIO19), que surt informació en sèrie cap a l'exterior (mestre).</p>
+    <p> La comunicació SPI necessita ser síncrona, i per això connectem el cable GPIO5 que és un SSK o serial clock o rellotge que sincronitza el enviament de temperatures al microcontrolador. </p>
+    <p> Necesitem connectar un cable CS al pin CS que significa Chip select ens permet fer la comunicació en sèrie i està en el GPIO23. </p>
+    <p> Resumint,necessitem molts cables per comunicació entre el sensor de temperatura i el microcontrolador. Hi ha tecnologies que necessiten un cable i es diuen one-wire com per exemple com el sensor de temperatura DS20 </p>
+        
     <p>You can work with different software as you can read under Microcontrollers>Software for microcontollers in this
         web as for example using the <a
             href="https://docs.platformio.org/en/latest/boards/espressif32/esp32-s3-devkitc-1.html"
@@ -478,6 +562,7 @@
         From 16/09/2022 it is possible to use <a
             href="https://blog.arduino.cc/2022/09/16/arduino-cloud-extends-esp32-support-to-s2-s3-c3-devices/"
             target="_blank">cloud Arduino IDE.</a>
+
     </p>
     </div>
 
@@ -488,4 +573,4 @@
 
 </body>
 
-</html>5679y
+</html>
