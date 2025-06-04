@@ -153,10 +153,16 @@
       strokeWeight(4);
 
         switch (dominant) {
-        case "happy":
+        case "neutral":
         
-      
-            
+  function setup() {
+  createCanvas(600, 600);
+}
+
+function draw() {
+  background(220);
+  
+  fill(220, 190, 160)
   beginShape();//Cara
 vertex(223, 204.1875);
 vertex(209, 211.1875);
@@ -191,7 +197,9 @@ vertex(303, 240.1875);
 vertex(259, 216.1875);
 vertex(223, 204.1875);
 endShape();
-  beginShape();
+  
+  fill(198, 143, 122)
+  beginShape();//orella
 vertex(380, 317.1875);
 vertex(379, 319.1875);
 vertex(379, 322.1875);
@@ -210,6 +218,7 @@ vertex(383, 319.1875);
 vertex(380, 316.1875);
 endShape();
   
+  fill(40, 70, 130)
   beginShape() //vel blau
   vertex(209, 211.1875);
 vertex(222, 204.1875);
@@ -252,6 +261,7 @@ vertex(199, 218.1875);
 vertex(208, 211.1875);
 endShape();
   
+  fill(230, 210, 120)
   beginShape() //arruga vel blanc
   vertex(291, 125.1875);
 vertex(302, 116.1875);
@@ -327,6 +337,7 @@ vertex(321, 123.1875);
 vertex(290, 124.1875);
 endShape();
   
+   fill(210, 180, 70)
   beginShape() //cua vel blnc.
   vertex(388, 117.1875);
 vertex(412, 131.1875);
@@ -351,7 +362,8 @@ vertex(367, 109.1875);
 vertex(388, 117.1875);
 endShape();
   
-  beginShape() //dessuadora
+ fill(70, 50, 30)
+  beginShape() //caputxa
   vertex(181, 702.1875);
 vertex(203, 651.1875);
 vertex(240, 583.1875);
@@ -399,6 +411,7 @@ vertex(512, 701.1875);
 vertex(181, 701.1875);
 endShape();
   
+  fill(235, 225, 200)
   beginShape() //detall caputxa
   vertex(266, 493.1875);
 vertex(280, 488.1875);
@@ -422,6 +435,7 @@ vertex(270, 474.1875);
 vertex(265, 500.1875);
 endShape();
   
+  fill(220, 190, 160)
   beginShape() //coll
   vertex(278, 419.1875);
 vertex(291, 443.1875);
@@ -446,6 +460,7 @@ vertex(298, 415.1875);
 vertex(278, 418.1875);
 endShape();
 
+  fill(225, 225, 235)
   beginShape() //arrecada
   vertex(369, 366.1875);
 vertex(361, 377.1875);
@@ -462,6 +477,7 @@ vertex(374, 365.1875);
 vertex(368, 367.1875)
 endShape();  
   
+  fill(100, 75, 45)
   beginShape(); //espatlla
 vertex(244, 569.1875);
 vertex(262, 543.1875);
@@ -487,6 +503,7 @@ vertex(241, 576.1875);
 vertex(244, 568.1875);
 endShape();
   
+  fill(255, 255, 255)
   beginShape(); //ull esq.
 vertex(218, 275.1875);
 vertex(218, 269.1875);
@@ -504,6 +521,7 @@ vertex(216, 278.1875);
 vertex(218, 275.1875);
 endShape();
   
+  fill(115, 75, 45)
   beginShape(); //iris esq.
 vertex(218, 274.1875);
 vertex(214, 275.1875);
@@ -521,6 +539,7 @@ vertex(217, 268.1875);
 vertex(218, 274.1875);
 endShape();
   
+  fill(0)
   beginShape() //pupi·la esq.
   vertex(212, 263.1875);
 vertex(209, 264.1875);
@@ -534,6 +553,7 @@ vertex(215, 266.1875);
 vertex(213, 264.1875);
 endShape();
   
+   fill(220, 190, 160)
   beginShape() //nas
   vertex(209, 245.1875);
 vertex(214, 249.1875);
@@ -568,6 +588,7 @@ vertex(245, 328.1875);
 vertex(240, 323.1875);
 endShape();
   
+ fill(220, 190, 160)
   beginShape() //segona part nas
   vertex(244, 327.1875);
 vertex(242, 319.1875);
@@ -583,6 +604,7 @@ vertex(273, 260.1875);
 vertex(279, 263.1875);
 endShape();
   
+  fill(255, 255, 255)
   beginShape() //ull dret
   vertex(255, 280.1875);
 vertex(258, 274.1875);
@@ -602,6 +624,7 @@ vertex(261, 286.1875);
 vertex(255, 281.1875);
 endShape();
   
+  fill(115, 75, 45)
   beginShape() //iris dret
   vertex(274, 273.1875);
 vertex(272, 277.1875);
@@ -619,6 +642,7 @@ vertex(277, 273.1875);
 vertex(274, 274.1875);
 endShape();
   
+  fill(0)
   beginShape() //pupil·la dreta
   vertex(280, 275.1875);
 vertex(277, 276.1875);
@@ -634,6 +658,7 @@ vertex(283, 278.1875);
 vertex(281, 276.1875);
 endShape();
   
+  fill(255, 255, 255)
   beginShape() //dents
   vertex(222, 367.1875);
 vertex(222, 371.1875);
@@ -650,6 +675,7 @@ vertex(226, 369.1875);
 vertex(222, 368.1875);
 endShape();
   
+  fill(170, 90, 80)
   beginShape(); //llavi sup.
 vertex(208, 356.1875);
 vertex(210, 355.1875);
@@ -680,6 +706,7 @@ vertex(206, 357.1875);
 vertex(207, 356.1875);
 endShape();
   
+  fill(170, 90, 80)
   beginShape() //llavi inf.
   vertex(221, 367.1875);
 vertex(216, 368.1875);
@@ -713,6 +740,9 @@ endShape();
   vertex(373, 347.1875);
 vertex(372, 371.1875);
 endShape();
+}
+
+
 
 
             background(255, 255, map(intensity,1,0,0,255));
@@ -741,7 +771,7 @@ endShape();
           endShape(CLOSE);
           break;
 
-        case 'fearful':
+        case 'happy':
           stroke(100,100,100,150); // gris
           beginShape();
           for (let x = 0; x <= VIRTUAL_W; x += 10) {
