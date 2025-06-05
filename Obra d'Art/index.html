@@ -1,61 +1,154 @@
-
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <title>La Joven De La Perla Amb Emocions</title>
-  <!-- Llibreria p5.js per fer gràfics interactius -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.js"></script>
-  <!-- Llibreria ml5.js per reconeixement facial amb machine learning -->
-  <script src="https://cdn.jsdelivr.net/gh/ml5js/Intro-ML-Arts-IMA@ml5-build-10-7-19/ml5_build/ml5.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web d'Oscar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Estil general del cos de la pàgina */
     body {
-      margin: 0; /* sense marges externs */
-      padding: 0; /* sense espais interns */
-      background-color: #f4f4f4; /* color de fons gris clar */
-      display: flex; /* fa servir flexbox per alinear */
-      justify-content: center; /* centra horitzontalment */
-      align-items: center; /* centra verticalment */
-      height: 100vh; /* alçada de tota la pantalla */
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(145deg, #0a0a0a, #1f012f);
+      color: #e0caff;
+      overflow-x: hidden;
     }
 
-    /* Pantalla de càrrega quan els models encara es carreguen */
-    #loading-screen {
-      position: fixed; /* fixa la posició a la pantalla */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255,0.9); /* blanc amb transparència */
+    header {
+      background: #1a002e;
+      padding: 1rem 2rem;
       display: flex;
-      flex-direction: column; /* columna vertical */
-      justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      color: #333; /* gris fosc */
-      z-index: 10; /* per sobre de tot */
+      justify-content: space-between;
+      box-shadow: 0 0 20px #9000ff;
+      border-bottom: 1px solid #6400a8;
     }
 
-    /* Rodona animada de càrrega */
-    .loader {
-      width: 50px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
       height: 50px;
-      border: 6px solid #3498db; /* blau */
-      border-top: 6px solid transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-bottom: 10px;
     }
 
-    /* Animació de gir */
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .brand-text {
+      color: #c46bff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #e0caff;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #32004d;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #e0caff;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #4c0070;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(40, 0, 60, 0.25);
+      border-radius: 20px;
+      box-shadow: 0 0 25px #610094;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f2d6ff;
+    }
+
+    footer {
+      text-align: center;
+      color: #9966cc;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #330033;
     }
   </style>
 </head>
+
+<body>
+  <header>
+    <div class="brand">
+      <a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/">
+        <img src="pompeu.png" alt="Logo" class="logo">
+      </a>
+      <a href="https://omesa4.github.io/" class="brand-text">Web d'Oscar</a>
+    </div>
+
+    <nav>
+      <a href="https://omesa4.github.io/">Inici</a>
+
+      <div class="dropdown">
+        <a href="#">Robòtica ▾</a>
+        <div class="dropdown-content">
+          <a href="https://omesa4.github.io/robotica/cdirecta/index.html">Cinemàtica directa</a>
+          <a href="https://omesa4.github.io/robotica/cinversa/index.html">Cinemàtica inversa</a>
+          <a href="https://omesa4.github.io/robotica/index.html">Teoria</a>
+          <a href="https://omesa4.github.io/robotica/arduino/configuracio/index.html">Configuració</a>
+          <a href="https://omesa4.github.io/robotica/arduino/programacio/index.html">Programació</a>
+          <a href="https://omesa4.github.io/robotica/arduino/musica/index.html">Música</a>
+          <a href="https://omesa4.github.io/robotica/final/index.html">Projecte Final</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Programació ▾</a>
+        <div class="dropdown-content">
+      <a href="https://omesa4.github.io/cara/index.html"> Cares</a>
+      <a href="https://omesa4.github.io/we_pray/index.html"> We Pray</a>
+      <a href="https://omesa4.github.io/coldplay/index.html"> ColdPlay</a>
+      <a href="https://omesa4.github.io/p5/index.html"> p5</a>
+      <a href="https://omesa4.github.io/astronomia/index.html"> Astronomia</a>
+      <a href="https://omesa4.github.io/Obra%20d'Art/index.html"> Obra d'art</a>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
 <body>
   <!-- Div visible mentre es carreguen els models -->
   <div id="loading-screen">
@@ -3072,5 +3165,6 @@ break;
       }
     }
   </script>
+  </main>
 </body>
 </html>
