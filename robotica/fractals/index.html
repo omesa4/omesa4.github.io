@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ca">
 <head>
   <meta charset="UTF-8" />
@@ -17,73 +17,86 @@
     header {
       background: #1a002e;
       padding: 1rem 2rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       box-shadow: 0 0 20px #9000ff;
       border-bottom: 1px solid #6400a8;
     }
 
-    header h1 {
-      font-size: 2.8rem;
-      margin: 0;
-      color: #c46bff;
-      letter-spacing: 3px;
-      text-shadow: 0 0 10px #8a2be2;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .container {
-      max-width: 1000px;
+    .logo {
+      height: 50px;
+    }
+
+    .brand-text {
+      color: #c46bff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #e0caff;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #32004d;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #e0caff;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #4c0070;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
       background: rgba(40, 0, 60, 0.25);
       border-radius: 20px;
       box-shadow: 0 0 25px #610094;
-      backdrop-filter: blur(6px);
     }
 
-    h2 {
+    h1 {
+      text-align: center;
       color: #f2d6ff;
-      font-size: 2rem;
-      border-bottom: 2px solid #b200ff;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin: 1rem 0;
-      padding: 0.5rem 1rem;
-      background: rgba(150, 0, 255, 0.1);
-      border-left: 4px solid #b300ff;
-      transition: all 0.3s ease-in-out;
-    }
-
-    ul li:hover {
-      background: rgba(255, 0, 255, 0.15);
-      transform: scale(1.02);
-      border-left: 6px solid #ff66ff;
-    }
-
-    button {
-      background-color: #9e00ff;
-      border: none;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: 1rem;
-      border-radius: 30px;
-      box-shadow: 0 0 15px #8b00ff;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #ff00e6;
-      box-shadow: 0 0 20px #e600ff;
     }
 
     footer {
@@ -94,41 +107,29 @@
       border-top: 1px solid #330033;
     }
   </style>
+</head>
 
+<body>
   <header>
-<div class="brand">
-  <a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/" style="display: flex; align-items: center; text-decoration: none;">
-    <img src="pompeu.png" alt="Logo" class="logo">
-  </a>
-    <a span href="https://cmarzque4.github.io/" class="brand-text"> Web de Carla</span>
-  </a>
-</div>
+    <div class="brand">
+      <a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/">
+        <img src="pompeu.png" alt="Logo" class="logo">
+      </a>
+      <a href="https://cmarzque4.github.io/" class="brand-text">Web de Carla</a>
+    </div>
 
     <nav>
       <a href="https://omesa4.github.io/">Inici</a>
 
-  <div class="dropdown" onmouseenter="openDropdown(this)" onmouseleave="closeDropdown(this)">
-  <a href="#"> Robótica ▾</a>
-    <div class="dropdown-content">
-      <a href="https://omesa4.github.io/robotica/cdirecta">Cinemàtica directa</a>
-      <a href="https://omesa4.github.io/robotica/cinversa">Cinemàtica inversa</a>
-    </div>
-  </div>
-      
-  <div class="dropdown" onmouseenter="openDropdown(this)" onmouseleave="closeDropdown(this)">
-    <a href="#"> Programació ▾</a>
-    <div class="dropdown-content">
-      <a href="https://omesa4.github.io/cara/index.html"> Cares</a>
-      <a href="https://omesa4.github.io/we_pray/index.html"> We Pray</a>
-      <a href="https://omesa4.github.io/coldplay/index.html"> ColdPlay</a>
-      <a href="https://omesa4.github.io/p5/index.html"> p5</a>
-      <a href="https://omesa4.github.io/astronomia/index.html"> Astronomia</a>
-      <a href="https://omesa4.github.io/Obra%20d'Art/index.html"> Obra d'art</a>
-    </div>
-  </div>
-    </nav>
-  </header>
-  <body>
-    
-  </body>
-</body>
+      <div class="dropdown">
+        <a href="#">Robòtica ▾</a>
+        <div class="dropdown-content">
+          <a href="https://omesa4.github.io/robotica/cdirecta">Cinemàtica directa</a>
+          <a href="https://omesa4.github.io/robotica/cinversa">Cinemàtica inversa</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Programació ▾</a>
+        <div class="dropdown-content">
+          <a href="https://omesa4.github.io/car
