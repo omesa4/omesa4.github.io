@@ -1,108 +1,119 @@
 <!DOCTYPE html>
 <html lang="ca">
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(145deg, #0a0a0a, #1f012f);
+  color: #e0caff;
+  overflow-x: hidden;
+}
+
+header {
+  background: #1a002e;
+  padding: 1rem 2rem;
+  text-align: center;
+  box-shadow: 0 0 20px #9000ff;
+  border-bottom: 1px solid #6400a8;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin: 0;
+  color: #c46bff;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #8a2be2;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(40, 0, 60, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 0 25px #610094;
+  backdrop-filter: blur(6px);
+}
+
+h2 {
+  color: #f2d6ff;
+  font-size: 2rem;
+  border-bottom: 2px solid #b200ff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: rgba(150, 0, 255, 0.1);
+  border-left: 4px solid #b300ff;
+  transition: all 0.3s ease-in-out;
+}
+
+ul li:hover {
+  background: rgba(255, 0, 255, 0.15);
+  transform: scale(1.02);
+  border-left: 6px solid #ff66ff;
+}
+
+button {
+  background-color: #9e00ff;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-radius: 30px;
+  box-shadow: 0 0 15px #8b00ff;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff00e6;
+  box-shadow: 0 0 20px #e600ff;
+}
+
+footer {
+  text-align: center;
+  color: #9966cc;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  border-top: 1px solid #330033;
+}
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detector de Mentides</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #0d0d0d;
-      color: #e0ccff;
-      overflow-x: hidden;
-    }
-
-    .container {
-      padding: 60px 10%;
-    }
-
-    h1, h2, h3 {
-      color: #bb86fc;
-      text-shadow: 0 0 5px #9f5fff;
-      margin-bottom: 20px;
-    }
-
-    button {
-      background: linear-gradient(135deg, #bb86fc, #6a1b9a);
-      border: none;
-      color: white;
-      padding: 12px 24px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #bb86fc;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #c792ea;
-    }
-
-    .card {
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #6a1b9a55;
-      margin-bottom: 20px;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 0 30px #bb86fcaa;
-    }
-
-    a {
-      color: #c792ea;
-      text-decoration: none;
-      border-bottom: 1px dashed #c792ea;
-    }
-
-    a:hover {
-      color: #ffffff;
-      border-bottom: 1px solid #ffffff;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #bb86fc; }
-      50% { box-shadow: 0 0 20px #bb86fcaa; }
-      100% { box-shadow: 0 0 10px #bb86fc; }
-    }
-
-    .glow {
-      animation: pulse 2s infinite;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #666;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="futurista.css" />
 </head>
 <body>
+  <header>
+    <h1>Detector de Mentides Futurista</h1>
+  </header>
+
   <div class="container">
-    <h1 class="glow">Detector de Mentides</h1>
-    <div class="card">
-      <h2>Mode 1: Sensor de pols</h2>
-      <p>Pressiona el botó per fer una pregunta i detectar la veracitat mitjançant el sensor de ritme cardíac.</p>
-      <button>Inicia Mode 1</button>
-    </div>
-    <div class="card">
-      <h2>Mode 2: Aleatori</h2>
-      <p>Pressiona el segon botó i el sistema determinarà aleatòriament si la resposta és certa o falsa.</p>
-      <button>Inicia Mode 2</button>
-    </div>
-    <p>Consulta la <a href="#">documentació del projecte</a> o <a href="#">mira la recreació</a>.</p>
+    <h2>Funcionament:</h2>
+    <ul>
+      <li>Prem el botó per iniciar</li>
+      <li>Es fa una pregunta</li>
+      <li>El sensor detecta o genera una resposta</li>
+      <li>El LED verd o vermell s’encén segons el resultat</li>
+    </ul>
+
+    <button>Iniciar Detector</button>
   </div>
 
   <footer>
-    © 2025 Projecte Detector Mentides - Inspirat en Simon Monk
+    © 2025 Projecte de Robòtica | Web Futurista dissenyada per tu 💜
   </footer>
 </body>
 </html>
