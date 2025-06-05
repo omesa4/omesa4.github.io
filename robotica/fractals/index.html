@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detector de Mentides Futurista</title>
+  <title>Web d'Oscar</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -94,28 +94,58 @@
       border-top: 1px solid #330033;
     }
   </style>
-</head>
-<body>
 
   <header>
-    <h1>Detector de Mentides Futurista</h1>
+     <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" width="50">
+                Web d'Oscar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inici</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tema 1</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Programació p5.js
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://omesa4.github.io/cara">Cara interactiva</a>
+                            <a class="dropdown-item" href="https://omesa4.github.io/ocell">Ocell</a>
+                            <a class="dropdown-item" href="https://omesa4.github.io/wepray">We Pray</a>
+                            <a class="dropdown-item" href="https://omesa4.github.io/coldplay">Coldplay</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Braç robòtic
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="https://omesa4.github.io/robotica/cdirecta">Cinemàtica directa</a>
+                            <a class="dropdown-item" href="https://omesa4.github.io/robotica/cinversa">Cinemàtica inversa</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tema 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
   </header>
-
-  <div class="container">
-    <h2>Funcionament:</h2>
-    <ul>
-      <li>Prem el botó per iniciar</li>
-      <li>Es fa una pregunta</li>
-      <li>El sensor detecta o genera una resposta</li>
-      <li>El LED verd o vermell s’encén segons el resultat</li>
-    </ul>
-
-    <button>Iniciar Detector</button>
-  </div>
-
-  <footer>
-    © 2025 Projecte de Robòtica | Web Futurista dissenyada per tu 💜
-  </footer>
-
+  <body>
+    
+  </body>
 </body>
-</html>
