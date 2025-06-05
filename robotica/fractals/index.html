@@ -1,12 +1,108 @@
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <title>Web de Martí V.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detector de Mentides</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d0d0d;
+      color: #e0ccff;
+      overflow-x: hidden;
+    }
 
+    .container {
+      padding: 60px 10%;
+    }
+
+    h1, h2, h3 {
+      color: #bb86fc;
+      text-shadow: 0 0 5px #9f5fff;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #bb86fc, #6a1b9a);
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #bb86fc;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #c792ea;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #6a1b9a55;
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 30px #bb86fcaa;
+    }
+
+    a {
+      color: #c792ea;
+      text-decoration: none;
+      border-bottom: 1px dashed #c792ea;
+    }
+
+    a:hover {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #bb86fc; }
+      50% { box-shadow: 0 0 20px #bb86fcaa; }
+      100% { box-shadow: 0 0 10px #bb86fc; }
+    }
+
+    .glow {
+      animation: pulse 2s infinite;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="glow">Detector de Mentides</h1>
+    <div class="card">
+      <h2>Mode 1: Sensor de pols</h2>
+      <p>Pressiona el botó per fer una pregunta i detectar la veracitat mitjançant el sensor de ritme cardíac.</p>
+      <button>Inicia Mode 1</button>
+    </div>
+    <div class="card">
+      <h2>Mode 2: Aleatori</h2>
+      <p>Pressiona el segon botó i el sistema determinarà aleatòriament si la resposta és certa o falsa.</p>
+      <button>Inicia Mode 2</button>
+    </div>
+    <p>Consulta la <a href="#">documentació del projecte</a> o <a href="#">mira la recreació</a>.</p>
+  </div>
+
+  <footer>
+    © 2025 Projecte Detector Mentides - Inspirat en Simon Monk
+  </footer>
 </body>
 </html>
-
