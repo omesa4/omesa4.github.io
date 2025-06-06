@@ -1,28 +1,152 @@
-<html>
-  <head>
-    <style>
-      table{ 
-        width:50%; //Ocupa el 50% de l'amplada de la pàgina
-        border-collapse: collapse;// Evita que apareixin dobles linies a les cel·les 
-        margin: 20px auto;} //Marge de 20px a la part superior i centra la taula
-      
-      th,td{
-        border: 1px solid #ddd; //Afegieix una vora fina d'un píxel de color gris clar al voltant de totes les cel·les th i td.
-        padding: 10px auto; //Espai intern dins de cada cel·la, per fer-la més llegible.
-        text-algin: center} //Centrar el text dins de cada cel·la.
-        
-      thead{
-        background: #f4f4f4; //Cavia el color del fons del thead a gris clar.
-        font-weight: bold;} //Fa que la capçelera de la aula estigui en negreta.
-        
-      tbody tr: nth-child(even){ //És una pseudoclasse aplicada a tr segons si es parell o imparell, even és parell i odd és imparell.
-        background-color: #f9f9f9;}
+<!DOCTYPE html> 
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web d'Oscar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(145deg, #0a0a0a, #1f012f);
+      color: #e0caff;
+      overflow-x: hidden;
+    }
 
-      tbody tr: hover{  //És una pseudoclasse hover per quan passo per sobre amb el ratolí pel contngut de la taula és fa més fosc.
-        background-color: #e2e2e2;}
-    </style>
-  </head>
-  <body>
+    header {
+      background: #1a002e;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 0 20px #9000ff;
+      border-bottom: 1px solid #6400a8;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .brand-text {
+      color: #c46bff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #e0caff;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #32004d;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #e0caff;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #4c0070;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(40, 0, 60, 0.25);
+      border-radius: 20px;
+      box-shadow: 0 0 25px #610094;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f2d6ff;
+    }
+
+    footer {
+      text-align: center;
+      color: #9966cc;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #330033;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/">
+        <img src="pompeu.png" alt="Logo" class="logo">
+      </a>
+      <a href="https://omesa4.github.io/" class="brand-text">Web d'Oscar</a>
+    </div>
+
+    <nav>
+      <a href="https://omesa4.github.io/">Inici</a>
+
+      <div class="dropdown">
+        <a href="#">Robòtica ▾</a>
+        <div class="dropdown-content">
+          <a href="https://omesa4.github.io/robotica/cdirecta/index.html">Cinemàtica directa</a>
+          <a href="https://omesa4.github.io/robotica/cinversa/index.html">Cinemàtica inversa</a>
+          <a href="https://omesa4.github.io/robotica/index.html">Teoria</a>
+          <a href="https://omesa4.github.io/robotica/arduino/configuracio/index.html">Configuració</a>
+          <a href="https://omesa4.github.io/robotica/arduino/programacio/index.html">Programació</a>
+          <a href="https://omesa4.github.io/robotica/arduino/musica/index.html">Música</a>
+          <a href="https://omesa4.github.io/robotica/final/index.html">Projecte Final</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Programació ▾</a>
+        <div class="dropdown-content">
+      <a href="https://omesa4.github.io/cara/index.html"> Cares</a>
+      <a href="https://omesa4.github.io/we_pray/index.html"> We Pray</a>
+      <a href="https://omesa4.github.io/coldplay/index.html"> ColdPlay</a>
+      <a href="https://omesa4.github.io/astronomia/index.html"> Astronomia</a>
+      <a href="https://omesa4.github.io/Obra%20d'Art/index.html"> Obra d'art</a>
+      </div>
+      </div>
+    </nav>
+  </header>
+  <main>
 <h1> Conceptes generals de microcontroladors </h1>
 <p> Els diferents microcontroladors tenen en comú els seguents aspectes:</p>
 <ul>
@@ -485,5 +609,6 @@ perque? Si soc un Arduino, els pins A0 - A5 només soc capaç de fer una cosa, l
         </code>
       </pre>
   </div>
+  </main>
   </body>
 </html>
