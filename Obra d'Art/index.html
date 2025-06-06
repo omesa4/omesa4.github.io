@@ -149,110 +149,186 @@
 
   <main>
 <body>
-  <!-- Div visible mentre es carreguen els models -->
   <div id="loading-screen">
     <div class="loader"></div>
-    <p>Carregant models, si us plau, espera...</p>
+    <p>Carregant models...</p>
   </div>
   <script>
-    // Variables globals
     let faceapi, detections = [], video;
-    let modelsMostrats = false;
+    let modelsReady = false;
+    let currentExpression = { dominant: 'neutral', intensity: 0 };
+    let smoothIntensity = 0;
 
-    // Mida virtual que es manté proporcional a qualsevol pantalla
-    const VIRTUAL_W = 800;
-    const VIRTUAL_H = 600;
+    // Traducció d'emocions a català
+    const emotionsCA = {
+      happy: "feliç",
+      sad: "trist",
+      angry: "enfadat",
+      surprised: "sorprès",
+      disgusted: "fastiguejat",
+      fearful: "espantat",
+      neutral: "neutral"
+    };
 
-    // Funció que es crida al començar
+    // Emoticones per cada emoció
+    const emotionsEmoji = {
+      happy: "😄",
+      sad: "😢",
+      angry: "😠",
+      surprised: "😲",
+      disgusted: "🤢",
+      fearful: "😱",
+      neutral: "😐"
+    };
+
     function setup() {
-      createCanvas(windowWidth, windowHeight); // crea una zona de dibuix de la mida de la finestra
-      video = createCapture(VIDEO);            // activa la webcam
-      video.size(480, 480);                    // estableix la mida del vídeo
-      video.hide();                            // amaga el vídeo per defecte
+      createCanvas(windowWidth, windowHeight);
 
-      // Configura els paràmetres del reconeixement facial
-      const options = {
-        withLandmarks: true,
-        withExpressions: true,
-        withDescriptors: false
-      };
-      faceapi = ml5.faceApi(video, options, modelReady); // inicialitza el model amb la webcam
+      video = createCapture(VIDEO);
+      video.size(320, 240);
+      video.hide();
+      video.elt.muted = true;
+      video.elt.playsinline = true;
+
+      const options = { withLandmarks: false, withExpressions: true, withDescriptors: false };
+      faceapi = ml5.faceApi(video, options, () => {
+        modelsReady = true;
+        document.getElementById('loading-screen').style.display = 'none';
+        faceapi.detect(gotResults);
+      });
     }
 
-    // Redimensiona el canvas si canvia la mida de la finestra
     function windowResized() {
       resizeCanvas(windowWidth, windowHeight);
     }
 
-    // Quan el model està carregat correctament
-    function modelReady() {
-      faceapi.detect(gotResults); // comença a detectar cares
-    }
-
-    // Quan hi ha resultats del model
-    function gotResults(err, result) {
-      if (err) return console.error(err); // mostra error si hi ha
-      detections = result; // desa les dades de la detecció
-      if (!modelsMostrats) {
-        document.getElementById("loading-screen").style.display = "none";
-        modelsMostrats = true;
+    function gotResults(err, results) {
+      if (err) {
+        console.error(err);
+        document.getElementById('loading-screen').innerHTML =
+          '<p style="color: red">Error! Comprova la càmera i actualitza.</p>';
+        return;
       }
-      faceapi.detect(gotResults); // torna a detectar de forma continua
+      detections = results;
+      if (detections.length > 0) updateCurrentExpression();
+      faceapi.detect(gotResults);
     }
 
-    // Funció de dibuix
+    function updateCurrentExpression() {
+      let maxIntensity = 0;
+      detections.forEach(face => {
+        const expr = face.expressions;
+        const dominant = Object.keys(expr).reduce((a, b) => expr[a] > expr[b] ? a : b);
+        if (expr[dominant] > maxIntensity) {
+          currentExpression = { dominant: dominant, intensity: expr[dominant] };
+          maxIntensity = expr[dominant];
+        }
+      });
+    }
+
     function draw() {
-      background(255); // fons blanc
+      background(240);
 
-      // Inicialitzem l'estat emocional detectat
-      let dominant = "neutral", intensity = 0;
-      if (detections.length > 0) {
-        let expr = detections[0].expressions;
-        dominant = Object.keys(expr).reduce((a, b) => expr[a] > expr[b] ? a : b);
-        intensity = expr[dominant];
+      // Transició suau de la intensitat
+      smoothIntensity = lerp(smoothIntensity, currentExpression.intensity, 0.1);
+
+      // Dibuixa la figura geomètrica gran centrada segons el sentiment
+      push();
+      translate(width/2, height/2);
+      switch(currentExpression.dominant) {
+        case 'happy':
+        push();
+        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800  
+        figuraFelic(smoothIntensity);
+        pop();
+        break;
+        
+        case 'sad':
+        push();
+        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800       
+        figuraTrist(smoothIntensity); 
+        pop();
+        break;
+        
+        //Enfadat
+        case 'angry':
+        push();
+        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800      
+        figuraEnfadat(smoothIntensity); 
+        pop();
+        break;
+        
+        //Disgustat
+        case 'disgusted':  
+        push();
+        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800
+        figuraFastiguejat(smoothIntensity); 
+        pop();
+        break;
+       
+        //Sorprès
+        case 'surprised': 
+        push();
+        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800
+        figuraSorprès(smoothIntensity); 
+        pop();
+        break;
+
+        case 'fearful':    
+        push();
+        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800
+        figuraEspantat(smoothIntensity); 
+        pop();
+        break;
+
+        default:       
+        push();
+        translate(width/2 - 1000, height/2 - 600); // 300 i 400 són la meitat de 600x800    
+        figuraNeutral(smoothIntensity); 
+        pop();
+        break;
       }
+      pop();
 
-      // Calcular escala i marges per centrar el dibuix virtual a la pantalla
-      let scaleFactor = min(width / VIRTUAL_W, height / VIRTUAL_H);
-      let offsetX = (width - VIRTUAL_W * scaleFactor) / 2;
-      let offsetY = (height - VIRTUAL_H * scaleFactor) / 2;
+      // Mostra el vídeo petit a la cantonada inferior dreta
+      let vW = 160, vH = 120;
+      let margin = 20;
+      imageMode(CORNER);
+      push();
+      translate(width - vW - margin, height - vH - margin);
+      stroke(255);
+      strokeWeight(2);
+      fill(0, 180);
+      rect(-5, -5, vW+10, vH+10, 12);
+      image(video, 0, 0, vW, vH);
+      pop();
+      
 
-      // Aplicar transformacions per mantenir el dibuix centrat i escalat
-      push(); // desa l'estat de transformació
-      translate(offsetX, offsetY); // desplaça l'origen
-      scale(scaleFactor); // redimensiona proporcionalment
-      drawArt(dominant, intensity); // dibuixa la figura segons l'expressió
-      pop(); // recupera l'estat anterior
-
-      // Mostra el text amb l'expressió dominant (fora de transformacions)
+      // Text informatiu a dalt amb emoticona
+      fill(30, 180);
       noStroke();
-      fill(44,169,225);
-      textSize(32);
       textAlign(CENTER, TOP);
-      text("Expressió: " + dominant, width / 2, 10);
-      textSize(24);
-      text("Intensitat: " + Math.round(intensity * 100) + "%", width / 2, 50);
-
-      // Mostra el vídeo si hi ha detecció
-      if (detections.length > 0) {
-        image(video, width - 140, height - 140, 120, 120);
-      }
+      textSize(28);
+      let label = emotionsCA[currentExpression.dominant] || "neutral";
+      let emoji = emotionsEmoji[currentExpression.dominant] || "😐";
+      text(
+        `${emoji} Sentiment: ${label} (${(smoothIntensity*100).toFixed(0)}%)`,
+        width/2, 20
+      );
     }
 
-    // Dibuixa diferents figures depenent de l'estat emocional
-    function drawArt(dominant, intensity) {
-      noFill();
-      strokeWeight(4);
+    // Figures irregulars per a cada sentiment
+    function figuraFelic(intensity) {
+   r = map(intensity, 0, 1, 255, 255);
+   g = map(intensity, 0, 1, 255, 255);
+   b = map(intensity, 0, 1, 255, 0);
+   r2 = map(intensity, 1, 0, 255, 255);
+   g2 = map(intensity, 1, 0, 255, 255);
+   b2 = map(intensity, 1, 0, 255, 0);
+   s = map(intensity, 0.5,1, 0, 7)
 
-        switch (dominant) {
-        case "neutral":
-        
-  function setup() {
-  createCanvas(600, 600);
-}
 
-function draw() {
-  background(220);
+  background(r2, g2, b2);
   
   fill(220, 190, 160)
   beginShape();//Cara
