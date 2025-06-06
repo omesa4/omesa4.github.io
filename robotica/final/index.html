@@ -177,28 +177,61 @@
         <p> Després de buscar la partitura i les tons de les notes en Arduino vam establir les variables de les notes i la duració d'aquestes (tot dins d'arrays)</p>
      <main>   
 <pre><class="text" onclick="copyCode(this)"><i class="fas fa-copy"></i><code class="language-arduino">
-void setup()
-{
-  tone(4, 500);
+// Notes (en Hz)
+double NOTE_E5 = 659.25;
+double NOTE_D5 = 587.33;
+double NOTE_C5 = 523.25;
+double NOTE_B4 = 493.88;
+double NOTE_A4 = 440.00;
+double NOTE_G4 = 392.00;
+double NOTE_FS4 = 369.99;
+double NOTE_E4 = 329.63;
+double NOTE_D4 = 293.66;
+double NOTE_C4 = 261.63;
+double P = 0; // pausa
+
+// Duració de les notes
+int negra = 250;
+int corchea = 125;
+int blanca = 500;
+int pausa = 50;
+
+// Melodia Angry Birds (simplificada)
+double angryBirds[] = {
+  NOTE_C5, NOTE_C5, NOTE_C5, NOTE_G4,
+  NOTE_C5, NOTE_C5, NOTE_C5, NOTE_E5,
+  NOTE_D5, NOTE_C5, NOTE_B4, NOTE_C5,
+  P, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_G5,
+  NOTE_E5, NOTE_E5, NOTE_E5, NOTE_C5
+};
+
+int duracioNota[] = {
+  corchea, corchea, negra, corchea,
+  corchea, corchea, negra, corchea,
+  corchea, corchea, negra, negra,
+  corchea, corchea, corchea, negra, corchea,
+  corchea, corchea, negra, negra
+};
+
+void setup() {
+  // Res a fer aquí
 }
 
 void loop() {
-     #define NOTE_C 261.626 //DO
-     #define NOTE_D 293.665 //RE
-     #define NOTE_E 329.628 //MI
-     #define NOTE_F 349.228 //FA
-     #define NOTE_G 391.995 //SOL
-     #define NOTE_A 440.000 //LA
-     #define NOTE_B 493.883 //SI
-     #define NOTE_S 000.000 //SILENCI
-int angrybirds[]{
-    NOTE_E,NOTE_F,NOTE_G,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,
-    NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,
-    NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,
-    NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,
-    NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,NOTE_,
+  int numNotas = sizeof(angryBirds) / sizeof(angryBirds[0]);
+
+  for (int i = 0; i < numNotas; i++) {
+    if (angryBirds[i] > 0) {
+      tone(8, angryBirds[i]);
+    }
+    delay(duracioNota[i]);
+    noTone(8);
+    delay(pausa); // pausa entre notes
+  }
+
+  delay(2000); // pausa abans de tornar a començar
 }
-}
+
  </code></pre>
      </main>
       </div>
