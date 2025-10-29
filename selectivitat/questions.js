@@ -189,4 +189,5 @@ const questions = [
         images: `<img src="ruta/a/imatgePregunta.jpg" alt="Imatge relacionada amb la pregunta">`  // Imatge opcional al final de la pregunta
     }
 ];
+window.questions = questions;
 
