@@ -19,7 +19,6 @@ const questions = [
         <br>
         $P_{cap} = \eta \cdot I \cdot S = 0,6073 \cdot 900 \cdot 2,2 = 1202 \text{ W}$
         <br><br>
-        // PARTE 3 de 3
         <strong>b) Nombre de captadors:</strong>
         <br>
         Energia necessària: $Q = m \cdot c_e \cdot (T_{cal} - T_a) = 200 \cdot 4180 \cdot (55 - 18) = 30,93 \text{ MJ}$
