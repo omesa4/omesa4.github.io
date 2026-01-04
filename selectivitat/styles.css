@@ -100,22 +100,30 @@
             color: red;
         }
 
-        .solution-button {
-            width: 100%;
-            background-color: #e67e22;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
+        /* Botó de solució estil Neó */
+.solution-button {
+    width: 100%;
+    background-color: #bc13fe; /* Morat base */
+    color: white;
+    border: 2px solid #2cfc03; /* Verd neó */
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 0 10px #bc13fe, 0 0 5px #2cfc03;
+}
 
-        .solution-button:hover {
-            background-color: #d35400;
-        }
+.solution-button:hover {
+    background-color: #2cfc03; /* Canvia a verd al passar el ratolí */
+    color: #000;
+    box-shadow: 0 0 20px #2cfc03, 0 0 10px #bc13fe;
+    transform: translateY(-2px);
+}
+   
 
         .ocult {
             display: none;
