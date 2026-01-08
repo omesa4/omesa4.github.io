@@ -2,12 +2,16 @@ const questions = [
 {
     type: "exercicis",
     category: "energia",
-    text: `<br><strong>Exercici 1</strong>
-    <br>Volem utilitzar captadors solars de superfície $S = 2,2 \text{ m}^2$ per a produir aigua calenta en un habitatge familiar. Els captadors es complementen amb un escalfador
-    elèctric per als dies en què no hi ha prou radiació solar. El rendiment energètic d’un captador solar s’obté mitjançant l’equació $\eta = \eta_0 - k_1 \frac{T_m - T_a}{I}$, en què $\eta_0$ és el rendiment òptic, $k_1$ és el coeficient de pèrdues, $T_m$ és la temperatura de treball del captador, $T_a$ és la temperatura ambient i $I$ és la irradiància solar. En una prova de funcionament s’han obtingut les dades següents: $I = 900 \text{ W/m}^2$, $T_a = 18 \text{ °C}$, $T_m = 55 \text{ °C}$, $\eta_0 = 0,78$ i $k_1 = 4,2 \text{ W/(m}^2 \cdot \text{K)}$.
-    <br><br><strong>a)</strong> Determineu el rendiment $\eta$ del captador en aquestes condicions i la potència $P_{cap}$ que cada captador aporta a l’aigua. [1 punt]
-    <br><strong>b)</strong> Si es volen escalfar $V = 200 \text{ L}$ d’aigua des de la temperatura ambient fins a $T_{cal} = 55 \text{ °C}$ en un temps $t = 4 \text{ h}$ amb una irradiància solar mitjana $I_{mitj} = 750 \text{ W/m}^2$ i un rendiment del captador constant $\eta = 0,55$, determineu el nombre $n$ de captadors necessari (arrodonit per defecte). [1 punt]
-    <br><strong>c)</strong> Si només disposem de dos captadors de les mateixes característiques que els de l’apartat b), determineu la potència $P_{elec}$ de l’escalfador elèctric de suport necessari per a escalfar l’aigua en el mateix temps i condicions de l’apartat b). [0,5 punts]
+    text: `<br> En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte
+està format per quatre membres: president, secretari, vocal 1 i vocal 2. La decisió es pren per
+majoria i, en cas d’empat, preval el vot de qualitat del president.
+Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+
+<img src="#" alt="Imatge relacionada amb la pregunta">
+
+    <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
+    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la.  [1 punt]
+    <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
     <br><br>`, 
     correctAnswer: "",  
     steps: `
