@@ -40,6 +40,53 @@ Responeu a les qüestions que hi ha a continuació utilitzant les variables d’
         $P_{elec} = \frac{Q_{elec}}{t} = \frac{4,79 \cdot 10^6}{4 \cdot 3600} = 332,6 \text{ W}$
     `, 
 },
+
+    {
+    type: "exercicis",
+    category: "energia",
+    text: `<br>Una pantalla de projecció té una massa m = 2 kg a la
+part inferior per a mantenir-la sempre tibada. Un motor
+reductor de rendiment ηmot = 0,9 és l’encarregat de recollir
+la pantalla en el corró de diàmetre d = 250 mm, que es troba
+articulat amb el sostre al punt P.
+El punt inferior de la pantalla es desplaça verticalment
+des d’una altura \\(h_1 = 0{,}3\\,\\text{m}\\) fins a h2 = 2 m en t = 8 s, a velocitat constant. Si la massa de la resta d’elements és negligible,
+determineu:
+
+<img src="#" alt="Imatge relacionada amb la pregunta">
+
+    <br><br><strong>a)</strong> La potència elèctrica mitjana \\(P_{elèctr}\\) consumida pel motor reductor. [1 punt]
+    <br><strong>b)</strong> La velocitat angular de l’eix de sortida del motor reductor \\(ω_{mot}\\) i el parell aplicat per aquest al tambor \\(Γ_{mot}\\).  [1 punt]
+    <br><strong>c)</strong> L’increment percentual, \\(Inc\\), de la potència elèctrica si es volgués fer pujar la pantalla
+amb la meitat del temps. [0,5 punts]
+    <br><br>`, 
+    correctAnswer: "",  
+    steps: `
+        <strong>Solució pas a pas:</strong>
+        <br><br>
+        <strong>a) Rendiment i potència del captador:</strong>
+        <br>
+        $\eta = 0,78 - 4,2 \frac{55 - 18}{900} = 0,78 - 0,1727 = 0,6073$
+        <br>
+        $P_{cap} = \eta \cdot I \cdot S = 0,6073 \cdot 900 \cdot 2,2 = 1202 \text{ W}$
+        <br><br>
+        <strong>b) Nombre de captadors:</strong>
+        <br>
+        Energia necessària: $Q = m \cdot c_e \cdot (T_{cal} - T_a) = 200 \cdot 4180 \cdot (55 - 18) = 30,93 \text{ MJ}$
+        <br>
+        Energia per captador: $Q_{cap} = \eta \cdot I_{mitj} \cdot S \cdot t = 0,55 \cdot 750 \cdot 2,2 \cdot (4 \cdot 3600) = 13,07 \text{ MJ}$
+        <br>
+        $n = \frac{Q}{Q_{cap}} = \frac{30,93}{13,07} = 2,36 \rightarrow$ <strong>2 captadors</strong> (per defecte).
+        <br><br>
+        <strong>c) Potència de l'escalfador elèctric:</strong>
+        <br>
+        Energia total aportada pels 2 captadors: $Q_{2cap} = 2 \cdot 13,07 = 26,14 \text{ MJ}$
+        <br>
+        Energia que falta (elèctrica): $Q_{elec} = Q - Q_{2cap} = 30,93 - 26,14 = 4,79 \text{ MJ}$
+        <br>
+        $P_{elec} = \frac{Q_{elec}}{t} = \frac{4,79 \cdot 10^6}{4 \cdot 3600} = 332,6 \text{ W}$
+    `, 
+},
              
     {
         type: "questions", // Tipus de pregunta
