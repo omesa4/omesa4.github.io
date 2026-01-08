@@ -36,26 +36,7 @@ const questions = [
         $P_{elec} = \frac{Q_{elec}}{t} = \frac{4,79 \cdot 10^6}{4 \cdot 3600} = 332,6 \text{ W}$
     `, 
 },
-];
-.botó-solució {
-    background-color: #bc13fe; /* Morado base */
-    color: #fff;
-    border: 2px solid #2cfc03; /* Borde verde neón */
-    box-shadow: 0 0 10px #bc13fe, 0 0 20px #2cfc03; /* Resplandor neón */
-    transition: 0.3s;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.botó-solució:hover {
-    background-color: #2cfc03;
-    color: #000;
-    box-shadow: 0 0 20px #2cfc03, 0 0 40px #bc13fe;
-}
-*/
-               
+             
     {
         type: "questions", // Tipus de pregunta
         category: "energia",
@@ -146,5 +127,3 @@ const questions = [
         images: `<img src="ruta/a/imatgePregunta.jpg" alt="Imatge relacionada amb la pregunta">`  // Imatge opcional al final de la pregunta
     }
 ];
-window.questions = questions;
-
