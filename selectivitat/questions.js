@@ -148,7 +148,7 @@ amb la meitat del temps. [0,5 punts]
     `, 
 },
 {
-    type: "questions",
+    type: "exercicis",
     category: "mecanica",
     text: `<br>La figura mostra un esquema simplificat d’una grua per a elevar caixes de fruita. 
     La barra OBC, de longitud \\(2l = 4\\,\\text{m}\\) (essent B el seu punt mitjà), es troba articulada al terra al punt O. 
@@ -211,8 +211,137 @@ amb la meitat del temps. [0,5 punts]
         <img src="ruta/a/imatgeMecanica.jpg" alt="Esquema de forces i angles">`
     `, 
 },
+{
+    type: "exercicis",
+    category: "energia",
+    text: `<br>Una espremedora domèstica per a fer suc de taronja està formada per un motor elèctric de corrent continu d’imants permanents i un reductor d’engranatges, la sortida del qual fa girar la peça en forma de con que permet extreure suc de les taronges. El parell del motor és donat per l’expressió:
+    <br>
+    \\[ Γ_{mot} = (0,08U – 0,01ω)\\,\\text{N m} \\]
+    en què \\(U = 24\\,\\text{V}\\) és la tensió d’alimentació del motor i \\(ω\\) és la seva velocitat angular (en rad/s). 
+    <br>La sortida del motor està connectada a l’entrada del reductor. Aquest està format per un pinyó de \\(z_p = 9\\) dents que engrana amb una roda dentada de \\(z_r = 62\\) dents.
+    <br><br>
+    <strong>a)</strong> Determineu la relació de transmissió \\(τ = ω_{sortida}/ω_{entrada}\\) del reductor. [0,5 punts]
+    <br>
+    <strong>b)</strong> Dibuixeu, indicant les escales, la corba característica parell-velocitat del motor i determineu-ne la velocitat de gir màxima, \\(n_{màx}\\). [0,5 punts]
+    <br>
+    <strong>c)</strong> En règim nominal, el motor gira a \\(n_{mot} = 1000\\,\\text{min}^{-1}\\) i té un rendiment \\(η = 0,55\\). Determineu la intensitat \\(I\\) que circula pel motor. [1 punt]
+    <br>
+    <strong>d)</strong> La velocitat angular \\(ω_{con}\\) de la peça en forma de con que extreu el suc de les taronges. [0,5 punts]
+    <br><br>`,
+    correctAnswer: "",
+    steps: `
+        <strong>a) Relació de transmissió:</strong>
+        <br>
+        - La relació de transmissió en engranatges és:
+        \\[
+        τ = \\frac{ω_{sortida}}{ω_{entrada}} = \\frac{z_p}{z_r} = \\frac{9}{62} = 0,1452
+        \\]
+        <br><strong>b) Corba característica i velocitat màxima:</strong>
+        <br>
+        - L'equació del parell amb \\(U = 24\\,\\text{V}\\) és: \\(Γ_{mot} = 0,08(24) - 0,01ω = 1,92 - 0,01ω\\).
+        - El parell d'arrencada (\\(ω = 0\\)) és \\(Γ_{arr} = 1,92\\,\\text{N m}\\).
+        - La velocitat de buit o màxima (\\(Γ_{mot} = 0\\)):
+        \\[
+        0 = 1,92 - 0,01ω_{màx} \\implies ω_{màx} = \\frac{1,92}{0,01} = 192\\,\\text{rad/s}
+        \\]
+        - Convertint a min\\(^{-1}\\):
+        \\[
+        n_{màx} = 192\\,\\text{rad/s} \\times \\frac{60}{2π} = 1833,5\\,\\text{min}^{-1}
+        \\]
+        <br><strong>c) Intensitat nominal:</strong>
+        <br>
+        - Calculem el parell a \\(n_{mot} = 1000\\,\\text{min}^{-1}\\):
+        \\[
+        ω = 1000 \\times \\frac{2π}{60} = 104,72\\,\\text{rad/s}
+        \\]
+        \\[
+        Γ_{mot} = 1,92 - (0,01 \\times 104,72) = 0,8728\\,\\text{N m}
+        \\]
+        - Potència útil (mecànica):
+        \\[
+        P_{útil} = Γ_{mot} \\times ω = 0,8728 \\times 104,72 = 91,4\\,\\text{W}
+        \\]
+        - Potència absorbida (elèctrica) mitjançant el rendiment:
+        \\[
+        P_{abs} = \\frac{P_{útil}}{η} = \\frac{91,4}{0,55} = 166,18\\,\\text{W}
+        \\]
+        - Intensitat:
+        \\[
+        I = \\frac{P_{abs}}{U} = \\frac{166,18\\,\\text{V}}{24\\,\\text{V}} = 6,92\\,\\text{A}
+        \\]
+        <br><strong>d) Velocitat angular del con:</strong>
+        <br>
+        - Utilitzant la relació de transmissió trobada a l'apartat a:
+        \\[
+        ω_{con} = ω_{mot} \\times τ = 104,72\\,\\text{rad/s} \\times 0,1452 = 15,2\\, \\text{rad/s}
+        \\]
+        <br><br>
+        <img src="ruta/a/grafica_motor.jpg" alt="Gràfica parell-velocitat">`
+`, 
+},
+    {
+    type: "exercicis",
+    category: "sistemes_control",
+    text: `<br>Un semàfor té un circuit de control d’errors que activa una alarma si els tres llums estan apagats o si com a mínim dos estan encesos a la vegada, tret que siguin el verd i el groc.
+    <br>Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents (1: encès, 0: apagat):
+    <br>\\(V\\): Verd, \\(G\\): Groc, \\(R\\): Vermell. L'alarma s'activa quan \\(A = 1\\).
+    <br><br>
+    <strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
+    <br>
+    <strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+    <br>
+    <strong>c)</strong> Dibuixeu l’esquema de portes lògiques equivalent. [0,5 punts]
+    <br><br>`,
+    correctAnswer: "",
+    steps: `
+        <strong>a) Taula de veritat:</strong>
+        <br>
+        L'alarma \\(A\\) s'activa (1) si:
+        1. Tots apagats: (0,0,0)
+        2. Dos o més encesos: (0,1,1), (1,0,1), (1,1,1) 
+        *Nota: El cas Verd i Groc (1,1,0) està exclòs segons l'enunciat.*
+        <br><br>
+        <table>
+            <thead>
+                <tr><th>V</th><th>G</th><th>R</th><th>A</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+                <tr><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                <tr><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                <tr><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+                <tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+            </tbody>
+        </table>
+        <br><strong>b) Funció lògica i simplificació:</strong>
+        <br>
+        - Escrivim la funció com a suma de minterms (on \\(A=1\\)):
+        \\[
+        A = \\bar{V}\\bar{G}\\bar{R} + \\bar{V}GR + V\\bar{G}R + VGR
+        \\]
+        - Simplifiquem agrupant els termes amb \\(R\\):
+        \\[
+        A = \\bar{V}\\bar{G}\\bar{R} + R(\\bar{V}G + V\\bar{G} + VG)
+        \\]
+        - Aplicant mapes de Karnaugh o identitats booleanes (\\(\\bar{V}G + V\\bar{G} + VG = V + G\\)):
+        \\[
+        A = \\bar{V}\\bar{G}\\bar{R} + R(V + G)
+        \\]
+        \\[
+        A = \\bar{V}\\bar{G}\\bar{R} + RV + RG
+        \\]
+        <br><strong>c) Esquema de portes lògiques:</strong>
+        <br>
+        - Per a implementar la funció \\(A = \\bar{V}\\bar{G}\\bar{R} + RV + RG\\) necessitarem:
+        1. Portes NOT per a les entrades negades.
+        2. Portes AND per als productes.
+        3. Una porta OR final per a la suma de productes.
+        <br><br>
+        <img src="ruta/a/esquema_portes_logiques.jpg" alt="Esquema de portes lògiques del circuit d'alarma">`
 }
-             
     {
         type: "questions", // Tipus de pregunta
         category: "energia",
