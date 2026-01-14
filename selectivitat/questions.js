@@ -7,7 +7,7 @@ està format per quatre membres: president, secretari, vocal 1 i vocal 2. La dec
 majoria i, en cas d’empat, preval el vot de qualitat del president.
 Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
 <br>
-<img src="#" alt="Imatge relacionada amb la pregunta">
+<img src="202306P2.png" alt="Imatge relacionada amb la pregunta">
 <br>
     <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
     <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la.  [1 punt]
@@ -17,9 +17,13 @@ Responeu a les qüestions que hi ha a continuació utilitzant les variables d’
     steps: `
         <strong>a) Rendiment i potència del captador:</strong>
         <br>
+        \\[
         $\eta = 0,78 - 4,2 \frac{55 - 18}{900} = 0,78 - 0,1727 = 0,6073$
+        \\]
         <br>
+        \\[
         $P_{cap} = \eta \cdot I \cdot S = 0,6073 \cdot 900 \cdot 2,2 = 1202 \text{ W}$
+        \\]
         <br><br>
         <strong>b) Nombre de captadors:</strong>
         <br>
@@ -49,8 +53,65 @@ reductor de rendiment ηmot = 0,9 és l’encarregat de recollir
 la pantalla en el corró de diàmetre d = 250 mm, que es troba
 articulat amb el sostre al punt P.
 El punt inferior de la pantalla es desplaça verticalment
-des d’una altura \\(h_1 = 0{,}3\\,\\text{m}\\) fins a h2 = 2 m en t = 8 s, a velocitat constant. Si la massa de la resta d’elements és negligible,
+des d’una altura \\(h_1 = 0{,}3\\,\\text{m}\\) fins a \\(h2 = 2\\,\\text{m}\\) en \\(t = 8\\,\\text{s}\\), a velocitat constant. Si la massa de la resta d’elements és negligible,
 determineu:
+
+<img src="#" alt="Imatge relacionada amb la pregunta">
+
+    <br><br><strong>a)</strong> La potència elèctrica mitjana \\(P_{elèctr}\\) consumida pel motor reductor. [1 punt]
+    <br><strong>b)</strong> La velocitat angular de l’eix de sortida del motor reductor \\(ω_{mot}\\) i el parell aplicat per aquest al tambor \\(Γ_{mot}\\).  [1 punt]
+    <br><strong>c)</strong> L’increment percentual, \\(Inc\\), de la potència elèctrica si es volgués fer pujar la pantalla
+amb la meitat del temps. [0,5 punts]
+    <br><br>`, 
+    correctAnswer: "",  
+    steps: `
+        <strong>Solució pas a pas:</strong>
+        <br><br>
+        <strong>a) Potència elèctrica mitjana:</strong>
+        <br>
+        \\[
+        P_{mec} = m \\times \\ g \\times \\ v = \\frac{m \\times \\ g \\times \\ (h_2 - h_1)}{t}
+        \\]
+        \\[
+        P_{mec} = \\frac{2\\,\\text{kg} \\times \\ 9,81\\,\\text{m/s^2} \\times \\ (2\\,\\text{m} - 0,3\\,\\text{m})}{8\\,\\text{s}} = 
+        \\]
+        \\[
+        η_{mec} = \\frac{P_{mec}}{P_{elec}}
+        \\]
+        \\[
+        P_{elec = \\frac{P_{mec}}{η_{mec}} = 
+        \\]
+        <br>
+        $P_{cap} = \eta \cdot I \cdot S = 0,6073 \cdot 900 \cdot 2,2 = 1202 \text{ W}$
+        <br><br>
+        <strong>b) Nombre de captadors:</strong>
+        <br>
+        Energia necessària: $Q = m \cdot c_e \cdot (T_{cal} - T_a) = 200 \cdot 4180 \cdot (55 - 18) = 30,93 \text{ MJ}$
+        <br>
+        Energia per captador: $Q_{cap} = \eta \cdot I_{mitj} \cdot S \cdot t = 0,55 \cdot 750 \cdot 2,2 \cdot (4 \cdot 3600) = 13,07 \text{ MJ}$
+        <br>
+        $n = \frac{Q}{Q_{cap}} = \frac{30,93}{13,07} = 2,36 \rightarrow$ <strong>2 captadors</strong> (per defecte).
+        <br><br>
+        <strong>c) Potència de l'escalfador elèctric:</strong>
+        <br>
+        Energia total aportada pels 2 captadors: $Q_{2cap} = 2 \cdot 13,07 = 26,14 \text{ MJ}$
+        <br>
+        Energia que falta (elèctrica): $Q_{elec} = Q - Q_{2cap} = 30,93 - 26,14 = 4,79 \text{ MJ}$
+        <br>
+        $P_{elec} = \frac{Q_{elec}}{t} = \frac{4,79 \cdot 10^6}{4 \cdot 3600} = 332,6 \text{ W}$
+    `, 
+},
+{
+        type: "exercicis",
+    category: "energia",
+    text: `<br>Un establiment turístic es planteja posar una estufa de pèŀlets o de gasoil per a cobrir
+una demanda energètica anual Econs = 15 000 kW h. L’estufa de pèŀlets té un rendiment
+ηpèl = 0,94 i la instaŀlació necessita una inversió inicial cinv_pèl = 7 000 €. Pel que fa a la installació de l’estufa de gasoil, l’estufa té un rendiment ηgas = 0,82 i la instaŀlació necessita una
+inversió inicial cinv_gas = 2 000 €. En ambdós casos el cost del manteniment anual s’estima
+en cmant_pèl = cmant_gas = 400 €. El poder calorífic del pèŀlet és pc_pèl = 4,8 kW h/kg i el seu preu
+cpèl = 0,4 €/kg. El poder calorífic del gasoil és pc_gas = 44,8 MJ/kg, la seva densitat ρ = 0,85 kg/L
+i el seu preu cgas = 1,3 €/L.
+Determineu:
 
 <img src="#" alt="Imatge relacionada amb la pregunta">
 
@@ -126,7 +187,7 @@ amb la meitat del temps. [0,5 punts]
             <br><br>
             <img src="ruta/a/imatgeResposta.jpg" alt="Imatge relacionada amb la resposta">`,  // Imatge opcional al final de la resposta
         images: `<img src="ruta/a/imatgePregunta.jpg" alt="Imatge relacionada amb la pregunta">`  // Imatge opcional al final de la pregunta
-    },
+    },             
     {
         type: "questions", // Tipus de pregunta
         category: "materials",
