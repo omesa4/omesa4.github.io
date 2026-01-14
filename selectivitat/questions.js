@@ -6,17 +6,15 @@ const questions = [
 està format per quatre membres: president, secretari, vocal 1 i vocal 2. La decisió es pren per
 majoria i, en cas d’empat, preval el vot de qualitat del president.
 Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
-
+<br>
 <img src="#" alt="Imatge relacionada amb la pregunta">
-
+<br>
     <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
     <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la.  [1 punt]
     <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
     <br><br>`, 
     correctAnswer: "",  
     steps: `
-        <strong>Solució pas a pas:</strong>
-        <br><br>
         <strong>a) Rendiment i potència del captador:</strong>
         <br>
         $\eta = 0,78 - 4,2 \frac{55 - 18}{900} = 0,78 - 0,1727 = 0,6073$
@@ -38,6 +36,7 @@ Responeu a les qüestions que hi ha a continuació utilitzant les variables d’
         Energia que falta (elèctrica): $Q_{elec} = Q - Q_{2cap} = 30,93 - 26,14 = 4,79 \text{ MJ}$
         <br>
         $P_{elec} = \frac{Q_{elec}}{t} = \frac{4,79 \cdot 10^6}{4 \cdot 3600} = 332,6 \text{ W}$
+        <br>
     `, 
 },
 
