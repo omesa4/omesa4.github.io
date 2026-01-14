@@ -147,6 +147,71 @@ amb la meitat del temps. [0,5 punts]
         $P_{elec} = \frac{Q_{elec}}{t} = \frac{4,79 \cdot 10^6}{4 \cdot 3600} = 332,6 \text{ W}$
     `, 
 },
+{
+    type: "questions",
+    category: "mecanica",
+    text: `<br>La figura mostra un esquema simplificat d’una grua per a elevar caixes de fruita. 
+    La barra OBC, de longitud \\(2l = 4\\,\\text{m}\\) (essent B el seu punt mitjà), es troba articulada al terra al punt O. 
+    A l’extrem C s’hi pengen 3 caixes de fruita de 25 kg cadascuna (\\(m = 75\\,\\text{kg}\\)). La massa de la resta d’elements és negligible.
+    <br>La barra es mou mitjançant un cilindre hidràulic de diàmetre interior \\(d_{int} = 40\\,\\text{mm}\\), que es troba articulat a P i a B. 
+    Els punts O i P es troben sobre la mateixa vertical a una distància \\(l = 2\\,\\text{m}\\).
+    El cilindre permet modificar la coordenada \\(φ\\), que pren valors entre \\(0^\\circ < φ < 65^\\circ\\). 
+    <br><br>
+    <strong>a)</strong> Dibuixeu el diagrama de cos lliure de la barra OBC. [0,5 punts]
+    <br>
+    <strong>b)</strong> Trobeu la relació entre les coordenades \\(φ\\) i \\(α\\). [0,5 punts]
+    <br>
+    <strong>c)</strong> Sabent que el cilindre hidràulic manté el sistema en equilibri i que \\(φ = 30^\\circ\\), determineu la força, \\(F_c\\), que fa el cilindre hidràulic. [1 punt]
+    <br>
+    <strong>d)</strong> La pressió relativa \\(p_{int}\\) a l’interior del cilindre. [0,5 punts]
+    <br><br>`,
+    correctAnswer: "",
+    steps: `
+        <strong>a) Diagrama de cos lliure:</strong>
+        <br>
+        - Sobre la barra actuen: la força del cilindre \\(F_c\\) en el punt B, el pes de les caixes \\(P = m \\times g\\) en el punt C, i la reacció de l'articulació \\(R_O\\) en el punt O.
+        <br><br>
+        <strong>b) Relació entre \\(φ\\) i \\(α\\):</strong>
+        <br>
+        - El triangle OPB és isòsceles, ja que \\(OP = l\\) i \\(OB = l\\).
+        - Per la suma d'angles d'un triangle:
+        \\[
+        180^\\circ = (90^\\circ + φ) + α + α = 90^\\circ + φ + 2α
+        \\]
+        \\[
+        2α = 90^\\circ - φ \\implies α = 45^\\circ - \\frac{φ}{2}
+        \\]
+        <br><strong>c) Força del cilindre \\(F_c\\) per a \\(φ = 30^\\circ\\):</strong>
+        <br>
+        - Primer calculem l'angle \\(α\\):
+        \\[
+        α = 45^\\circ - \\frac{30^\\circ}{2} = 30^\\circ
+        \\]
+        - Sumatòria de moments respecte a O (en equilibri):
+        \\[
+        \\sum M_O = 0 \\implies F_c \\times l \\times \\sin(α) - m \\times g \\times 2l \\times \\cos(φ) = 0
+        \\]
+        \\[
+        F_c = \\frac{m \\times g \\times 2l \\times \\cos(φ)}{l \\times \\sin(α)} = \\frac{75\\,\\text{kg} \\times 9,8\\,\\text{m/s^2} \\times 2 \\times \\cos(30^\\circ)}{\\sin(30^\\circ)}
+        \\]
+        \\[
+        F_c = \\frac{1470 \\times 0,866}{0,5} = 2546,1\\,\\text{N}
+        \\]
+        <br><strong>d) Pressió relativa a l'interior del cilindre:</strong>
+        <br>
+        - Àrea del pistó:
+        \\[
+        A = \\frac{π \\times d_{int}^2}{4} = \\frac{π \\times (0,04\\,\\text{m})^2}{4} = 1,2566 \\times 10^{-3}\\,\\text{m^2}
+        \\]
+        - Pressió:
+        \\[
+        p_{int} = \\frac{F_c}{A} = \\frac{2546,1\\,\\text{N}}{1,2566 \\times 10^{-3}\\,\\text{m^2}} = 2,026 \\times 10^6\\,\\text{Pa} = 2,026\\,\\text{MPa}
+        \\]
+        <br><br>
+        <img src="ruta/a/imatgeMecanica.jpg" alt="Esquema de forces i angles">`
+    `, 
+},
+}
              
     {
         type: "questions", // Tipus de pregunta
