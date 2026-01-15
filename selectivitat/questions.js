@@ -619,63 +619,7 @@ amb la meitat del temps. [0,5 punts]
         <br><br>
         <img src="ruta/a/esquema_contactes_hivernacle.jpg" alt="Esquema de contactes del sistema de control del sostre">`, 
 },
-        {
-    type: "exercicis",
-    category: "sistemes_control",
-    text: `<br>Un hivernacle disposa de quatre sensors: un de temperatura (\\(T\\)), un de velocitat del vent (\\(V\\)), un de pressió atmosfèrica (\\(P\\)) i un d’humitat ambiental (\\(H\\)). Es vol dissenyar un circuit digital que controli el tancament del sostre (\\(S = 1\\)). 
-    <br>El sostre es tanca si es dona, com a mínim, una de les tres condicions següents:
-    <br>1. Si la velocitat del vent supera els 60 km/h (\\(V=1\\)).
-    <br>2. Si la temperatura ambient supera els 30 °C (\\(T=1\\)) amb una humitat ambiental inferior al 40 % (\\(H=0\\)).
-    <br>3. Si es detecta un canvi sobtat de pressió (\\(P=1\\)) quan la humitat ambiental és superior o igual al 40 % (\\(H=1\\)).
-    <br><br>
-    <strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
-    <br>
-    <strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-    <br>
-    <strong>c)</strong> Dibuixeu l’esquema de contactes equivalent. [0,5 punts]
-    <br><br>`,
-    correctAnswer: "",
-    steps: `
-        <strong>a) Taula de veritat:</strong>
-        <br>
-        Definim les variables: \\(V\\) (Vent), \\(T\\) (Temperatura), \\(P\\) (Pressió), \\(H\\) (Humitat). El tancament és \\(S\\).
-        Les condicions d'activació (\\(S=1\\)) són: \\(V=1\\) O (\\(T=1\\) i \\(H=0\\)) O (\\(P=1\\) i \\(H=1\\)).
-        <br><br>
-        <table>
-            <thead>
-                <tr><th>V</th><th>T</th><th>P</th><th>H</th><th>S</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-                <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-                <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
-                <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-                <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-                <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
-                <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-                <tr><td>1</td><td>X</td><td>X</td><td>X</td><td>1</td></tr>
-            </tbody>
-        </table>
-        <br><i>*Nota: Quan V=1, el sostre sempre es tanca independentment de la resta de variables (8 combinacions).</i>
-        <br><br>
-        <strong>b) Funció lògica i simplificació:</strong>
-        <br>
-        - Escrivim la funció directament a partir de les condicions de l'enunciat (forma simplificada):
-        \\[
-        S = V + (T \\cdot \\bar{H}) + (P \\cdot H)
-        \\]
-        - Aquesta funció ja es troba en una forma simplificada de suma de productes, on cada terme correspon a una de les condicions de seguretat de l'hivernacle.
-        <br><br>
-        <strong>c) Esquema de contactes:</strong>
-        <br>
-        - L'esquema de contactes (Ladder) es dibuixa posant en paral·lel les tres branques principals:
-        1. Un contacte normalment obert per a \\(V\\).
-        2. Una branca amb el contacte \\(T\\) en sèrie amb un contacte normalment tancat de \\(H\\) (\\(\\bar{H}\\)).
-        3. Una branca amb el contacte \\(P\\) en sèrie amb un contacte normalment obert de \\(H\\).
-        <br><br>
-        <img src="ruta/a/esquema_contactes_hivernacle.jpg" alt="Esquema de contactes del sistema de control del sostre">`,
-        },
+        
 {
     type: "exercicis",
     category: "energia",
