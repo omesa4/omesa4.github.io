@@ -208,7 +208,7 @@ amb la meitat del temps. [0,5 punts]
         p_{int} = \\frac{F_c}{A} = \\frac{2546,1\\,\\text{N}}{1,2566 \\times 10^{-3}\\,\\text{m^2}} = 2,026 \\times 10^6\\,\\text{Pa} = 2,026\\,\\text{MPa}
         \\]
         <br><br>
-        <img src="ruta/a/imatgeMecanica.jpg" alt="Esquema de forces i angles">`
+        <img src="ruta/a/imatgeMecanica.jpg" alt="Esquema de forces i angles">
     `, 
 },
 {
@@ -276,7 +276,7 @@ amb la meitat del temps. [0,5 punts]
         ω_{con} = ω_{mot} \\times τ = 104,72\\,\\text{rad/s} \\times 0,1452 = 15,2\\, \\text{rad/s}
         \\]
         <br><br>
-        <img src="ruta/a/grafica_motor.jpg" alt="Gràfica parell-velocitat">`
+        <img src="ruta/a/grafica_motor.jpg" alt="Gràfica parell-velocitat">
 `, 
 },
     {
@@ -340,7 +340,7 @@ amb la meitat del temps. [0,5 punts]
         2. Portes AND per als productes.
         3. Una porta OR final per a la suma de productes.
         <br><br>
-        <img src="ruta/a/esquema_portes_logiques.jpg" alt="Esquema de portes lògiques del circuit d'alarma">`
+        <img src="ruta/a/esquema_portes_logiques.jpg" alt="Esquema de portes lògiques del circuit d'alarma">
 `, 
 },
 {
@@ -396,7 +396,7 @@ amb la meitat del temps. [0,5 punts]
         \\]
         - Caldria instal·lar \\(q = 715\\) aerogeneradors.
         <br><br>
-        <img src="ruta/a/grafiques_eolica.jpg" alt="Gràfiques de potència i velocitat">`
+        <img src="ruta/a/grafiques_eolica.jpg" alt="Gràfiques de potència i velocitat">
 `, 
 },
     {
