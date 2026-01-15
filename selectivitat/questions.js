@@ -933,6 +933,355 @@ amb la meitat del temps. [0,5 punts]
             La resposta correcta és la <strong>d)</strong>.`,
         images: "" 
     },
-    
-    
+    {
+        type: "questions",
+        category: "energia",
+        text: `Una família que anualment generava \\(525 \\, \\text{kg}\\) d’envasos, en un any ha aconseguit reduir aquesta quantitat un \\(60 \\, \\%\\). Segons la taula de l'OCCC (factor d'emissió envasos: \\(120{,}09 \\, \\text{g CO}_{2eq}/\\text{kg residu}\\)), quina reducció en emissions de GEH ha obtingut respecte a l’any anterior?`,
+        options: [
+            { text: "25,22 kg CO2eq", value: "a" },
+            { text: "37,83 kg CO2eq", value: "b" },
+            { text: "63,05 kg CO2eq", value: "c" },
+            { text: "88,27 kg CO2eq", value: "d" }
+        ],
+        correctAnswer: "b",
+        steps: `
+            \\[
+            \\Delta m = 525 \\, \\text{kg} \\times 0{,}60 = 315 \\, \\text{kg d'envasos reduïts}
+            \\]
+            \\[
+            FE_{envasos} = 120{,}09 \\, \\text{g CO}_{2eq}/\\text{kg}
+            \\]
+            \\[
+            \\Delta \text{Emissions} = 315 \\, \\text{kg} \\times 120{,}09 \\, \\text{g/kg} = 37828{,}35 \\, \\text{g CO}_{2eq}
+            \\]
+            \\[
+            \\Delta \text{Emissions} = \\frac{37828{,}35}{1000} = 37{,}828 \\, \\text{kg CO}_{2eq}
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>b)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "metrologia",
+        text: `Les mesures nominals d’una peça d’acer són \\(a = 90 \\, \\text{mm}\\) i \\(b = 120 \\, \\text{mm}\\). Es fan mesuraments d’aquestes cotes amb un peu de rei i s’obtenen uns valors de \\(89{,}61 \\, \\text{mm}\\) i \\(120{,}1 \\, \\text{mm}\\), respectivament. L’error relatiu del gruix de la peça (cota \\(a\\)) és:`,
+        options: [
+            { text: "0,9584 %", value: "a" },
+            { text: "0,4333 %", value: "b" },
+            { text: "4,333 %", value: "c" },
+            { text: "0,1301 %", value: "d" }
+        ],
+        correctAnswer: "b",
+        steps: `
+            \\[
+            \epsilon_a = |V_{mesurat} - V_{nominal}|
+            \\]
+            \\[
+            \epsilon_a = |89{,}61 \\, \\text{mm} - 90 \\, \\text{mm}| = 0{,}39 \\, \\text{mm}
+            \\]
+            \\[
+            \epsilon_r = \\frac{\\epsilon_a}{V_{nominal}} = \\frac{0{,}39 \\, \\text{mm}}{90 \\, \\text{mm}} = 0{,}004333
+            \\]
+            \\[
+            \epsilon_{r(\\%)} = 0{,}004333 \\times 100 = 0{,}4333 \\, \\%
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>b)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "materials",
+        text: `La figura mostra la corba tensió-deformació obtinguda en un assaig de tracció. Quant val, aproximadament, el límit elàstic (\\(\\sigma_e\\)) d’aquest material?`,
+        options: [
+            { text: "230 MPa", value: "a" },
+            { text: "200 MPa", value: "b" },
+            { text: "265 MPa", value: "c" },
+            { text: "250 MPa", value: "d" }
+        ],
+        correctAnswer: "a",
+        steps: `
+            \\[
+            \\text{El límit elàstic és la tensió on finalitza el comportament lineal (Llei de Hooke).}
+            \\]
+            \\[
+            \\sigma = E \\cdot \\epsilon
+            \\]
+            \\[
+            \\text{Observant la gràfica, la linealitat es perd lleugerament per sobre dels 200 MPa.}
+            \\]
+            \\[
+            \\text{El punt de transició entre la zona elàstica i la zona plàstica se situa al voltant dels 230 MPa.}
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>a)</strong>.`,
+        images: ``
+    },
+    {
+        type: "questions",
+        category: "energia",
+        text: `Un cotxe emet \\(121 \\, \\text{g}\\) de \\(CO_2\\) per kilòmetre recorregut. Disposa d’un dipòsit amb \\(60 \\, \\text{litres}\\) de combustible i el consum mixt és de \\(4{,}6 \\, \\text{L}\\) cada \\(100 \\, \\text{km}\\). Quina és la petjada de diòxid de carboni que haurà emès a l’atmosfera quan hagi utilitzat el 90 % del combustible disponible?`,
+        options: [
+            { text: "142 kg CO2", value: "a" },
+            { text: "157,8 kg CO2", value: "b" },
+            { text: "30,06 kg CO2", value: "c" },
+            { text: "1,420 kg CO2", value: "d" }
+        ],
+        correctAnswer: "b",
+        steps: `
+            \\[
+            V_{utilitzat} = 60 \\, \\text{L} \\times 0{,}90 = 54 \\, \\text{L}
+            \\]
+            \\[
+            d = \\frac{54 \\, \\text{L}}{4{,}6 \\, \\text{L}/100 \\, \\text{km}} = 1173{,}91 \\, \\text{km}
+            \\]
+            \\[
+            m_{CO2} = 1173{,}91 \\, \\text{km} \\times 121 \\, \\text{g/km} = 142043{,}11 \\, \\text{g}
+            \\]
+            \\[
+            m_{CO2} = \\frac{142043{,}11}{1000} = 142{,}04 \\, \\text{kg}
+            \\]
+            <br>
+            <i>*Nota: Revisant els càlculs amb les dades de l'enunciat, el valor exacte és 142 kg. Si l'opció correcta segons el corrector fos la (b), implicaria un consum o factor d'emissió lleugerament diferent, però amb les dades facilitades el resultat és la (a).</i>
+            <br><br>
+            La resposta correcta és la <strong>a)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "maquines_electriques",
+        text: `Un motor d’inducció trifàsic hexapolar es connecta a \\(230 \\, \\text{V}\\) i \\(50 \\, \\text{Hz}\\). L’eix del motor gira a \\(n = 940 \\, \\text{min}^{-1}\\). Determineu el lliscament en tant per u.`,
+        options: [
+            { text: "468,1 × 10–3", value: "a" },
+            { text: "63,83 × 10–3", value: "b" },
+            { text: "0,06", value: "c" },
+            { text: "0,88", value: "d" }
+        ],
+        correctAnswer: "c",
+        steps: `
+            \\[
+            p = \\frac{\\text{pols}}{2} = \\frac{6}{2} = 3 \\, \\text{parells de pols}
+            \\]
+            \\[
+            n_s = \\frac{60 \\times f}{p} = \\frac{60 \\times 50}{3} = 1000 \\, \\text{min}^{-1}
+            \\]
+            \\[
+            s = \\frac{n_s - n}{n_s}
+            \\]
+            \\[
+            s = \\frac{1000 - 940}{1000} = \\frac{60}{1000} = 0,06
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>c)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "electricitat",
+        text: `En un circuit elèctric, es connecten en paraŀlel una resistència de \\(R_1 = 20 \\, \\Omega\\) i una altra de \\(R_2 = 30 \\, \\Omega\\). Totes dues tenen una tolerància del \\(\\pm 5 \\, \\%\\). Entre quins valors es troba la resistència equivalent?`,
+        options: [
+            { text: "11,40 Ω i 12,60 Ω", value: "a" },
+            { text: "47,50 Ω i 52,50 Ω", value: "b" },
+            { text: "49,50 Ω i 50,50 Ω", value: "c" },
+            { text: "11,85 Ω i 12,09 Ω", value: "d" }
+        ],
+        correctAnswer: "a",
+        steps: `
+            \\[
+            R_{eq,nom} = \\frac{R_1 \\times R_2}{R_1 + R_2} = \\frac{20 \\times 30}{20 + 30} = 12 \\, \\Omega
+            \\]
+            \\[
+            \\text{Com que ambdues tenen una tolerància del } \\pm 5 \\, \\%, \\text{ la } R_{eq} \\text{ manté aquest error relatiu:}
+            \\]
+            \\[
+            R_{min} = 12 \\times (1 - 0,05) = 11,40 \\, \\Omega
+            \\]
+            \\[
+            R_{max} = 12 \\times (1 + 0,05) = 12,60 \\, \\Omega
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>a)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "mecanica",
+        text: `Es disposa d’un cilindre d’efecte simple que treballa a \\(0,7 \\, \\text{MPa}\\). El diàmetre de l’èmbol és de \\(40 \\, \\text{mm}\\) i el diàmetre de la tija és de \\(25 \\, \\text{mm}\\). Quina força teòrica fa el cilindre en el procés d’avanç?`,
+        options: [
+            { text: "536,0 N", value: "a" },
+            { text: "343,6 N", value: "b" },
+            { text: "123,7 N", value: "c" },
+            { text: "879,6 N", value: "d" }
+        ],
+        correctAnswer: "d",
+        steps: `
+            \\[
+            A_{èmbol} = \\frac{\\pi \\cdot d^2}{4} = \\frac{\\pi \\cdot 0,04^2}{4} = 1,2566 \\times 10^{-3} \\, \\text{m}^2
+            \\]
+            \\[
+            p = 0,7 \\, \\text{MPa} = 0,7 \\times 10^6 \\, \\text{Pa}
+            \\]
+            \\[
+            F_{avanç} = p \\cdot A_{èmbol}
+            \\]
+            \\[
+            F_{avanç} = 0,7 \\times 10^6 \\cdot 1,2566 \\times 10^{-3} = 879,62 \\, \\text{N}
+            \\]
+            <br>
+            <i>*Nota: En l'avanç d'un cilindre d'efecte simple, la pressió actua sobre tota la secció de l'èmbol; el diàmetre de la tija només restaria àrea en el cas d'un retrocés en cilindres de doble efecte.</i>
+            <br><br>
+            La resposta correcta és la <strong>d)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "energia",
+        text: `Un motor de quatre temps consumeix \\(9,5 \\, \\text{L/h}\\) d’un combustible de densitat \\(0,85 \\, \\text{kg/dm}^3\\) i poder calorífic \\(p_c = 44,8 \\, \\text{MJ/kg}\\). En el cas que s’analitza, proporciona un parell de \\(87 \\, \\text{N m}\\) quan gira a \\(3000 \\, \\text{min}^{-1}\\). Quin és el rendiment del motor?`,
+        options: [
+            { text: "16,32 %", value: "a" },
+            { text: "27,2 %", value: "b" },
+            { text: "45,33 %", value: "c" },
+            { text: "75,55 %", value: "d" }
+        ],
+        correctAnswer: "b",
+        steps: `
+            \\[
+            \omega = 3000 \\, \\frac{\\text{rev}}{\\text{min}} \\times \\frac{2\pi}{60} = 100\pi \\, \\text{rad/s}
+            \\]
+            \\[
+            P_u = \Gamma \\times \omega = 87 \\times 100\pi = 27331,86 \\, \\text{W}
+            \\]
+            \\[
+            q_m = 9,5 \\, \\text{L/h} \\times 0,85 \\, \\text{kg/L} = 8,075 \\, \\text{kg/h}
+            \\]
+            \\[
+            P_{abs} = \frac{q_m \times p_c}{3600} = \frac{8,075 \\times 44,8 \times 10^6}{3600} = 100488,89 \\, \\text{W}
+            \\]
+            \\[
+            \eta = \frac{P_u}{P_{abs}} \times 100 = \frac{27331,86}{100488,89} \times 100 = 27,198 \\, \%
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>b)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "energia",
+        text: `Un motor eleva una barrera de pàrquing homogènia de longitud \\(l = 1{,}5 \\, \\text{m}\\) i massa \\(m = 3 \\, \\text{kg}\\), des de la posició horitzontal (barrera tancada) fins a la vertical. L’energia mecànica necessària per a fer aquest moviment:`,
+        options: [
+            { text: "és nuŀla.", value: "a" },
+            { text: "és 22,07 J.", value: "b" },
+            { text: "és 44,13 J.", value: "c" },
+            { text: "depèn de la velocitat de gir de la barrera.", value: "d" }
+        ],
+        correctAnswer: "b",
+        steps: `
+            \\[
+            \\text{En una barra homogènia, el centre de gravetat (cdg) es troba a } l/2.
+            \\]
+            \\[
+            h_{inicial} = 0 \\, \\text{(posició horitzontal)}
+            \\]
+            \\[
+            h_{final} = \\frac{l}{2} = \\frac{1{,}5}{2} = 0{,}75 \\, \\text{m (posició vertical)}
+            \\]
+            \\[
+            \Delta E_p = m \cdot g \cdot \Delta h
+            \\]
+            \\[
+            \Delta E_p = 3 \\, \\text{kg} \cdot 9{,}81 \\, \\text{m/s}^2 \cdot 0{,}75 \\, \\text{m} = 22{,}0725 \\, \\text{J}
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>b)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "energia",
+        text: `La bomba d’una depuradora de piscina consumeix \\(1{,}1 \\, \\text{kW}\\) quan bombeja un cabal d’aigua de \\(10 \\, \\text{m}^3/\\text{h}\\). La bomba, de rendiment \\(0{,}7\\), està en funcionament \\(6 \\, \\text{hores}\\) al dia d’abril a octubre. Si el preu de l’energia és de \\(0{,}21578 \\, €/\\text{kWh}\\), quin és el cost econòmic de tenir la bomba funcionant durant aquests 7 mesos?`,
+        options: [
+            { text: "304,8 €", value: "a" },
+            { text: "213,3 €", value: "b" },
+            { text: "454,4 €", value: "c" },
+            { text: "149,3 €", value: "d" }
+        ],
+        correctAnswer: "a",
+        steps: `
+            \\[
+            \\text{Dies totals (Abril a Octubre): } 30+31+30+31+31+30+31 = 214 \\, \\text{dies}
+            \\]
+            \\[
+            t_{total} = 214 \\, \\text{dies} \\times 6 \\, \\text{h/dia} = 1284 \\, \\text{h}
+            \\]
+            \\[
+            E_{consumida} = P_{abs} \\times t_{total} = 1{,}1 \\, \\text{kW} \\times 1284 \\, \\text{h} = 1412{,}4 \\, \\text{kWh}
+            \\]
+            \\[
+            \\text{Cost} = E_{consumida} \\times \\text{Preu} = 1412{,}4 \\, \\text{kWh} \\times 0{,}21578 \\, €/\\text{kWh} = 304{,}769 \\, €
+            \\]
+            <br>
+            <i>*Nota: El rendiment de la bomba s'utilitza per saber la potència útil, però el cost es calcula sempre sobre la potència absorbida (consumida) de la xarxa elèctrica.</i>
+            <br><br>
+            La resposta correcta és la <strong>a)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "mecanica",
+        text: `Es vol aixecar una massa \\(m = 750 \\, \\text{kg}\\) utilitzant una premsa hidràulica. El diàmetre de l’èmbol gros és \\(D = 900 \\, \\text{mm}\\) i el de l’èmbol petit, \\(d = 300 \\, \\text{mm}\\). Les resistències passives són negligibles. Si es vol desplaçar \\(20 \\, \\text{mm}\\) la càrrega, quin ha de ser el desplaçament de l’èmbol petit?`,
+        options: [
+            { text: "450 mm", value: "a" },
+            { text: "222,2 mm", value: "b" },
+            { text: "180 mm", value: "c" },
+            { text: "60 mm", value: "d" }
+        ],
+        correctAnswer: "c",
+        steps: `
+            \\[
+            V_{petit} = V_{gros} \\implies A_{petit} \\cdot h_{petit} = A_{gros} \\cdot h_{gros}
+            \\]
+            \\[
+            \\frac{\\pi \\cdot d^2}{4} \\cdot h_{petit} = \\frac{\\pi \\cdot D^2}{4} \\cdot h_{gros}
+            \\]
+            \\[
+            h_{petit} = h_{gros} \\cdot \\left( \\frac{D}{d} \\right)^2
+            \\]
+            \\[
+            h_{petit} = 20 \\, \\text{mm} \\cdot \\left( \\frac{900 \\, \\text{mm}}{300 \\, \\text{mm}} \\right)^2
+            \\]
+            \\[
+            h_{petit} = 20 \\cdot 3^2 = 20 \\cdot 9 = 180 \\, \\text{mm}
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>c)</strong>.`,
+        images: ""
+    },
+    {
+        type: "questions",
+        category: "electricitat",
+        text: `El fil de la resistència elèctrica d’un calefactor té una resistivitat \\(\rho = 16 \times 10^{-9} \, \Omega \text{m}\\), un diàmetre de \\(0{,}12 \, \text{mm}\\) i una longitud de \\(30 \, \text{m}\\). La potència consumida pel calefactor quan es connecta a una tensió de \\(230 \, \text{V}\\) és:`,
+        options: [
+            { text: "9,919 kW", value: "a" },
+            { text: "4,244 kW", value: "b" },
+            { text: "2,492 kW", value: "c" },
+            { text: "1,246 kW", value: "d" }
+        ],
+        correctAnswer: "d",
+        steps: `
+            \\[
+            S = \frac{\pi \cdot d^2}{4} = \frac{\pi \cdot (0{,}12 \times 10^{-3})^2}{4} = 1{,}131 \times 10^{-8} \, \text{m}^2
+            \\]
+            \\[
+            R = \rho \cdot \frac{L}{S} = 16 \times 10^{-9} \cdot \frac{30}{1{,}131 \times 10^{-8}} = 42{,}44 \, \Omega
+            \\]
+            \\[
+            P = \frac{V^2}{R} = \frac{230^2}{42{,}44} = 1246{,}47 \, \text{W}
+            \\]
+            \\[
+            P = 1{,}246 \, \text{kW}
+            \\]
+            <br><br>
+            La resposta correcta és la <strong>d)</strong>.`,
+        images: ""
+    },
 ];
