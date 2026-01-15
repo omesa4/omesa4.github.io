@@ -1231,7 +1231,7 @@ amb la meitat del temps. [0,5 punts]
             E_{consumida} = P_{abs} \\times t_{total} = 1{,}1 \\, \\text{kW} \\times 1284 \\, \\text{h} = 1412{,}4 \\, \\text{kWh}
             \\]
             \\[
-            \\text{Cost} = E_{consumida} \\times \\ Preu = 1412{,}4\\,\\text{kWh} \\times \\ 0{,}21578 \\,\\text{€/kWh} = 304{,}769\\,\\text{€}
+            Cost = E_{consumida} \\times \\ Preu = 1412,4\\,\\text{kWh} \\times \\ 0,21578 \\,\\text{€/kWh} = 304,769\\,\\text{€}
             \\]
             <br>
             <i>*Nota: El rendiment de la bomba s'utilitza per saber la potència útil, però el cost es calcula sempre sobre la potència absorbida (consumida) de la xarxa elèctrica.</i>
@@ -1283,16 +1283,16 @@ amb la meitat del temps. [0,5 punts]
         correctAnswer: "d",
         steps: `
             \\[
-            S = \frac{\pi \cdot d^2}{4} = \frac{\pi \cdot (0{,}12 \times 10^{-3})^2}{4} = 1{,}131 \times 10^{-8} \, \text{m}^2
+            S = \\frac{\\pi \\cdot d^2}{4} = \\frac{\\pi \\cdot (0,12 \\times \\ 10^{-3})^2}{4} = 1,131 \\times \\ 10^{-8} \\,\\text{m}^2
             \\]
             \\[
-            R = \rho \cdot \frac{L}{S} = 16 \times 10^{-9} \cdot \frac{30}{1{,}131 \times 10^{-8}} = 42{,}44 \, \Omega
+            R = \\rho \\cdot \\frac{L}{S} = 16 \\times 10^{-9} \\cdot \frac{30}{1,131 \\times \\ 10^{-8}} = 42,44 \\,\\Omega
             \\]
             \\[
-            P = \frac{V^2}{R} = \frac{230^2}{42{,}44} = 1246{,}47 \, \text{W}
+            P = \\frac{V^2}{R} = \\frac{230^2}{42,44} = 1246,47 \\,\\text{W}
             \\]
             \\[
-            P = 1{,}246 \, \text{kW}
+            P = 1,246\\,\\text{kW}
             \\]
             <br><br>
             La resposta correcta és la <strong>d)</strong>.`,
