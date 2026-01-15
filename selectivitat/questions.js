@@ -638,7 +638,7 @@ amb la meitat del temps. [0,5 punts]
     type: "exercicis",
     category: "energia",
     text: `<br>Es disposa d’un escalfador d’aigua que funciona amb gas butà i d’un altre que és elèctric. Ambdós subministren un cabal d’aigua \\(q = 10\\,\\text{L/min}\\) i augmenten la temperatura de l’aigua \\(ΔT = 30\\,^\circ\\text{C}\\), que té una calor específica \\(c_e = 4,187\\,\\text{kJ/(kg K)}\\). Es vol comparar el cost econòmic i la petjada de \\(CO_2\\) de tenir en funcionament cadascun dels escalfadors durant \\(t = 5\\,\\text{h}\\).
-    <br>El poder calorífic del butà és \\(p_{c,butà} = 47\\,\\text{MJ/kg}\\), el preu d’una bombona de \\(m_{butà} = 12,5\\,\\text{kg}\\) és \\(c_{butà} = 17,66\\,€\\) i el seu coeficient d’emissions és \\(e_{butà} = 2,960\\,\\text{kg CO}_2\\text{/kg}\\). L’escalfador de gas té un rendiment \\(η_{butà} = 0,89\\). L’escalfador elèctric té un rendiment \\(η_{elèctr} = 0,97\\), el preu de l’electricitat és \\(c_{elèctr} = 0,21\\,€\\text{/(kWh)}\\) i les emissions són \\(e_{elèctr} = 250\\,\\text{gCO}_2\\text{/(kWh)}\\). Determineu:
+    <br>El poder calorífic del butà és \\(p_{c,butà} = 47\\,\\text{MJ/kg}\\), el preu d’una bombona de \\(m_{butà} = 12,5\\,\\text{kg}\\) és \\(c_{butà} = 17{,}66\\,\\text{€}\\) i el seu coeficient d’emissions és \\(e_{butà} = 2{,}960\\,\\text{kg CO}_2\\text{/kg}\\). L’escalfador de gas té un rendiment \\(η_{butà} = 0,89\\). L’escalfador elèctric té un rendiment \\(η_{elèctr} = 0,97\\), el preu de l’electricitat és \\(c_{elèctr} = 0{,}21\\,\\text{€/(kWh)}\\) i les emissions són \\(e_{elèctr} = 250\\,\\text{gCO}_2\\text{/(kWh)}\\). Determineu:
     <br><br>
     <strong>a)</strong> La potència consumida per cadascun dels escalfadors \\(P_{butà}\\) i \\(P_{elèctr}\\). [0,5 punts]
     <br>
@@ -681,11 +681,11 @@ amb la meitat del temps. [0,5 punts]
         <br>
         - Cost del butà (consum total de massa \\(m = q_{butà} \\times 5\\,\\text{h} = 9,01\\,\\text{kg}\\)):
         \\[
-        c_{e,butà} = 9,01\\,\\text{kg} \\times \\frac{17,66\\,€}{12,5\\,\\text{kg}} = 12,73\\,€
+        c_{e,butà} = 9,01\\,\\text{kg} \\times \\ \\frac{17,66\\,\\text{€}}{12,5\\,\\text{kg}} = 12,73\\,\\text{€}
         \\]
         - Cost de l'elèctric (energia consumida \\(E = P_{elèctr} \\times 5\\,\\text{h} = 107,9\\,\\text{kWh}\\)):
         \\[
-        c_{e,elèctr} = 107,9\\,\\text{kWh} \\times 0,21\\,€\\text{/kWh} = 22,66\\,€
+        c_{e,elèctr} = 107,9\\,\\text{kWh} \\times \\ 0,21\\,\\text{€/kWh} = 22,66\\,\\text{€}
         \\]
         <br><strong>d) Petjada de CO2:</strong>
         <br>
@@ -1169,10 +1169,10 @@ amb la meitat del temps. [0,5 punts]
             q_m = 9,5 \\, \\text{L/h} \\times 0,85 \\, \\text{kg/L} = 8,075 \\, \\text{kg/h}
             \\]
             \\[
-            P_{abs} = \frac{q_m \times p_c}{3600} = \frac{8,075 \\times 44,8 \times 10^6}{3600} = 100488,89 \\, \\text{W}
+            P_{abs} = \\frac{q_m \\times \\ p_c}{3600} = \\frac{8,075 \\times \\ 44,8 \\times \\ 10^6}{3600} = 100488,89 \\,\\text{W}
             \\]
             \\[
-            \eta = \frac{P_u}{P_{abs}} \times 100 = \frac{27331,86}{100488,89} \times 100 = 27,198 \\, \%
+            \eta = \\frac{P_u}{P_{abs}} \\times \\ 100 = \\frac{27331,86}{100488,89} \\times \\ 100 = 27,198 \\,\\text{%}
             \\]
             <br><br>
             La resposta correcta és la <strong>b)</strong>.`,
@@ -1203,7 +1203,7 @@ amb la meitat del temps. [0,5 punts]
             \Delta E_p = m \cdot g \cdot \Delta h
             \\]
             \\[
-            \Delta E_p = 3 \\, \\text{kg} \cdot 9{,}81 \\, \\text{m/s}^2 \cdot 0{,}75 \\, \\text{m} = 22{,}0725 \\, \\text{J}
+            \Delta E_p = 3 \\,\\text{kg} \\cdot 9{,}81\\,\\text{m/s}^2 \\cdot 0{,}75\\,\\text{m} = 22{,}0725 \\,\\text{J}
             \\]
             <br><br>
             La resposta correcta és la <strong>b)</strong>.`,
@@ -1212,7 +1212,7 @@ amb la meitat del temps. [0,5 punts]
     {
         type: "questions",
         category: "energia",
-        text: `La bomba d’una depuradora de piscina consumeix \\(1{,}1 \\, \\text{kW}\\) quan bombeja un cabal d’aigua de \\(10 \\, \\text{m}^3/\\text{h}\\). La bomba, de rendiment \\(0{,}7\\), està en funcionament \\(6 \\, \\text{hores}\\) al dia d’abril a octubre. Si el preu de l’energia és de \\(0{,}21578 \\, €/\\text{kWh}\\), quin és el cost econòmic de tenir la bomba funcionant durant aquests 7 mesos?`,
+        text: `La bomba d’una depuradora de piscina consumeix \\(1{,}1 \\, \\text{kW}\\) quan bombeja un cabal d’aigua de \\(10 \\, \\text{m}^3/\\text{h}\\). La bomba, de rendiment \\(0{,}7\\), està en funcionament \\(6 \\, \\text{hores}\\) al dia d’abril a octubre. Si el preu de l’energia és de \\(0{,}21578 \\,\\text{€/kWh}\\), quin és el cost econòmic de tenir la bomba funcionant durant aquests 7 mesos?`,
         options: [
             { text: "304,8 €", value: "a" },
             { text: "213,3 €", value: "b" },
@@ -1231,7 +1231,7 @@ amb la meitat del temps. [0,5 punts]
             E_{consumida} = P_{abs} \\times t_{total} = 1{,}1 \\, \\text{kW} \\times 1284 \\, \\text{h} = 1412{,}4 \\, \\text{kWh}
             \\]
             \\[
-            \\text{Cost} = E_{consumida} \\times \\text{Preu} = 1412{,}4 \\, \\text{kWh} \\times 0{,}21578 \\, €/\\text{kWh} = 304{,}769 \\, €
+            \\text{Cost} = E_{consumida} \\times \\ Preu = 1412{,}4\\,\\text{kWh} \\times \\ 0{,}21578 \\,\\text{€/kWh} = 304{,}769\\,\\text{€}
             \\]
             <br>
             <i>*Nota: El rendiment de la bomba s'utilitza per saber la potència útil, però el cost es calcula sempre sobre la potència absorbida (consumida) de la xarxa elèctrica.</i>
