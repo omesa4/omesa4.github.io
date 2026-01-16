@@ -2,32 +2,31 @@ const questions = [
 {
     type: "exercicis",
     category: "mecanica",
-    text: `Un cilindre hidràulic ha d'elevar una massa de 980 kg. El diàmetre interior del cilindre és de 94 mm i el de la tija és de 60 mm. Calculeu:
-    <br><br><strong>a)</strong> Pressió relativa.
-    <br><strong>b)</strong> Tensió de la tija.
-    <br><strong>c)</strong> Potència de la bomba si el cabal és de 2,3 l/s a una pressió de 1,7 MPa.
-    <br><strong>d)</strong> Rendiment del sistema si la velocitat d'elevació és de 0,33 m/s.`, 
+    text: `<br> En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte està format per quatre membres: president (P), secretari (S), vocal 1 (V1) i vocal 2 (V2). La decisió es pren per majoria i, en cas d’empat, preval el vot de qualitat del president.
+    <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
+    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
+    <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
+    <br><br>`, 
     correctAnswer: "",  
     steps: `
-        <strong>a) Pressió relativa (\\\\(p_{int}\\\\)):</strong>
+        <strong>a) Taula de veritat:</strong>
         <br>
-        \\\\[ F = m \\\\cdot g = 980 \\\\cdot 9,807 = 9611 \\\\text{ N} \\\\]
-        \\\\[ S_{int} = \\\\frac{\\\\pi \\\\cdot 0,094^2}{4} = 6,94 \\\\cdot 10^{-3} \\\\text{ m}^2 \\\\]
-        \\\\[ p_{int} = \\\\frac{F}{S_{int}} = 1,385 \\\\cdot 10^6 \\\\text{ Pa} = 1,385 \\\\text{ MPa} \\\\]
+        Es considera 1 (Apte) quan hi ha 3 o més vots positius, o quan n'hi ha 2 i un d'ells és el del president (P).
+        <br><br>
+        <strong>b) Funció lògica simplificada:</strong>
         <br>
-        <strong>b) Tensió de la tija (\\\\(\\\\sigma_{tija}\\\\)):</strong>
+        Aplicant el mètode de Karnaugh, la funció simplificada és:
+        \\\\[ F = P \\\\cdot S + P \\\\cdot V_1 + P \\\\cdot V_2 + S \\\\cdot V_1 \\\\cdot V_2 \\\\]
         <br>
-        \\\\[ S_{tija} = \\\\frac{\\\\pi \\\\cdot 0,06^2}{4} = 2,827 \\\\cdot 10^{-3} \\\\text{ m}^2 \\\\]
-        \\\\[ \\\\sigma_{tija} = \\\\frac{F}{S_{tija}} = 3,4 \\\\cdot 10^6 \\\\text{ Pa} = 3,4 \\\\text{ MPa} \\\\]
+        On:
         <br>
-        <strong>c) Potència de la bomba (\\\\(P_h\\\\)):</strong>
+        \\\\( P \\\\cdot S, P \\\\cdot V_1, P \\\\cdot V_2 \\\\) representen el vot del president més qualsevol altre membre (guanya per desempat).
         <br>
-        \\\\[ P_h = p \\\\cdot q = 1,7 \\\\cdot 10^6 \\\\cdot 2,3 \\\\cdot 10^{-3} = 3910 \\\\text{ W} = 3,91 \\\\text{ kW} \\\\]
+        \\\\( S \\\\cdot V_1 \\\\cdot V_2 \\\\) representa la majoria simple sense el president.
+        <br><br>
+        <strong>c) Diagrama de portes lògiques:</strong>
         <br>
-        <strong>d) Rendiment (\\\\(\\\\eta\\\\)):</strong>
-        <br>
-        \\\\[ P_{útil} = F \\\\cdot v = 9611 \\\\cdot 0,33 = 3171,6 \\\\text{ W} \\\\]
-        \\\\[ \\\\eta = \\\\frac{P_{útil}}{P_h} = \\\\frac{3171,6}{3910} = 0,8111 \\\\rightarrow 81,11 \\\\% \\\\]
+        Es realitza mitjançant quatre portes AND (tres de dues entrades i una de tres entrades) connectades a una porta OR final de quatre entrades.
     `, 
 },
 
