@@ -8,17 +8,11 @@ const questions = [
     <br><br>
     Es defineixen les variables d’estat següents:
     <br>
-    \\(v_1\\): vot del vocal 1 &nbsp;&nbsp; (1: favorable, 0: en contra)
+    <img src= "202306S1E2.png">
     <br>
-    \\(v_2\\): vot del vocal 2 &nbsp;&nbsp; (1: favorable, 0: en contra)
-    <br>
-    \\(s\\): vot del secretari &nbsp;&nbsp; (1: favorable, 0: en contra)
-    <br>
-    \\(p\\): vot del president &nbsp;&nbsp; (1: favorable, 0: en contra)
-    <br>
-    \\(d\\): decisió final &nbsp;&nbsp; (1: treball apte, 0: treball no apte)
-    <br><br>
     <strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
+    <br>
+    <img src= "202306S1E2a.png">
     <br>
     <strong>b)</strong> Determineu la funció lògica del sistema i simplifiqueu-la, si escau. [1 punt]
     <br>
