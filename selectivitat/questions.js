@@ -1,7 +1,7 @@
 const questions = [
 {
     type: "exercicis",
-    category: "logica",
+    category: "control",
     text: `<br>En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte
     està format per quatre membres: president, secretari, vocal 1 i vocal 2.
     La decisió es pren per majoria i, en cas d’empat, preval el vot de qualitat del president.
@@ -72,7 +72,7 @@ const questions = [
 },
 {
     type: "exercicis",
-    category: "energies",
+    category: "maquines",
     text: `<br>Una pantalla de projecció té una massa \\(m = 2\\,\\text{kg}\\) a la part inferior per a mantenir-la sempre tibada.
     Un motor reductor de rendiment \\(\\eta_{mot} = 0,9\\) és l’encarregat de recollir la pantalla en un corró
     de diàmetre \\(d = 250\\,\\text{mm}\\), que es troba articulat amb el sostre al punt P.
@@ -147,7 +147,7 @@ const questions = [
 
 {
     type: "exercicis",
-    category: "mecanica",
+    category: "pneumatica",
     text: `<br>La figura mostra un esquema simplificat d’una grua per a elevar caixes de fruita. 
     La barra OBC, de longitud \\(2l = 4\\,\\text{m}\\) (essent B el seu punt mitjà), es troba articulada al terra al punt O. 
     A l’extrem C s’hi pengen 3 caixes de fruita de 25 kg cadascuna (\\(m = 75\\,\\text{kg}\\)). La massa de la resta d’elements és negligible.
@@ -211,7 +211,7 @@ const questions = [
 },
     {
     type: "exercicis",
-    category: "energies",
+    category: "energia",
     text: `<br>Un establiment turístic es planteja instal·lar una estufa de pellets o una de gasoil per a cobrir
     una demanda energètica anual \\(E_{cons} = 15\\,000\\,\\text{kW·h}\\).
     <br><br>
@@ -301,7 +301,7 @@ const questions = [
 
 {
     type: "exercicis",
-    category: "energia",
+    category: "motors",
     text: `<br>Una espremedora domèstica per a fer suc de taronja està formada per un motor elèctric de corrent continu d’imants permanents i un reductor d’engranatges, la sortida del qual fa girar la peça en forma de con que permet extreure suc de les taronges. El parell del motor és donat per l’expressió:
     <br>
     \\[ Γ_{mot} = (0,08U – 0,01ω)\\,\\text{N m} \\]
@@ -369,7 +369,7 @@ const questions = [
 },
     {
     type: "exercicis",
-    category: "sistemes_control",
+    category: "control",
     text: `<br>Un semàfor té un circuit de control d’errors que activa una alarma si els tres llums estan apagats o si com a mínim dos estan encesos a la vegada, tret que siguin el verd i el groc.
     <br>Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents (1: encès, 0: apagat):
     <br>\\(V\\): Verd, \\(G\\): Groc, \\(R\\): Vermell. L'alarma s'activa quan \\(A = 1\\).
@@ -597,7 +597,7 @@ const questions = [
 },
             {
     type: "exercicis",
-    category: "mecanica",
+    category: "maquines",
     text: `<br>Una persona asseguda en una cadira de rodes elèctrica avança a una velocitat constant \\(v = 4\\,\\text{km/h}\\) per un pendent ascendent del 10 %. La massa del conjunt format per la persona i la cadira és \\(m = 240\\,\\text{kg}\\). La cadira té dues rodes motrius de diàmetre \\(d = 300\\,\\text{mm}\\) amb un motor reductor independent cadascuna. 
     <br>En la situació d’estudi, la cadira avança en línia recta, els dos motors consumeixen la mateixa potència i les rodes no llisquen. El rendiment dels motors reductors és \\(η = 0,79\\) i la fricció amb l’aire es considera negligible. Determineu:
     <br><br>
@@ -652,7 +652,7 @@ const questions = [
 },
 {
     type: "exercicis",
-    category: "sistemes_control",
+    category: "control",
     text: `<br>Un hivernacle disposa de quatre sensors: un de temperatura (\\(T\\)), un de velocitat del vent (\\(V\\)), un de pressió atmosfèrica (\\(P\\)) i un d’humitat ambiental (\\(H\\)). Es vol dissenyar un circuit digital que controli el tancament del sostre (\\(S = 1\\)). 
     <br>El sostre es tanca si es dona, com a mínim, una de les tres condicions següents:
     <br>1. Si la velocitat del vent supera els 60 km/h (\\(V=1\\)).
@@ -776,7 +776,7 @@ const questions = [
 },
 {
     type: "exercicis",
-    category: "energia",
+    category: "maquines",
     text: `<br>Una cadira de rodes elèctrica experimental està sensoritzada per a estudiar-ne els consums elèctrics. Disposa d’una bateria d’ió liti de tensió \\(U = 36\\,\\text{V}\\) i energia \\(E_{bat} = 240\\,\\text{Wh}\\) que alimenta un motor reductor de rendiment \\(η = 0,72\\).
     <br>En les condicions d’estudi, la persona i la cadira tenen una massa conjunta \\(m = 130\\,\\text{kg}\\) i avancen per una pujada on l’angle que forma el perfil del carrer amb l’horitzontal és \\(α = 8^\\circ\\). En l’estudi, la cadira puja a dues velocitats diferents, \\(v_1\\) i \\(v_2\\), i les potències consumides pel motor són \\(P_1 = 109,5\\,\\text{W}\\) i \\(P_2 = 650,3\\,\\text{W}\\), respectivament. Determineu:
     <br><br>
@@ -828,7 +828,7 @@ const questions = [
 },
 {
     type: "exercicis",
-    category: "mecanica",
+    category: "maquines",
     text: `<br>Una cistella de bàsquet de massa \\(m_c = 45\\,\\text{kg}\\) és solidària a una barra homogènia OBC de longitud \\(2l = 4\\,\\text{m}\\) i massa \\(m_b = 60\\,\\text{kg}\\). El punt O està articulat al sostre. L’angle entre el sostre i la barra està comprès entre \\(15^\\circ \\le φ \\le 45^\\circ\\). 
     <br>Per a plegar i desplegar la cistella s’utilitza un mecanisme de tambor, de diàmetre \\(d = 250\\,mm\\), en què un motor enrotlla al tambor un cable. El cable passa per una politja al sostre al punt P i l’altre extrem està fixat al punt mitjà de la barra (punt B). En la posició desplegada, \\(φ = 45^\\circ\\), el cable BP és perpendicular a la barra OBC. Determineu:
     <br><br>
@@ -886,7 +886,7 @@ const questions = [
 },
 {
     type: "exercicis",
-    category: "mecanica",
+    category: "pneumatica",
     text: `<br>Cal seleccionar un cilindre hidràulic comercial d’efecte simple per a elevar contenidors. El cilindre s’ha de connectar a una bomba d’oli que subministra un cabal constant \\(q = 3\\,\\text{m}^3\\text{/h}\\) i una pressió màxima \\(p_{màx} = 20\\,\\text{MPa}\\). Es demana que el cilindre sigui capaç de fer una força \\(F = 65\\,000\\,\\text{N}\\) en la seva cursa d’avanç. 
     <br>Determineu:
     <br><br>
@@ -992,7 +992,7 @@ const questions = [
     },
     {
         type: "questions",
-        category: "mecanica",
+        category: "pneumatica",
         text: `El diàmetre interior d’un cilindre hidràulic de doble efecte és de \\(60 \\, \\text{mm}\\), i el diàmetre de la tija és de \\(25 \\, \\text{mm}\\). Si s’alimenta amb un cabal d’oli de \\(9,3 \\times 10^{-3} \\, \\text{m}^3/\\text{min}\\), quina és la seva velocitat de retrocés?`,
         options: [
             { text: "3,289 mm/s", value: "a" },
@@ -1137,7 +1137,7 @@ const questions = [
     },
     {
         type: "questions",
-        category: "maquines_electriques",
+        category: "electrics",
         text: `Un motor d’inducció trifàsic hexapolar es connecta a \\(230 \\, \\text{V}\\) i \\(50 \\, \\text{Hz}\\). L’eix del motor gira a \\(n = 940 \\, \\text{min}^{-1}\\). Determineu el lliscament en tant per u.`,
         options: [
             { text: "468,1 × 10–3", value: "a" },
@@ -1165,7 +1165,7 @@ const questions = [
     },
     {
         type: "questions",
-        category: "electricitat",
+        category: "electrics",
         text: `En un circuit elèctric, es connecten en paraŀlel una resistència de \\(R_1 = 20 \\, \\Omega\\) i una altra de \\(R_2 = 30 \\, \\Omega\\). Totes dues tenen una tolerància del \\(\\pm 5 \\, \\%\\). Entre quins valors es troba la resistència equivalent?`,
         options: [
             { text: "11,40 Ω i 12,60 Ω", value: "a" },
@@ -1193,7 +1193,7 @@ const questions = [
     },
     {
         type: "questions",
-        category: "mecanica",
+        category: "pneumatica",
         text: `Es disposa d’un cilindre d’efecte simple que treballa a \\(0,7 \\, \\text{MPa}\\). El diàmetre de l’èmbol és de \\(40 \\, \\text{mm}\\) i el diàmetre de la tija és de \\(25 \\, \\text{mm}\\). Quina força teòrica fa el cilindre en el procés d’avanç?`,
         options: [
             { text: "536,0 N", value: "a" },
@@ -1315,7 +1315,7 @@ const questions = [
     },
     {
         type: "questions",
-        category: "mecanica",
+        category: "pneumatica",
         text: `Es vol aixecar una massa \\(m = 750 \\, \\text{kg}\\) utilitzant una premsa hidràulica. El diàmetre de l’èmbol gros és \\(D = 900 \\, \\text{mm}\\) i el de l’èmbol petit, \\(d = 300 \\, \\text{mm}\\). Les resistències passives són negligibles. Si es vol desplaçar \\(20 \\, \\text{mm}\\) la càrrega, quin ha de ser el desplaçament de l’èmbol petit?`,
         options: [
             { text: "450 mm", value: "a" },
@@ -1346,7 +1346,7 @@ const questions = [
     },
     {
         type: "questions",
-        category: "electricitat",
+        category: "electrics",
         text: `El fil de la resistència elèctrica d’un calefactor té una resistivitat \\(\rho = 16 \times 10^{-9} \, \Omega \text{m}\\), un diàmetre de \\(0{,}12 \, \text{mm}\\) i una longitud de \\(30 \, \text{m}\\). La potència consumida pel calefactor quan es connecta a una tensió de \\(230 \, \text{V}\\) és:`,
         options: [
             { text: "9,919 kW", value: "a" },
