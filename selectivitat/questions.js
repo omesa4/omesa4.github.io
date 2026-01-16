@@ -658,9 +658,13 @@ const questions = [
     <br>El sostre es tanca si es dona, com a mínim, una de les tres condicions següents:
     <br>1. Si la velocitat del vent supera els 60 km/h (\\(V=1\\)).
     <br>2. Si la temperatura ambient supera els 30 °C (\\(T=1\\)) amb una humitat ambiental inferior al 40 % (\\(H=0\\)).
-    <br>3. Si es detecta un canvi sobtat de pressió (\\(P=1\\)) quan la humitat ambiental és superior o igual al 40 % (\\(H=1\\)).
+    <br>3. Si es detecta un canvi sobtat de pressió (\\(P=1\\)) quan la humitat ambiental és superior o igual al 40 % (\\(H=1\\)). Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+    <br>
+    <img src= "202309S2E2.png">
     <br><br>
     <strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
+    <br>
+    <img src= "202309S2E2a.png">
     <br>
     <strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
     <br>
@@ -830,7 +834,8 @@ const questions = [
 {
     type: "exercicis",
     category: "maquines",
-    text: `<br>Una cistella de bàsquet de massa \\(m_c = 45\\,\\text{kg}\\) és solidària a una barra homogènia OBC de longitud \\(2l = 4\\,\\text{m}\\) i massa \\(m_b = 60\\,\\text{kg}\\). El punt O està articulat al sostre. L’angle entre el sostre i la barra està comprès entre \\(15^\\circ \\le φ \\le 45^\\circ\\). 
+    text: `<br> <img src= "202309S2E5.png">
+    <br> Una cistella de bàsquet de massa \\(m_c = 45\\,\\text{kg}\\) és solidària a una barra homogènia OBC de longitud \\(2l = 4\\,\\text{m}\\) i massa \\(m_b = 60\\,\\text{kg}\\). El punt O està articulat al sostre. L’angle entre el sostre i la barra està comprès entre \\(15^\\circ \\le φ \\le 45^\\circ\\). 
     <br>Per a plegar i desplegar la cistella s’utilitza un mecanisme de tambor, de diàmetre \\(d = 250\\,mm\\), en què un motor enrotlla al tambor un cable. El cable passa per una politja al sostre al punt P i l’altre extrem està fixat al punt mitjà de la barra (punt B). En la posició desplegada, \\(φ = 45^\\circ\\), el cable BP és perpendicular a la barra OBC. Determineu:
     <br><br>
     <strong>a)</strong> Dibuixeu el diagrama de cos lliure de la barra OBC. [0,5 punts]
@@ -888,7 +893,11 @@ const questions = [
 {
     type: "exercicis",
     category: "pneumatica",
-    text: `<br>Cal seleccionar un cilindre hidràulic comercial d’efecte simple per a elevar contenidors. El cilindre s’ha de connectar a una bomba d’oli que subministra un cabal constant \\(q = 3\\,\\text{m}^3\\text{/h}\\) i una pressió màxima \\(p_{màx} = 20\\,\\text{MPa}\\). Es demana que el cilindre sigui capaç de fer una força \\(F = 65\\,000\\,\\text{N}\\) en la seva cursa d’avanç. 
+    text: `<br>Cal seleccionar un cilindre hidràulic comercial d’efecte simple per a elevar contenidors. El cilindre s’ha de connectar a una bomba d’oli que subministra un cabal constant \\(q = 3\\,\\text{m}^3\\text{/h}\\) i una pressió màxima \\(p_{màx} = 20\\,\\text{MPa}\\). Es demana que el cilindre sigui capaç de fer una força \\(F = 65\\,000\\,\\text{N}\\) en la seva cursa d’avanç. Un
+fabricant de cilindres hidràulics facilita 10 models amb els valors de diàmetre interior, dint, i
+diàmetre de tija, dtija, següents:
+<br>
+<img src= "202309S2E6.png">
     <br>Determineu:
     <br><br>
     <strong>a)</strong> El model més petit (diàmetre interior \\(d_{int}\\)) que compleix les especificacions. [0,5 punts]
@@ -1300,7 +1309,10 @@ const questions = [
     {
         type: "questions",
         category: "energia",
-        text: `Un motor eleva una barrera de pàrquing homogènia de longitud \\(l = 1{,}5 \\, \\text{m}\\) i massa \\(m = 3 \\, \\text{kg}\\), des de la posició horitzontal (barrera tancada) fins a la vertical. L’energia mecànica necessària per a fer aquest moviment:`,
+        text: `Un motor eleva una barrera de pàrquing homogènia de longitud \\(l = 1{,}5 \\, \\text{m}\\) i massa \\(m = 3 \\, \\text{kg}\\), des de la posició horitzontal (barrera tancada) fins a la vertical. L’energia mecànica necessària per a fer aquest moviment:
+        <br>
+        <img src= "202309S2Q2.png">
+        <br>`,
         options: [
             { text: "és nuŀla.", value: "a" },
             { text: "és 22,07 J.", value: "b" },
@@ -1361,7 +1373,10 @@ const questions = [
     {
         type: "questions",
         category: "pneumatica",
-        text: `Es vol aixecar una massa \\(m = 750 \\, \\text{kg}\\) utilitzant una premsa hidràulica. El diàmetre de l’èmbol gros és \\(D = 900 \\, \\text{mm}\\) i el de l’èmbol petit, \\(d = 300 \\, \\text{mm}\\). Les resistències passives són negligibles. Si es vol desplaçar \\(20 \\, \\text{mm}\\) la càrrega, quin ha de ser el desplaçament de l’èmbol petit?`,
+        text: `Es vol aixecar una massa \\(m = 750 \\, \\text{kg}\\) utilitzant una premsa hidràulica. El diàmetre de l’èmbol gros és \\(D = 900 \\, \\text{mm}\\) i el de l’èmbol petit, \\(d = 300 \\, \\text{mm}\\). Les resistències passives són negligibles. Si es vol desplaçar \\(20 \\, \\text{mm}\\) la càrrega, quin ha de ser el desplaçament de l’èmbol petit?
+        <br>
+        <img src= "202309S2Q4.png">
+        <br>`,
         options: [
             { text: "450 mm", value: "a" },
             { text: "222,2 mm", value: "b" },
