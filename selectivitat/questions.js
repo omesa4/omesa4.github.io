@@ -1029,15 +1029,11 @@ const questions = [
         La resposta correcta és la <strong>a)</strong>.
     `,
 },
-
-
-
-
-    
     {
         type: "questions",
         category: "pneumatica",
         text: `El diàmetre interior d’un cilindre hidràulic de doble efecte és de \\(60 \\, \\text{mm}\\), i el diàmetre de la tija és de \\(25 \\, \\text{mm}\\). Si s’alimenta amb un cabal d’oli de \\(9,3 \\times 10^{-3} \\, \\text{m}^3/\\text{min}\\), quina és la seva velocitat de retrocés?`,
+        <img src="">
         options: [
             { text: "3,289 mm/s", value: "a" },
             { text: "3,980 mm/s", value: "b" },
