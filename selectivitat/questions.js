@@ -1,39 +1,76 @@
 const questions = [
 {
     type: "exercicis",
-    category: "electronica",
-    text: `<strong>Exercici 2:</strong> En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte està format per quatre membres: president (p), secretari (s), vocal 1 (v1) i vocal 2 (v2). La decisió es pren per majoria i, en cas d’empat, preval el vot de qualitat del president.
-    <br><br>Responeu a les qüestions utilitzant les variables d’estat següents:
-    <ul>
-        <li>\\\\( v_1, v_2, s, p \\\\): 1 si el vot és favorable, 0 si és en contra.</li>
-        <li>\\\\( d \\\\): 1 si el treball és apte, 0 si no ho és.</li>
-    </ul>
+    category: "logica",
+    text: `<br>En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte
+    està format per quatre membres: president, secretari, vocal 1 i vocal 2.
+    La decisió es pren per majoria i, en cas d’empat, preval el vot de qualitat del president.
+    <br><br>
+    Es defineixen les variables d’estat següents:
+    <br>
+    \\(v_1\\): vot del vocal 1 &nbsp;&nbsp; (1: favorable, 0: en contra)
+    <br>
+    \\(v_2\\): vot del vocal 2 &nbsp;&nbsp; (1: favorable, 0: en contra)
+    <br>
+    \\(s\\): vot del secretari &nbsp;&nbsp; (1: favorable, 0: en contra)
+    <br>
+    \\(p\\): vot del president &nbsp;&nbsp; (1: favorable, 0: en contra)
+    <br>
+    \\(d\\): decisió final &nbsp;&nbsp; (1: treball apte, 0: treball no apte)
+    <br><br>
     <strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
-    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i simplifiqueu-la. [1 punt]
-    <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]`,
+    <br>
+    <strong>b)</strong> Determineu la funció lògica del sistema i simplifiqueu-la, si escau. [1 punt]
+    <br>
+    <strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
+    <br><br>`,
     correctAnswer: "",
     steps: `
         <strong>a) Taula de veritat:</strong>
         <br>
-        El sistema dóna un resultat de apte (\\\\( d=1 \\\\)) quan hi ha majoria (3 o 4 vots) o quan hi ha un empat (2 vots) i el president (p) ha votat a favor.
+        <table border="1" cellpadding="4" cellspacing="0">
+            <tr>
+                <th>v₁</th><th>v₂</th><th>s</th><th>p</th><th>d</th>
+            </tr>
+            <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+            <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+            <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+        </table>
         <br><br>
+
         <strong>b) Funció lògica simplificada:</strong>
         <br>
-        Extreiem els minterms on la sortida és 1 i simplifiquem per Karnaugh:
-        \\\\[ d = (p \\\\cdot s) + (p \\\\cdot v_1) + (p \\\\cdot v_2) + (s \\\\cdot v_1 \\\\cdot v_2) \\\\]
+        - El treball és apte quan hi ha almenys tres vots favorables o bé quan hi ha empat i el president vota a favor.
         <br>
-        Aquesta funció indica que el treball és apte si el president vota amb qualsevol altre membre, o si els tres membres restants voten a favor sense el president.
+        \\[
+        d = v_1 v_2 s + v_1 v_2 p + v_1 s p + v_2 s p
+        \\]
         <br><br>
+
         <strong>c) Diagrama de portes lògiques:</strong>
         <br>
-        La implementació directa de la funció simplificada requereix:
-        <ul>
-            <li>Tres portes <strong>AND</strong> de dues entrades.</li>
-            <li>Una porta <strong>AND</strong> de tres entrades.</li>
-            <li>Una porta <strong>OR</strong> de quatre entrades per sumar tots els termes.</li>
-        </ul>
+        - Quatre portes AND de tres entrades corresponents als productes lògics.
+        <br>
+        - Una porta OR que agrupa totes les sortides AND i proporciona la sortida \\(d\\).
+        <br><br>
+
+        <img src="">
     `,
 },
+
 
     {
     type: "exercicis",
