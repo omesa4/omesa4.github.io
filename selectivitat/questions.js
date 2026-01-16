@@ -2,50 +2,46 @@ const questions = [
 {
     type: "exercicis",
     category: "energia",
-    text: `<br> En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte
-està format per quatre membres: president, secretari, vocal 1 i vocal 2. La decisió es pren per
-majoria i, en cas d’empat, preval el vot de qualitat del president.
-Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
-<br>
-<img src="202306P2.png" alt="Imatge relacionada amb la pregunta">
-<br>
-    <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
-    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la.  [1 punt]
+    text: `<br> En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte està format per quatre membres: president, secretari, vocal 1 i vocal 2. La decisió es pren per majoria i, en cas d’empat, preval el vot de qualitat del president.
+    Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+    <br>
+    <img src="202306P2.png" alt="Imatge relacionada amb la pregunta">
+    <br>
+    <br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
+    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
     <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
     <br><br>`, 
     correctAnswer: "",  
     steps: `
         <strong>a) Rendiment i potència del captador:</strong>
         <br>
-        \\[
-        $\\eta = 0,78 - 4,2 \\frac{55 - 18}{900} = 0,78 - 0,1727 = 0,6073$
-        \\]
+        \\\\[
+        \\\\eta = 0,78 - 4,2 \\\\frac{55 - 18}{900} = 0,78 - 0,1727 = 0,6073
+        \\\\]
         <br>
-        \\[
-        $P_{cap} = \\eta \\cdot I \\cdot S = 0,6073 \\cdot 900 \\cdot 2,2 = 1202 \\text{ W}$
-        \\]
+        \\\\[
+        P_{cap} = \\\\eta \\\\cdot I \\\\cdot S = 0,6073 \\\\cdot 900 \\\\cdot 2,2 = 1202 \\\\text{ W}
+        \\\\]
         <br><br>
         <strong>b) Nombre de captadors:</strong>
         <br>
-        Energia necessària: \\( $Q = m \cdot c_e \cdot (T_{cal} - T_a) = 200 \cdot 4180 \cdot (55 - 18) = 30,93 \text{ MJ}$ \\)
+        Energia necessària: \\\\( Q = m \\\\cdot c_e \\\\cdot (T_{cal} - T_a) = 200 \\\\cdot 4180 \\\\cdot (55 - 18) = 30,93 \\\\text{ MJ} \\\\)
         <br>
-        Energia per captador: \\( $Q_{cap} = \eta \cdot I_{mitj} \cdot S \cdot t = 0,55 \cdot 750 \cdot 2,2 \cdot (4 \cdot 3600) = 13,07 \text{ MJ}$ \\)
+        Energia per captador: \\\\( Q_{cap} = \\\\eta \\\\cdot I_{mitj} \\\\cdot S \\\\cdot t = 0,55 \\\\cdot 750 \\\\cdot 2,2 \\\\cdot (4 \\\\cdot 3600) = 13,07 \\\\text{ MJ} \\\\)
         <br>
-        \\[
-        $n = \\frac{Q}{Q_{cap}} = \\frac{30,93}{13,07} = 2,36 \\rightarrow$ 
-        \\]
-        <strong>2 captadors</strong> (per defecte)
+        \\\\[
+        n = \\\\frac{Q}{Q_{cap}} = \\\\frac{30,93}{13,07} = 2,36 \\\\rightarrow 2 \\\\text{ captadors}
+        \\\\]
         <br><br>
         <strong>c) Potència de l'escalfador elèctric:</strong>
         <br>
-        \\[
-        Energia total aportada pels 2 captadors: $Q_{2cap} = 2 \cdot 13,07 = 26,14 \text{ MJ}$
-        \\]
+        \\\\[
+        Q_{2cap} = 2 \\\\cdot 13,07 = 26,14 \\\\text{ MJ}
+        \\\\]
         <br>
-        Energia que falta (elèctrica): \\( $Q_{elec} = Q - Q_{2cap} = 30,93 - 26,14 = 4,79 \\text{ MJ}$ \\)
+        Energia que falta (elèctrica): \\\\( Q_{elec} = Q - Q_{2cap} = 30,93 - 26,14 = 4,79 \\\\text{ MJ} \\\\)
         <br>
-        $P_{elec} = \frac{Q_{elec}}{t} = \\(\\frac{4,79 \\cdot 10^6}{4 \cdot 3600} = 332,6 \\text{ W}$ \\)
-        <br>
+        \\\\( P_{elec} = \\\\frac{Q_{elec}}{t} = \\\\frac{4,79 \\\\cdot 10^6}{4 \\\\cdot 3600} = 332,6 \\\\text{ W} \\\\)
     `, 
 },
 
