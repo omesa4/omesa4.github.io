@@ -1090,7 +1090,8 @@ const questions = [
     {
         type: "questions",
         category: "metrologia",
-        text: `Les mesures nominals d’una peça d’acer són \\(a = 90 \\, \\text{mm}\\) i \\(b = 120 \\, \\text{mm}\\). Es fan mesuraments d’aquestes cotes amb un peu de rei i s’obtenen uns valors de \\(89{,}61 \\, \\text{mm}\\) i \\(120{,}1 \\, \\text{mm}\\), respectivament. L’error relatiu del gruix de la peça (cota \\(a\\)) és:`,
+        text: `Les mesures nominals d’una peça d’acer són \\(a = 90 \\, \\text{mm}\\) i \\(b = 120 \\, \\text{mm}\\). Es fan mesuraments d’aquestes cotes amb un peu de rei i s’obtenen uns valors de \\(89{,}61 \\, \\text{mm}\\) i \\(120{,}1 \\, \\text{mm}\\), respectivament. L’error relatiu del gruix de la peça (cota \\(a\\)) és:
+        <br><img src= "202306S1Q5.png">`,
         options: [
             { text: "0,9584 %", value: "a" },
             { text: "0,4333 %", value: "b" },
