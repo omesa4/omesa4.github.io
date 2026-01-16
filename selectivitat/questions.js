@@ -367,10 +367,12 @@ const questions = [
     type: "exercicis",
     category: "control",
     text: `<br>Un semàfor té un circuit de control d’errors que activa una alarma si els tres llums estan apagats o si com a mínim dos estan encesos a la vegada, tret que siguin el verd i el groc.
-    <br>Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents (1: encès, 0: apagat):
-    <br>\\(V\\): Verd, \\(G\\): Groc, \\(R\\): Vermell. L'alarma s'activa quan \\(A = 1\\).
+    <br>Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
+    <img src= "202306S5E2.png">
     <br><br>
     <strong>a)</strong> Escriviu la taula de veritat del sistema. [1 punt]
+    <br>
+    <img src= "202306S5E2a.png">
     <br>
     <strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
     <br>
@@ -431,7 +433,10 @@ const questions = [
     type: "exercicis",
     category: "energia",
     text: `<br>Es volen instal·lar petits aerogeneradors en una zona rural per a donar subministrament a una casa aïllada amb una demanda anual de \\(E_{casa} = 500\\,\\text{kW h}\\). En aquests aerogeneradors, el rotor es connecta directament al generador elèctric sense necessitat d’un multiplicador. 
-    <br>El rendiment del generador és \\(η_{gen} = 1/3\\). S’obté energia 14 hores al dia durant 250 dies l’any. Les gràfiques mostren la potència elèctrica generada \\(P_{útil}\\) en funció de la velocitat del vent \\(v\\) i la potència a l’eix del rotor \\(P_{rotor}\\) en funció de la velocitat de gir \\(n\\). 
+    <br>El rendiment del generador és \\(η_{gen} = 1/3\\). S’obté energia 14 hores al dia durant 250 dies l’any. Les gràfiques mostren la potència elèctrica generada \\(P_{útil}\\) en funció de la velocitat del vent \\(v\\) i la potència a l’eix del rotor \\(P_{rotor}\\) en funció de la velocitat de gir \\(n\\) de les pales.
+    <br>
+    <img src= "202306S5E3.png">
+    <br>
     <br>S’estima que la velocitat del vent al punt d’instal·lació és de \\(v = 4\\,\\text{m/s}\\). Determineu:
     <br><br>
     <strong>a)</strong> La potència a l’eix del rotor \\(P_{rotor}\\). [0,5 punts]
@@ -1119,7 +1124,8 @@ const questions = [
     {
         type: "questions",
         category: "materials",
-        text: `La figura mostra la corba tensió-deformació obtinguda en un assaig de tracció. Quant val, aproximadament, el límit elàstic (\\(\\sigma_e\\)) d’aquest material?`,
+        text: `La figura mostra la corba tensió-deformació obtinguda en un assaig de tracció. Quant val, aproximadament, el límit elàstic (\\(\\sigma_e\\)) d’aquest material?
+        <img src= "202306S5Q1.png">`,
         options: [
             { text: "230 MPa", value: "a" },
             { text: "200 MPa", value: "b" },
