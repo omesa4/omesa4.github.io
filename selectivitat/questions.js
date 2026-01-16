@@ -70,120 +70,81 @@ const questions = [
         <img src="">
     `,
 },
-
-
-    {
+{
     type: "exercicis",
-    category: "energia",
-    text: `<br>Una pantalla de projecció té una massa m = 2 kg a la
-part inferior per a mantenir-la sempre tibada. Un motor
-reductor de rendiment ηmot = 0,9 és l’encarregat de recollir
-la pantalla en el corró de diàmetre d = 250 mm, que es troba
-articulat amb el sostre al punt P.
-El punt inferior de la pantalla es desplaça verticalment
-des d’una altura \\(h_1 = 0{,}3\\,\\text{m}\\) fins a \\(h2 = 2\\,\\text{m}\\) en \\(t = 8\\,\\text{s}\\), a velocitat constant. Si la massa de la resta d’elements és negligible,
-determineu:
-
-<img src="#" alt="Imatge relacionada amb la pregunta">
-
-    <br><br><strong>a)</strong> La potència elèctrica mitjana \\(P_{elèctr}\\) consumida pel motor reductor. [1 punt]
-    <br><strong>b)</strong> La velocitat angular de l’eix de sortida del motor reductor \\(ω_{mot}\\) i el parell aplicat per aquest al tambor \\(Γ_{mot}\\).  [1 punt]
-    <br><strong>c)</strong> L’increment percentual, \\(Inc\\), de la potència elèctrica si es volgués fer pujar la pantalla
-amb la meitat del temps. [0,5 punts]
-    <br><br>`, 
-    correctAnswer: "",  
+    category: "energies",
+    text: `<br>Una pantalla de projecció té una massa \\(m = 2\\,\\text{kg}\\) a la part inferior per a mantenir-la sempre tibada.
+    Un motor reductor de rendiment \\(\\eta_{mot} = 0,9\\) és l’encarregat de recollir la pantalla en un corró
+    de diàmetre \\(d = 250\\,\\text{mm}\\), que es troba articulat amb el sostre al punt P.
+    <br>
+    El punt inferior de la pantalla es desplaça verticalment des d’una altura
+    \\(h_1 = 0,3\\,\\text{m}\\) fins a \\(h_2 = 2\\,\\text{m}\\) en un temps \\(t = 8\\,\\text{s}\\), a velocitat constant.
+    Si la massa de la resta d’elements és negligible, determineu:
+    <br><br>
+    <strong>a)</strong> La potència elèctrica mitjana \\(P_{elèctr}\\) consumida pel motor reductor. [1 punt]
+    <br>
+    <strong>b)</strong> La velocitat angular de l’eix de sortida del motor reductor \\(\\omega_{mot}\\) i el parell aplicat al tambor \\(\\Gamma_{mot}\\). [1 punt]
+    <br>
+    <strong>c)</strong> L’increment percentual, \\(Inc\\), de la potència elèctrica si la pantalla pugés en la meitat de temps. [0,5 punts]
+    <br><br>`,
+    correctAnswer: "",
     steps: `
-        <strong>Solució pas a pas:</strong>
-        <br><br>
         <strong>a) Potència elèctrica mitjana:</strong>
         <br>
+        - Desplaçament vertical:
         \\[
-        P_{mec} = m \\times \\ g \\times \\ v = \\frac{m \\times \\ g \\times \\ (h_2 - h_1)}{t}
+        \\Delta h = h_2 - h_1 = 2 - 0,3 = 1,7\\,\\text{m}
         \\]
+        - Treball mecànic:
         \\[
-        P_{mec} = \\frac{2\\,\\text{kg} \\times \\ 9,81\\,\\text{m/s^2} \\times \\ (2\\,\\text{m} - 0,3\\,\\text{m})}{8\\,\\text{s}} = 
+        W = m \\cdot g \\cdot \\Delta h = 2 \\cdot 9,8 \\cdot 1,7 = 33,32\\,\\text{J}
         \\]
+        - Potència mecànica:
         \\[
-        η_{mec} = \\frac{P_{mec}}{P_{elec}}
+        P_{mec} = \\frac{W}{t} = \\frac{33,32}{8} = 4,17\\,\\text{W}
         \\]
+        - Potència elèctrica:
         \\[
-        P_{elec = \\frac{P_{mec}}{η_{mec}} = 
-        \\]
-        <br>
-        \\[
-        $P_{cap} = \\eta \\cdot I \\cdot S = 0,6073 \\cdot 900 \\cdot 2,2 = 1202 \\text{ W}$
+        P_{elèctr} = \\frac{P_{mec}}{\\eta_{mot}} = \\frac{4,17}{0,9} = 4,63\\,\\text{W}
         \\]
         <br><br>
-        <strong>b) Nombre de captadors:</strong>
-        <br>
-        Energia necessària: \\( $Q = m \\cdot c_e \\cdot (T_{cal} - T_a) = 200 \\cdot 4180 \\cdot (55 - 18) = 30,93 \\text{ MJ}$ \\)
-        <br>
-        Energia per captador: \\( $Q_{cap} = \\eta \\cdot I_{mitj} \\cdot S \\cdot t = 0,55 \\cdot 750 \\cdot 2,2 \\cdot (4 \\cdot 3600) = 13,07 \\text{ MJ}$ \\)
-        <br>
-        \\[
-        $n = \\frac{Q}{Q_{cap}} = \\frac{30,93}{13,07} = 2,36 \\rightarrow$ 
-        \\]
-        <strong>2 captadors</strong> (per defecte).
-        <br><br>
-        <strong>c) Potència de l'escalfador elèctric:</strong>
-        <br>
-        Energia total aportada pels 2 captadors: $Q_{2cap} = 2 \cdot 13,07 = 26,14 \text{ MJ}$
-        <br>
-        Energia que falta (elèctrica): \\( $Q_{elec} = Q - Q_{2cap} = 30,93 - 26,14 = 4,79 \\text{ MJ}$ \\)
-        <br>
-        $P_{elec} = \frac{Q_{elec}}{t} = \\( \\frac{4,79 \\cdot 10^6}{4 \\cdot 3600} = 332,6 \\text{ W}$ \\)
-    `, 
-},
-{
-        type: "exercicis",
-    category: "energia",
-    text: `<br>Un establiment turístic es planteja posar una estufa de pèŀlets o de gasoil per a cobrir
-una demanda energètica anual Econs = 15 000 kW h. L’estufa de pèŀlets té un rendiment
-ηpèl = 0,94 i la instaŀlació necessita una inversió inicial cinv_pèl = 7 000 €. Pel que fa a la installació de l’estufa de gasoil, l’estufa té un rendiment ηgas = 0,82 i la instaŀlació necessita una
-inversió inicial cinv_gas = 2 000 €. En ambdós casos el cost del manteniment anual s’estima
-en cmant_pèl = cmant_gas = 400 €. El poder calorífic del pèŀlet és pc_pèl = 4,8 kW h/kg i el seu preu
-cpèl = 0,4 €/kg. El poder calorífic del gasoil és pc_gas = 44,8 MJ/kg, la seva densitat ρ = 0,85 kg/L
-i el seu preu cgas = 1,3 €/L.
-Determineu:
 
-<img src="#" alt="Imatge relacionada amb la pregunta">
+        <strong>b) Velocitat angular i parell:</strong>
+        <br>
+        - Velocitat lineal:
+        \\[
+        v = \\frac{\\Delta h}{t} = \\frac{1,7}{8} = 0,2125\\,\\text{m/s}
+        \\]
+        - Radi del corró:
+        \\[
+        r = \\frac{d}{2} = 0,125\\,\\text{m}
+        \\]
+        - Velocitat angular:
+        \\[
+        \\omega_{mot} = \\frac{v}{r} = \\frac{0,2125}{0,125} = 1,7\\,\\text{rad/s}
+        \\]
+        - Força aplicada:
+        \\[
+        F = m \\cdot g = 19,6\\,\\text{N}
+        \\]
+        - Parell:
+        \\[
+        \\Gamma_{mot} = F \\cdot r = 19,6 \\cdot 0,125 = 2,45\\,\\text{N·m}
+        \\]
+        <br><br>
 
-    <br><br><strong>a)</strong> La potència elèctrica mitjana \\(P_{elèctr}\\) consumida pel motor reductor. [1 punt]
-    <br><strong>b)</strong> La velocitat angular de l’eix de sortida del motor reductor \\(ω_{mot}\\) i el parell aplicat per aquest al tambor \\(Γ_{mot}\\).  [1 punt]
-    <br><strong>c)</strong> L’increment percentual, \\(Inc\\), de la potència elèctrica si es volgués fer pujar la pantalla
-amb la meitat del temps. [0,5 punts]
-    <br><br>`, 
-    correctAnswer: "",  
-    steps: `
-        <strong>Solució pas a pas:</strong>
-        <br><br>
-        <strong>a) Rendiment i potència del captador:</strong>
+        <strong>c) Increment percentual de potència:</strong>
         <br>
+        - Si el temps es redueix a la meitat, la potència es duplica.
         \\[
-        $\\eta = 0,78 - 4,2 \\frac{55 - 18}{900} = 0,78 - 0,1727 = 0,6073$
-        \\]
-        <br>
-        \\[
-        $P_{cap} = \\eta \\cdot I \\cdot S = 0,6073 \\cdot 900 \\cdot 2,2 = 1202 \\text{ W}$
+        Inc = 100\\,\\%
         \\]
         <br><br>
-        <strong>b) Nombre de captadors:</strong>
-        <br>
-        Energia necessària: $Q = m \cdot c_e \cdot (T_{cal} - T_a) = 200 \cdot 4180 \cdot (55 - 18) = 30,93 \text{ MJ}$
-        <br>
-        Energia per captador: $Q_{cap} = \eta \cdot I_{mitj} \cdot S \cdot t = 0,55 \cdot 750 \cdot 2,2 \cdot (4 \cdot 3600) = 13,07 \text{ MJ}$
-        <br>
-        $n = \frac{Q}{Q_{cap}} = \frac{30,93}{13,07} = 2,36 \rightarrow$ <strong>2 captadors</strong> (per defecte).
-        <br><br>
-        <strong>c) Potència de l'escalfador elèctric:</strong>
-        <br>
-        Energia total aportada pels 2 captadors: $Q_{2cap} = 2 \cdot 13,07 = 26,14 \text{ MJ}$
-        <br>
-        Energia que falta (elèctrica): $Q_{elec} = Q - Q_{2cap} = 30,93 - 26,14 = 4,79 \text{ MJ}$
-        <br>
-        $P_{elec} = \frac{Q_{elec}}{t} = \frac{4,79 \cdot 10^6}{4 \cdot 3600} = 332,6 \text{ W}$
-    `, 
+
+        <img src="ruta/a/pantallaMotor.jpg" alt="Esquema del motor i la pantalla">
+    `,
 },
+
 {
     type: "exercicis",
     category: "mecanica",
@@ -248,6 +209,94 @@ amb la meitat del temps. [0,5 punts]
         <img src="ruta/a/imatgeMecanica.jpg" alt="Esquema de forces i angles">
     `, 
 },
+    {
+    type: "exercicis",
+    category: "energies",
+    text: `<br>Un establiment turístic es planteja instal·lar una estufa de pèŀlets o una de gasoil per a cobrir
+    una demanda energètica anual \\(E_{cons} = 15\\,000\\,\\text{kW·h}\\).
+    <br><br>
+    Estufa de pèŀlets:
+    <br>
+    \\(\\eta_{pèl} = 0,94\\), \\(c_{inv,pèl} = 7\\,000\\,€\\), \\(c_{mant,pèl} = 400\\,€\\),
+    \\(pc_{pèl} = 4,8\\,\\text{kW·h/kg}\\), \\(c_{pèl} = 0,4\\,€/\\text{kg}\\)
+    <br><br>
+    Estufa de gasoil:
+    <br>
+    \\(\\eta_{gas} = 0,82\\), \\(c_{inv,gas} = 2\\,000\\,€\\), \\(c_{mant,gas} = 400\\,€\\),
+    \\(pc_{gas} = 44,8\\,\\text{MJ/kg}\\), \\(\\rho = 0,85\\,\\text{kg/L}\\),
+    \\(c_{gas} = 1,3\\,€/\\text{L}\\)
+    <br><br>
+    Determineu:
+    <br>
+    <strong>a)</strong> El cost energètic \\(c_{e,pèl}\\) i \\(c_{e,gas}\\). [1 punt]
+    <br>
+    <strong>b)</strong> La massa anual de pèŀlets necessària \\(m_{pèl}\\). [0,5 punts]
+    <br>
+    <strong>c)</strong> El volum anual de gasoil necessari \\(V_{gas}\\). [0,5 punts]
+    <br>
+    <strong>d)</strong> El temps necessari perquè el cost total de les dues instal·lacions s’iguali. [0,5 punts]
+    <br><br>`,
+    correctAnswer: "",
+    steps: `
+        <strong>a) Cost energètic:</strong>
+        <br>
+        - Pèŀlets:
+        \\[
+        c_{e,pèl} = \\frac{c_{pèl}}{pc_{pèl} \\cdot \\eta_{pèl}}
+        = \\frac{0,4}{4,8 \\cdot 0,94} = 0,0886\\,€/\\text{kW·h}
+        \\]
+        - Gasoil:
+        \\[
+        pc_{gas} = \\frac{44,8}{3,6} = 12,44\\,\\text{kW·h/kg}
+        \\]
+        \\[
+        c_{e,gas} = \\frac{1,3}{12,44 \\cdot 0,85 \\cdot 0,82}
+        = 0,150\\,€/\\text{kW·h}
+        \\]
+        <br><br>
+
+        <strong>b) Massa anual de pèŀlets:</strong>
+        \\[
+        m_{pèl} = \\frac{E_{cons}}{pc_{pèl} \\cdot \\eta_{pèl}}
+        = \\frac{15\\,000}{4,8 \\cdot 0,94}
+        = 3324\\,\\text{kg}
+        \\]
+        <br><br>
+
+        <strong>c) Volum anual de gasoil:</strong>
+        \\[
+        m_{gas} = \\frac{15\\,000}{12,44 \\cdot 0,82}
+        = 1465\\,\\text{kg}
+        \\]
+        \\[
+        V_{gas} = \\frac{m_{gas}}{\\rho}
+        = \\frac{1465}{0,85}
+        = 1723\\,\\text{L}
+        \\]
+        <br><br>
+
+        <strong>d) Temps d’amortització:</strong>
+        <br>
+        - Cost anual:
+        \\[
+        C_{pèl} = 15\\,000 \\cdot 0,0886 + 400 = 1729\\,€
+        \\]
+        \\[
+        C_{gas} = 15\\,000 \\cdot 0,150 + 400 = 2650\\,€
+        \\]
+        - Diferència d’inversió:
+        \\[
+        \\Delta C_{inv} = 7\\,000 - 2\\,000 = 5\\,000\\,€
+        \\]
+        \\[
+        t = \\frac{5\\,000}{2650 - 1729} = 5,4\\,\\text{anys}
+        \\]
+        <br><br>
+
+        <img src="ruta/a/comparacioEnergia.jpg" alt="Comparació estufa de pèŀlets i gasoil">
+    `,
+},
+
 {
     type: "exercicis",
     category: "energia",
