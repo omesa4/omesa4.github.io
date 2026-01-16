@@ -1,47 +1,33 @@
 const questions = [
 {
     type: "exercicis",
-    category: "energia",
-    text: `<br> En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte està format per quatre membres: president, secretari, vocal 1 i vocal 2. La decisió es pren per majoria i, en cas d’empat, preval el vot de qualitat del president.
-    Responeu a les qüestions que hi ha a continuació utilitzant les variables d’estat següents:
-    <br>
-    <img src="202306P2.png" alt="Imatge relacionada amb la pregunta">
-    <br>
-    <br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
-    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-    <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
-    <br><br>`, 
+    category: "mecanica",
+    text: `Un cilindre hidràulic ha d'elevar una massa de 980 kg. El diàmetre interior del cilindre és de 94 mm i el de la tija és de 60 mm. Calculeu:
+    <br><br><strong>a)</strong> Pressió relativa.
+    <br><strong>b)</strong> Tensió de la tija.
+    <br><strong>c)</strong> Potència de la bomba si el cabal és de 2,3 l/s a una pressió de 1,7 MPa.
+    <br><strong>d)</strong> Rendiment del sistema si la velocitat d'elevació és de 0,33 m/s.`, 
     correctAnswer: "",  
     steps: `
-        <strong>a) Rendiment i potència del captador:</strong>
+        <strong>a) Pressió relativa (\\\\(p_{int}\\\\)):</strong>
         <br>
-        \\\\[
-        \\\\eta = 0,78 - 4,2 \\\\frac{55 - 18}{900} = 0,78 - 0,1727 = 0,6073
-        \\\\]
+        \\\\[ F = m \\\\cdot g = 980 \\\\cdot 9,807 = 9611 \\\\text{ N} \\\\]
+        \\\\[ S_{int} = \\\\frac{\\\\pi \\\\cdot 0,094^2}{4} = 6,94 \\\\cdot 10^{-3} \\\\text{ m}^2 \\\\]
+        \\\\[ p_{int} = \\\\frac{F}{S_{int}} = 1,385 \\\\cdot 10^6 \\\\text{ Pa} = 1,385 \\\\text{ MPa} \\\\]
         <br>
-        \\\\[
-        P_{cap} = \\\\eta \\\\cdot I \\\\cdot S = 0,6073 \\\\cdot 900 \\\\cdot 2,2 = 1202 \\\\text{ W}
-        \\\\]
-        <br><br>
-        <strong>b) Nombre de captadors:</strong>
+        <strong>b) Tensió de la tija (\\\\(\\\\sigma_{tija}\\\\)):</strong>
         <br>
-        Energia necessària: \\\\( Q = m \\\\cdot c_e \\\\cdot (T_{cal} - T_a) = 200 \\\\cdot 4180 \\\\cdot (55 - 18) = 30,93 \\\\text{ MJ} \\\\)
+        \\\\[ S_{tija} = \\\\frac{\\\\pi \\\\cdot 0,06^2}{4} = 2,827 \\\\cdot 10^{-3} \\\\text{ m}^2 \\\\]
+        \\\\[ \\\\sigma_{tija} = \\\\frac{F}{S_{tija}} = 3,4 \\\\cdot 10^6 \\\\text{ Pa} = 3,4 \\\\text{ MPa} \\\\]
         <br>
-        Energia per captador: \\\\( Q_{cap} = \\\\eta \\\\cdot I_{mitj} \\\\cdot S \\\\cdot t = 0,55 \\\\cdot 750 \\\\cdot 2,2 \\\\cdot (4 \\\\cdot 3600) = 13,07 \\\\text{ MJ} \\\\)
+        <strong>c) Potència de la bomba (\\\\(P_h\\\\)):</strong>
         <br>
-        \\\\[
-        n = \\\\frac{Q}{Q_{cap}} = \\\\frac{30,93}{13,07} = 2,36 \\\\rightarrow 2 \\\\text{ captadors}
-        \\\\]
-        <br><br>
-        <strong>c) Potència de l'escalfador elèctric:</strong>
+        \\\\[ P_h = p \\\\cdot q = 1,7 \\\\cdot 10^6 \\\\cdot 2,3 \\\\cdot 10^{-3} = 3910 \\\\text{ W} = 3,91 \\\\text{ kW} \\\\]
         <br>
-        \\\\[
-        Q_{2cap} = 2 \\\\cdot 13,07 = 26,14 \\\\text{ MJ}
-        \\\\]
+        <strong>d) Rendiment (\\\\(\\\\eta\\\\)):</strong>
         <br>
-        Energia que falta (elèctrica): \\\\( Q_{elec} = Q - Q_{2cap} = 30,93 - 26,14 = 4,79 \\\\text{ MJ} \\\\)
-        <br>
-        \\\\( P_{elec} = \\\\frac{Q_{elec}}{t} = \\\\frac{4,79 \\\\cdot 10^6}{4 \\\\cdot 3600} = 332,6 \\\\text{ W} \\\\)
+        \\\\[ P_{útil} = F \\\\cdot v = 9611 \\\\cdot 0,33 = 3171,6 \\\\text{ W} \\\\]
+        \\\\[ \\\\eta = \\\\frac{P_{útil}}{P_h} = \\\\frac{3171,6}{3910} = 0,8111 \\\\rightarrow 81,11 \\\\% \\\\]
     `, 
 },
 
