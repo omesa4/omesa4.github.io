@@ -212,25 +212,25 @@ const questions = [
     {
     type: "exercicis",
     category: "energies",
-    text: `<br>Un establiment turístic es planteja instal·lar una estufa de pèŀlets o una de gasoil per a cobrir
+    text: `<br>Un establiment turístic es planteja instal·lar una estufa de pellets o una de gasoil per a cobrir
     una demanda energètica anual \\(E_{cons} = 15\\,000\\,\\text{kW·h}\\).
     <br><br>
-    Estufa de pèŀlets:
+    Estufa de pellets:
     <br>
-    \\(\\eta_{pèl} = 0,94\\), \\(c_{inv,pèl} = 7\\,000\\,€\\), \\(c_{mant,pèl} = 400\\,€\\),
-    \\(pc_{pèl} = 4,8\\,\\text{kW·h/kg}\\), \\(c_{pèl} = 0,4\\,€/\\text{kg}\\)
+    \\(\\eta_{pel} = 0,94\\), \\(c_{inv,pel} = 7\\,000\\,\\text{€}\\), \\(c_{mant,pel} = 400\\,\\text{€}\\),
+    \\(pc_{pel} = 4,8\\,\\text{kW·h/kg}\\), \\(c_{pel} = 0,4\\,\\text{€/kg}\\)
     <br><br>
     Estufa de gasoil:
     <br>
-    \\(\\eta_{gas} = 0,82\\), \\(c_{inv,gas} = 2\\,000\\,€\\), \\(c_{mant,gas} = 400\\,€\\),
+    \\(\\eta_{gas} = 0,82\\), \\(c_{inv,gas} = 2\\,000\\,\\text{€}\\), \\(c_{mant,gas} = 400\\,\\text{€}\\),
     \\(pc_{gas} = 44,8\\,\\text{MJ/kg}\\), \\(\\rho = 0,85\\,\\text{kg/L}\\),
-    \\(c_{gas} = 1,3\\,€/\\text{L}\\)
+    \\(c_{gas} = 1,3\\,\\text{€/L}\\)
     <br><br>
     Determineu:
     <br>
-    <strong>a)</strong> El cost energètic \\(c_{e,pèl}\\) i \\(c_{e,gas}\\). [1 punt]
+    <strong>a)</strong> El cost energètic \\(c_{e,pel}\\) i \\(c_{e,gas}\\). [1 punt]
     <br>
-    <strong>b)</strong> La massa anual de pèŀlets necessària \\(m_{pèl}\\). [0,5 punts]
+    <strong>b)</strong> La massa anual de pellets necessària \\(m_{pel}\\). [0,5 punts]
     <br>
     <strong>c)</strong> El volum anual de gasoil necessari \\(V_{gas}\\). [0,5 punts]
     <br>
@@ -240,10 +240,11 @@ const questions = [
     steps: `
         <strong>a) Cost energètic:</strong>
         <br>
-        - Pèŀlets:
+        - Pellets:
         \\[
-        c_{e,pèl} = \\frac{c_{pèl}}{pc_{pèl} \\cdot \\eta_{pèl}}
-        = \\frac{0,4}{4,8 \\cdot 0,94} = 0,0886\\,€/\\text{kW·h}
+        c_{e,pel} = \\frac{c_{pel}}{pc_{pel} \\cdot \\eta_{pel}}
+        = \\frac{0,4}{4,8 \\cdot 0,94}
+        = 0,0886\\,\\text{€/kW·h}
         \\]
         - Gasoil:
         \\[
@@ -251,13 +252,13 @@ const questions = [
         \\]
         \\[
         c_{e,gas} = \\frac{1,3}{12,44 \\cdot 0,85 \\cdot 0,82}
-        = 0,150\\,€/\\text{kW·h}
+        = 0,150\\,\\text{€/kW·h}
         \\]
         <br><br>
 
-        <strong>b) Massa anual de pèŀlets:</strong>
+        <strong>b) Massa anual de pellets:</strong>
         \\[
-        m_{pèl} = \\frac{E_{cons}}{pc_{pèl} \\cdot \\eta_{pèl}}
+        m_{pel} = \\frac{E_{cons}}{pc_{pel} \\cdot \\eta_{pel}}
         = \\frac{15\\,000}{4,8 \\cdot 0,94}
         = 3324\\,\\text{kg}
         \\]
@@ -279,23 +280,24 @@ const questions = [
         <br>
         - Cost anual:
         \\[
-        C_{pèl} = 15\\,000 \\cdot 0,0886 + 400 = 1729\\,€
+        C_{pel} = 15\\,000 \\cdot 0,0886 + 400 = 1729\\,\\text{€}
         \\]
         \\[
-        C_{gas} = 15\\,000 \\cdot 0,150 + 400 = 2650\\,€
+        C_{gas} = 15\\,000 \\cdot 0,150 + 400 = 2650\\,\\text{€}
         \\]
         - Diferència d’inversió:
         \\[
-        \\Delta C_{inv} = 7\\,000 - 2\\,000 = 5\\,000\\,€
+        \\Delta C_{inv} = 7\\,000 - 2\\,000 = 5\\,000\\,\\text{€}
         \\]
         \\[
         t = \\frac{5\\,000}{2650 - 1729} = 5,4\\,\\text{anys}
         \\]
         <br><br>
 
-        <img src="ruta/a/comparacioEnergia.jpg" alt="Comparació estufa de pèŀlets i gasoil">
+        <img src="ruta/a/comparacioEnergia.jpg" alt="Comparació estufa de pellets i gasoil">
     `,
 },
+
 
 {
     type: "exercicis",
