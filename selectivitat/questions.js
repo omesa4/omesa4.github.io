@@ -80,6 +80,7 @@ const questions = [
     El punt inferior de la pantalla es desplaça verticalment des d’una altura
     \\(h_1 = 0,3\\,\\text{m}\\) fins a \\(h_2 = 2\\,\\text{m}\\) en un temps \\(t = 8\\,\\text{s}\\), a velocitat constant.
     Si la massa de la resta d’elements és negligible, determineu:
+    <img src="202306S1E3.png">
     <br><br>
     <strong>a)</strong> La potència elèctrica mitjana \\(P_{elèctr}\\) consumida pel motor reductor. [1 punt]
     <br>
