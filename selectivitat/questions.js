@@ -148,7 +148,7 @@ const questions = [
 {
     type: "exercicis",
     category: "pneumatica",
-    text: `<br> <img src= "202306S1E6.png"> 
+    text: `<br> <img src= "202306S1E5.png"> 
     <br> La figura mostra un esquema simplificat d’una grua per a elevar caixes de fruita. 
     La barra OBC, de longitud \\(2l = 4\\,\\text{m}\\) (essent B el seu punt mitjà), es troba articulada al terra al punt O. 
     A l’extrem C s’hi pengen 3 caixes de fruita de 25 kg cadascuna (\\(m = 75\\,\\text{kg}\\)). La massa de la resta d’elements és negligible.
