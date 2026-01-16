@@ -1,33 +1,38 @@
 const questions = [
 {
     type: "exercicis",
-    category: "mecanica",
-    text: `<br> En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte està format per quatre membres: president (P), secretari (S), vocal 1 (V1) i vocal 2 (V2). La decisió es pren per majoria i, en cas d’empat, preval el vot de qualitat del president.
-    <br><br><strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
-    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i, si escau, simplifiqueu-la. [1 punt]
-    <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]
-    <br><br>`, 
-    correctAnswer: "",  
+    category: "electronica",
+    text: `<strong>Exercici 2:</strong> En la defensa d’un projecte acadèmic, el tribunal que valora si el treball és apte o no apte està format per quatre membres: president (p), secretari (s), vocal 1 (v1) i vocal 2 (v2). La decisió es pren per majoria i, en cas d’empat, preval el vot de qualitat del president.
+    <br><br>Responeu a les qüestions utilitzant les variables d’estat següents:
+    <ul>
+        <li>\\\\( v_1, v_2, s, p \\\\): 1 si el vot és favorable, 0 si és en contra.</li>
+        <li>\\\\( d \\\\): 1 si el treball és apte, 0 si no ho és.</li>
+    </ul>
+    <strong>a)</strong> Elaboreu la taula de veritat del sistema. [1 punt]
+    <br><strong>b)</strong> Determineu la funció lògica entre aquestes variables i simplifiqueu-la. [1 punt]
+    <br><strong>c)</strong> Dibuixeu el diagrama de portes lògiques equivalent. [0,5 punts]`,
+    correctAnswer: "",
     steps: `
         <strong>a) Taula de veritat:</strong>
         <br>
-        Es considera 1 (Apte) quan hi ha 3 o més vots positius, o quan n'hi ha 2 i un d'ells és el del president (P).
+        El sistema dóna un resultat de apte (\\\\( d=1 \\\\)) quan hi ha majoria (3 o 4 vots) o quan hi ha un empat (2 vots) i el president (p) ha votat a favor.
         <br><br>
         <strong>b) Funció lògica simplificada:</strong>
         <br>
-        Aplicant el mètode de Karnaugh, la funció simplificada és:
-        \\\\[ F = P \\\\cdot S + P \\\\cdot V_1 + P \\\\cdot V_2 + S \\\\cdot V_1 \\\\cdot V_2 \\\\]
+        Extreiem els minterms on la sortida és 1 i simplifiquem per Karnaugh:
+        \\\\[ d = (p \\\\cdot s) + (p \\\\cdot v_1) + (p \\\\cdot v_2) + (s \\\\cdot v_1 \\\\cdot v_2) \\\\]
         <br>
-        On:
-        <br>
-        \\\\( P \\\\cdot S, P \\\\cdot V_1, P \\\\cdot V_2 \\\\) representen el vot del president més qualsevol altre membre (guanya per desempat).
-        <br>
-        \\\\( S \\\\cdot V_1 \\\\cdot V_2 \\\\) representa la majoria simple sense el president.
+        Aquesta funció indica que el treball és apte si el president vota amb qualsevol altre membre, o si els tres membres restants voten a favor sense el president.
         <br><br>
         <strong>c) Diagrama de portes lògiques:</strong>
         <br>
-        Es realitza mitjançant quatre portes AND (tres de dues entrades i una de tres entrades) connectades a una porta OR final de quatre entrades.
-    `, 
+        La implementació directa de la funció simplificada requereix:
+        <ul>
+            <li>Tres portes <strong>AND</strong> de dues entrades.</li>
+            <li>Una porta <strong>AND</strong> de tres entrades.</li>
+            <li>Una porta <strong>OR</strong> de quatre entrades per sumar tots els termes.</li>
+        </ul>
+    `,
 },
 
     {
