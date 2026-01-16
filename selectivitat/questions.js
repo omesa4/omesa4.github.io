@@ -1028,8 +1028,7 @@ const questions = [
         <br>
         La resposta correcta és la <strong>a)</strong>.
     `,
-    images: "img/consum-especific.jpg" 
-}
+},
 
 
 
