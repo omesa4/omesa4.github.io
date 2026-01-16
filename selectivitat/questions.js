@@ -991,6 +991,51 @@ const questions = [
         images: `<img src="ruta/a/imatgePregunta.jpg" alt="Imatge relacionada amb la pregunta">`  // Imatge opcional al final de la pregunta
     },
     {
+    type: "questions",
+    category: "energia",
+    text: `Un vehicle utilitza gasoil de poder calorífic \\(pc = 44,8 \\, \\text{MJ/kg}\\) i densitat \\(0{,}85 \\, \\text{kg/L}\\). El motor té un rendiment del \\(32 \\, \\%\\). Quin és el consum específic d’aquest motor dièsel?`,
+    options: [
+        { text: "251,1 g/(kW h)", value: "a" },
+        { text: "69,75 g/(kW h)", value: "b" },
+        { text: "80,36 g/(kW h)", value: "c" },
+        { text: "3,982 g/(kW h)", value: "d" }
+    ],
+    correctAnswer: "a",
+    steps: `
+        <strong>1. Conversió del Poder Calorífic (pc) a unitats elèctriques:</strong>
+        <br>
+        Sabem que \\(1 \\, \\text{kWh} = 3,6 \\, \\text{MJ}\\). Per tant:
+        \\[
+        pc = \\frac{44,8 \\, \\text{MJ/kg}}{3,6 \\, \\text{MJ/kWh}} = 12,444 \\, \\text{kWh/kg}
+        \\]
+        
+        <strong>2. Càlcul de l'energia útil per kg de combustible:</strong>
+        <br>
+        Aplicant el rendiment (\\(\\eta = 0,32\\)):
+        \\[
+        E_{útil} = pc \\times \\eta = 12,444 \\, \\text{kWh/kg} \\times 0,32 = 3,982 \\, \\text{kWh/kg}
+        \\]
+        
+        <strong>3. Càlcul del consum específic (ce):</strong>
+        <br>
+        El consum específic és la inversa de l'energia útil, expressada habitualment en grams:
+        \\[
+        ce = \\frac{1}{E_{útil}} = \\frac{1}{3,982 \\, \\text{kWh/kg}} = 0,2511 \\, \\text{kg/(kWh)}
+        \\]
+        \\[
+        ce = 251,1 \\, \\text{g/(kWh)}
+        \\]
+        <br>
+        La resposta correcta és la <strong>a)</strong>.
+    `,
+    images: "img/consum-especific.jpg" 
+}
+
+
+
+
+    
+    {
         type: "questions",
         category: "pneumatica",
         text: `El diàmetre interior d’un cilindre hidràulic de doble efecte és de \\(60 \\, \\text{mm}\\), i el diàmetre de la tija és de \\(25 \\, \\text{mm}\\). Si s’alimenta amb un cabal d’oli de \\(9,3 \\times 10^{-3} \\, \\text{m}^3/\\text{min}\\), quina és la seva velocitat de retrocés?`,
