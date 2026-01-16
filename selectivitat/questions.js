@@ -1033,7 +1033,7 @@ const questions = [
         type: "questions",
         category: "pneumatica",
         text: `El diàmetre interior d’un cilindre hidràulic de doble efecte és de \\(60 \\, \\text{mm}\\), i el diàmetre de la tija és de \\(25 \\, \\text{mm}\\). Si s’alimenta amb un cabal d’oli de \\(9,3 \\times 10^{-3} \\, \\text{m}^3/\\text{min}\\), quina és la seva velocitat de retrocés?`,
-        <img src="">
+        <img src="202306S1Q3.png">
         options: [
             { text: "3,289 mm/s", value: "a" },
             { text: "3,980 mm/s", value: "b" },
@@ -1059,12 +1059,13 @@ const questions = [
             \\]
             <br><br>
             La resposta correcta és la <strong>d)</strong>.`,
-        images: "" 
     },
     {
         type: "questions",
         category: "energia",
-        text: `Una família que anualment generava \\(525 \\, \\text{kg}\\) d’envasos, en un any ha aconseguit reduir aquesta quantitat un \\(60 \\, \\%\\). Segons la taula de l'OCCC (factor d'emissió envasos: \\(120{,}09 \\, \\text{g CO}_{2eq}/\\text{kg residu}\\)), quina reducció en emissions de GEH ha obtingut respecte a l’any anterior?`,
+        text: `La gestió de residus té associada una generació d’emissions a l’atmosfera de gasos amb efecte d’hivernacle (GEH) a causa de l’ús de combustibles fòssils, la combustió dels residus i la formació de metà per la fermentació de la matèria orgànica. L’Oficina Catalana del Canvi Climàtic (OCCC) ha estimat un factor d’emissió, expressat en g CO2eq per kilogram de residu generat, que inclou totes les emissions directes i indirectes del procés complet de gestió. La taula següent recull els factors d’emissió per a cada tipus de fracció de residu. 
+        <img src="202306S1Q4.png">
+        <br>Una família que anualment generava \\(525 \\, \\text{kg}\\) d’envasos, en un any ha aconseguit reduir aquesta quantitat un \\(60 \\, \\%\\). Segons la taula de l'OCCC (factor d'emissió envasos: \\(120{,}09 \\, \\text{g CO}_{2eq}/\\text{kg residu}\\)), quina reducció en emissions de GEH ha obtingut respecte a l’any anterior?`,
         options: [
             { text: "25,22 kg CO2eq", value: "a" },
             { text: "37,83 kg CO2eq", value: "b" },
